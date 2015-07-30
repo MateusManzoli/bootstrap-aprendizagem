@@ -14,8 +14,7 @@ and open the template in the editor.
     padding-right: 3%;
     padding-top: 3%;
     float: left;
-    max-width: 700px;
-    min-width: 280px;
+    width: 700px;
     padding-left: 2%;
 }
 
@@ -29,6 +28,6 @@ and open the template in the editor.
 .thumbnail img{
     height: 300px;
     width: 650px;
-    min-width: 150px;
-
+    float: left;
+    //min-width: 150px;
 }
