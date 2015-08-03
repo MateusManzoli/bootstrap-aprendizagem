@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<?php include_once '../dados/dados-head.php';?>
+    <?php include_once '../dados/dados-head.php'; ?>
     <link rel="stylesheet" type="text/css" href="../fale-conosco.css"/>
     <body>
         <?php include_once '../dados/dados-cabecalho.php'; ?>
-        <form class="form-horizontal-a">
+        <form class="form-horizontal-a" method="post" 
             <legend>Dados do Usuario</legend>
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Nome</label>
@@ -41,9 +41,11 @@
             </div>
 
             <div class="form-group-a">
-                <label for="inputEmail3" class="col-sm-2 control-label">Nascimento</label>
+                <label for="inputEmail3" class="col-sm-2 control-label">Nascimento</label><br>
                 <div class="col-sm-10-a">
-                    <input type="datetime" class="form-control" size="10" maxlength="10" placeholder="DD/MM/AAAA">
+                    <input type="date" name="dia" size="2" maxlength="2" placeholder="dd"> 
+                    <input type="date" name="mes" size="2" maxlength="2" placeholder="mm"> 
+                    <input type="date" name="ano" size="4" maxlength="4" placeholder="aaaa">
                 </div>
             </div>
 

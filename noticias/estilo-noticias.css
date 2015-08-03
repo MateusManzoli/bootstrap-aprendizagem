@@ -11,7 +11,7 @@ and open the template in the editor.
 .conteudo{
     display: table;
     border-right: 1px solid #e0e0e0;
-    padding-right: 3%;
+    padding-right: 5%;
     padding-top: 3%;
     float: left;
     width: 700px;
@@ -25,9 +25,15 @@ and open the template in the editor.
     color: #8E949B;
 }
 
+.thumbnail{
+    border: none;
+}
+
 .thumbnail img{
+    //position: relative;
     height: 300px;
     width: 650px;
-    float: left;
-    //min-width: 150px;
+    //float: left;
+    padding-bottom: 1%;
+    
 }
