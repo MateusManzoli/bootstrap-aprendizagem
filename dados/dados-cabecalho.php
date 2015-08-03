@@ -32,14 +32,8 @@
                             <li><a href="#">Sudeste</a></li>
                         </ul>
                     </li>
-                    
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gerenciar<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../public/contato.php">Fale Conosco</a></li>
-                            <li><a href="../public/cadastro_noticias.php">Cadastrar Noticia</a></li>
-                        </ul>
-                    </li>
+
+                    <li><a href="../public/contato.php">Fale Conosco</a></li>
                 </ul>
 
             </div><!--/.nav-collapse -->

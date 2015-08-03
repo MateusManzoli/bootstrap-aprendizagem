@@ -3,7 +3,7 @@ include_once '../gerenciar/gerenciador.php';
 
 $noticias = buscarNoticiasMenuPrincipal();
 
-// pega o id das notcias
+
 foreach ($noticias as $noticia) {
     echo $noticia['id'];
 }
@@ -14,10 +14,10 @@ foreach ($noticias as $noticia) {
         <?php foreach ($noticias as $noticia) { ?>
             <div class="col-md-4">
                 <div class="thumbnail" >
-                    <a href=" noticia.php?id=<?php echo $noticia['id'] //informou que o link sera diferente de acordo com o id ?>"> <img src="../imagens/<?php echo $noticia['imagem']; // escolhe a imagem para cada id ?>"/>
+                    <a href=" noticia.php?id=<?php echo $noticia['id'] ?>"> <img src="../imagens/<?php echo $noticia['imagem']; ?>"/>
                         <div class="caption">
-                            <h4><?php echo $noticia['manchete'] //buscou a manchete  ?></h4>
-                            <p><?php echo $noticia['subtitulo'] //buscou o subtitulo?></p>
+                            <h4><?php echo $noticia['manchete'] ?></h4>
+                            <p><?php echo $noticia['subtitulo'] ?></p>
                         </div>
                     </a>
                 </div>

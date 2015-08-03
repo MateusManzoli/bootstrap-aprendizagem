@@ -3,7 +3,8 @@
     float: left;
     padding-top: 7%;
     padding-left: 3%;
-    width: 600px;
+    width: 650px;
+    min-width: 200px;
 }
 .col-sm-10-a{
     padding: 5px;

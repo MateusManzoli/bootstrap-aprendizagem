@@ -18,6 +18,7 @@
     min-width: 100px;
 }
 
+
 .thumbnail img{
     width: 180px;;
     height: 180px;
@@ -28,10 +29,11 @@
     background: #EEE;
 }
 
-.menulateral{
 
+.menulateral{
+  
     padding-top: 5%;
-    padding-right: 7%;
+    padding-right: 3%;
     float: right;
 }
 
@@ -61,6 +63,8 @@
     padding: 10px;
 }
 
+
+
 .video video{
     width: 250px;
     border-radius: 10px;
@@ -82,6 +86,8 @@
     text-decoration: none;
     color: black;
 }
+
+
 
 .list-group a{
     background-color: transparent;
