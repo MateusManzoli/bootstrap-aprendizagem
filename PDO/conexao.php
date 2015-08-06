@@ -1,5 +1,7 @@
 <?php
- //faz a canexao com o BD
+
+//faz a canexao com o BD
+//$conn = new PDO('mysql:host=localhost;dbname=meuBancoDeDados', $username, $password); modelo para conexao
 function conectar() {
     return new PDO('mysql:host=localhost;dbname=aprendizagem', 'root', 'mateus123');
 }
@@ -15,7 +17,26 @@ function pesquisar($sql) {
 
 function inserir($sql) {
     $conexao = conectar();
-    echo $sql;
-     $statement = $conexao->exec($sql);
-     return $conexao->lastInsertId();
+
+    $statement = $conexao->exec($sql);
+    //lastInsertId retorna os resultados por id
+    return $conexao->lastInsertId();
+}
+
+function excluir($sql) {
+
+    $conexao = conectar();
+
+    $statement = $conexao->query($sql);
+
+    return $statement->execute();
+}
+
+function editar($sql) {
+     
+    $conexao = conectar();
+ 
+    $statement = $conexao->query($sql);
+    //var_dump($sql);exit;
+    //return $statement;
 }

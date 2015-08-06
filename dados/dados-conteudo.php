@@ -3,10 +3,6 @@ include_once '../gerenciar/gerenciador.php';
 
 $noticias = buscarNoticiasMenuPrincipal();
 
-// pega o id das notcias
-foreach ($noticias as $noticia) {
-    echo $noticia['id'];
-}
 ?>
 
 <div class="noticias">
