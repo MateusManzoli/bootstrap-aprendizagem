@@ -13,7 +13,7 @@ $noticias = buscarNoticiasMenuPrincipal();
 <html>
 
     <?php include_once '../dados/dados-head.php' ?>
-    <link rel="stylesheet" type="text/css" href="../tabela_gerenciar-noticias.css"/>
+    <link rel="stylesheet" type="text/css" href="../estilos-paginas/tabela_gerenciar-noticias.css"/>
     <body>
 
         <div class="geral">

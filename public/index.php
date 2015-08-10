@@ -3,7 +3,6 @@
 <html lang="pt-br">
     <?php include_once '../dados/dados-head.php'; ?>
     <body>
-
         <!--navbar Fixa -->
         <?php include_once '../dados/dados-cabecalho.php'; ?>
         <?php include_once '../dados/dados-conteudo.php'; ?>

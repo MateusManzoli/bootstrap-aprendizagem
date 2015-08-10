@@ -23,3 +23,7 @@ and open the template in the editor.
     float: left ;
 }
 
+.alert-danger {
+    background-color: white;
+    border: none;
+}

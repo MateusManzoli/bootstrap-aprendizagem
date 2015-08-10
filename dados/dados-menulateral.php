@@ -10,7 +10,7 @@
         <div class="form-group">
             <label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
             <div class="col-sm-10">
-                <input type="Senha" class="form-control" id="inputPassword3" placeholder="Senha">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Senha">
             </div>
         </div>
 
@@ -27,8 +27,8 @@
     </div>
 
     <div class="link">
-        <a href="https://twitter.com" target="_blanck"> <img src="../imgres.jpg"></a> <br>
-        <a href="https://facebook.com" target="_blanck"> <img src="../imgres.png"> </a>
+        <a href="https://twitter.com" target="_blanck"> <img src="../imagens/twitter.jpg"></a> <br>
+        <a href="https://facebook.com" target="_blanck"> <img src="../imagens/facebook.jpg"> </a>
     </div>
 
     <div class="video" align="center">

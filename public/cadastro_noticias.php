@@ -2,21 +2,44 @@
 include_once '../dados/dados-cabecalho.php';
 include_once '../gerenciar/gerenciador.php';
 
-// post armazena os dados 
+try {
+
+    $execucao = [];
+    // post armazena os dados 
 // se post existir ele ira cadastrar as noticias, 
-if($_POST){
-    cadastrarNoticia($_POST);
+    if ($_POST) {
+        
+        cadastrarNoticia($_POST);    
+        
+        $execucao["mensagem"] = "Noticia cadastrda com sucesso";
+        $execucao["tipo"] = "alert-success";
+
+    }
+} catch (Exception $exc) {
+    $execucao['mensagem'] = $exc->getMessage();
+    $execucao['tipo'] = "alert-danger";
 }
+
+
+
 ?>
 
 <html>
     <?php include_once '../dados/dados-head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="../estilo-cadastro-noticia.css"/>
+    <link rel="stylesheet" type="text/css" href="../estilos-paginas/estilo-cadastro-noticia.css"/>
     <body>
         <?php include_once '../dados/dados-cabecalho.php'; ?>
         <div class="geral">
-            <form class="form-horizontal-a" method="post"> 
-                  <legend><h2>Dados da Noticia</h2></legend>
+
+            <form action="cadastro_noticias.php" class="form-horizontal-a" method="post"> 
+             
+                <?php if(!empty($execucao)){ ?>
+                    <div class="alert <?php echo $execucao['tipo']; ?>">
+                        <?php echo $execucao['mensagem']; ?>
+                    </div>
+                <?php } ?>
+                <legend><h2>Dados da Noticia</h2></legend>
+                <input type="hidden" name="cadastrar" value="1">
                 <div class="form-group-a">
                     <label  class="col-sm-2 control-label">Publicação</label>
                     <div class="col-sm-10-a">
@@ -27,7 +50,7 @@ if($_POST){
                 <div class="form-group-a">
                     <label  class="col-sm-2 control-label">Manchete</label>
                     <div class="col-sm-10-a">
-                        <input name="manchete" type="text" class="form-control" id="inputEmail3">
+                        <input name="manchete" type="text" class="form-control" id="inputEmail3" <!required-->
                     </div>
                 </div>
 
@@ -53,10 +76,12 @@ if($_POST){
                         <button type="submit" class="btn btn-default" >Cadastrar</button>
                     </div>
                 </div>
-            </form>
         </div>
+    </form>       
 
-        <?php
-        include_once '../dados/dados-menulateral.php';
-        include_once '../dados/dados-rodape.php';
-        ?>
+    <?php
+    include_once '../dados/dados-menulateral.php';
+    include_once '../dados/dados-rodape.php';
+    ?>
+</body>
+</html>

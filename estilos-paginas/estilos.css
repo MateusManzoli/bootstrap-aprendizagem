@@ -1,8 +1,8 @@
-
 .noticias{
     border-right: 1px solid #e0e0e0;
     text-align: left;
     float: left;
+    max-width: 900px;
     padding-top: 5%;
     padding-left: 7%;
     padding-right: 1%;
@@ -15,11 +15,11 @@
 
 .row{
     max-width: 750px;
-    min-width: 100px;
+
 }
 
 .thumbnail img{
-    width: 180px;;
+    width: 180px;
     height: 180px;
     border-radius: 15px;
 }
@@ -41,7 +41,7 @@
 
 .form-horizontal{
     border-bottom: 1px solid #e0e0e0;
-    width: 265px;
+    //width: 265px;
 }
 
 .cads{

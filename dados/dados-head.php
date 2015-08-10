@@ -8,5 +8,5 @@
         <script src="../jquery/jquery-1.11.3.min.js"></script>
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <script src="../bootstrap/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="../estilos.css"/>
+        <link rel="stylesheet" type="text/css" href="../estilos-paginas/estilos.css"/>
     </head>

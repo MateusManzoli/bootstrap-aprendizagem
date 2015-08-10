@@ -6,7 +6,7 @@ $noticia = buscarNoticia($_GET['id']);
 
 <html lang="pt-br">
     <?php include_once '../dados/dados-head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="../estilo-noticia.css"/>
+    <link rel="stylesheet" type="text/css" href="../estilos-paginas/estilo-noticia.css"/>
     <body>
 
         <!--navbar Fixa -->
