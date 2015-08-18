@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Noticias</a>
+                <a class="navbar-brand" href="../public/index.php">Noticias</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -20,9 +20,11 @@
                     <li><a href="#">Economia</a></li>
                     <li><a href="#">Educação</a></li>
                     <li><a href="#">Politica</a></li>
-                    <form class="navbar-form navbar-right">
-                        <input type="text" class="form-control" placeholder="Pesquisar Por...">
+                    
+                    <form class="navbar-form navbar-right" action="../public/index.php" method="post">
+                        <input type="text" name="pesquisa" class="form-control" placeholder="Pesquisar Por...">
                     </form>
+                    
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sua Região <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -38,6 +40,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gerenciar<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="../public/contato.php">Fale Conosco</a></li>
+                            <li><a href="../public/cadastro_usuario.php">Cadastrar Usuario</a></li>
                             <li><a href="../public/cadastro_noticias.php">Cadastrar Noticia</a></li>
                             <li><a href="../public/gerenciar_noticias.php">Gerenciar Noticias</a></li>
                         </ul>

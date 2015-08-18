@@ -18,6 +18,13 @@ function buscarNoticia($id) {
     return $noticia[0];
 }
 
+function buscarNoticiasPorPesquisa($pesquisa) {
+    // manchete passado no pesquisa nao esta correto pois o nome do formulario de pesquisa era "pesquisa"
+    $sql = "select * from aprendizagem.noticias where manchete like '%{$pesquisa['pesquisa']}%' or conteudo like '%{$pesquisa['pesquisa']}%'";
+   
+    return pesquisar($sql);
+}
+
 function cadastrarNoticia($dados) {
     validarDadosTela($dados);
     // faz o texto da inserção com os valores que serao preenchidos publicacao etc...
@@ -28,9 +35,9 @@ function cadastrarNoticia($dados) {
             manchete = '" . addslashes($dados['manchete']) . "',
             subtitulo = '" . addslashes($dados['subtitulo']) . "',
             imagem = '" . addslashes($dados['imagem']) . "',
+            legenda_imagem = '" . addslashes($dados['legenda_imagem']) . "',
             conteudo = '" . addslashes($dados['conteudo']) . "'
         ";
-    echo $cadastrar;
     //retorna o metodo inserir que contem os valores da variavel
     return inserir($cadastrar);
 }
@@ -49,11 +56,14 @@ function editarNoticia($dados) {
             manchete = '" . addslashes($dados['manchete']) . "',
             subtitulo = '" . addslashes($dados['subtitulo']) . "',
             imagem = '" . addslashes($dados['imagem']) . "',
+            legenda_imagem = '" . addslashes($dados['legenda_imagem']) . "',
             conteudo = '" . addslashes($dados['conteudo']) . "'
             where id = {$dados['id']} ";
 
     return editar($editar);
 }
+
+
 
 function validarDadosTela($dados) {
     // empty 'vazio'
@@ -75,6 +85,10 @@ function validarDadosTela($dados) {
 
     if (empty($dados['imagem'])) {
         throw new Exception('O campo imagem precisa ser preenchido');
+    }
+
+    if (empty($dados['legenda_imagem'])) {
+        throw new Exception('O campo legenda_imagem precisa ser preenchido');
     }
 
     if (empty($dados['conteudo'])) {

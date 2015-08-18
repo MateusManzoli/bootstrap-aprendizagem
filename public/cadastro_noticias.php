@@ -1,27 +1,21 @@
 <?php
 include_once '../dados/dados-cabecalho.php';
 include_once '../gerenciar/gerenciador.php';
-
 try {
-
     $execucao = [];
     // post armazena os dados 
 // se post existir ele ira cadastrar as noticias, 
     if ($_POST) {
-        
-        cadastrarNoticia($_POST);    
-        
+
+        cadastrarNoticia($_POST);
+
         $execucao["mensagem"] = "Noticia cadastrda com sucesso";
         $execucao["tipo"] = "alert-success";
-
     }
 } catch (Exception $exc) {
     $execucao['mensagem'] = $exc->getMessage();
     $execucao['tipo'] = "alert-danger";
 }
-
-
-
 ?>
 
 <html>
@@ -32,8 +26,8 @@ try {
         <div class="geral">
 
             <form action="cadastro_noticias.php" class="form-horizontal-a" method="post"> 
-             
-                <?php if(!empty($execucao)){ ?>
+
+                <?php if (!empty($execucao)) { ?>
                     <div class="alert <?php echo $execucao['tipo']; ?>">
                         <?php echo $execucao['mensagem']; ?>
                     </div>
@@ -65,6 +59,13 @@ try {
                     <label for="inputEmail3" class="col-sm-2 control-label">Imagem</label>
                     <div class="col-sm-10-a">
                         <input name="imagem" type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group-a">
+                    <label for="inputEmail3" class="col-sm-2 control-label">legenda_Imagem</label>
+                    <div class="col-sm-10-a">
+                        <input name="legenda_imagem" type="text" class="form-control">
                     </div>
                 </div>
 

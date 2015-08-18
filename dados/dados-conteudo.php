@@ -1,8 +1,14 @@
 <?php
 include_once '../gerenciar/gerenciador.php';
 
-$noticias = buscarNoticiasMenuPrincipal();
+print_r($_POST);
 
+if($_POST){
+    $noticias = buscarNoticiasPorPesquisa($_POST);
+} 
+else { 
+    $noticias = buscarNoticiasMenuPrincipal(); 
+}
 ?>
 
 <div class="noticias">
@@ -12,8 +18,8 @@ $noticias = buscarNoticiasMenuPrincipal();
                 <div class="thumbnail" >
                     <a href=" noticia.php?id=<?php echo $noticia['id'] //informou que o link sera diferente de acordo com o id ?>"> <img src="../imagens/<?php echo $noticia['imagem']; // escolhe a imagem para cada id ?>"/>
                         <div class="caption">
-                            <h4><?php echo $noticia['manchete'] //buscou a manchete  ?></h4>
-                            <p><?php echo $noticia['subtitulo'] //buscou o subtitulo?></p>
+                            <h4><?php echo substr( $noticia['manchete'],0,45) //buscou a manchete  ?></h4>
+                            <p><?php echo substr( $noticia['subtitulo'], 0,65)//buscou o subtitulo?></p>
                         </div>
                     </a>
                 </div>

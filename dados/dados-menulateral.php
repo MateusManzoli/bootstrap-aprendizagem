@@ -16,13 +16,13 @@
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">Entrar</button>
+                <button type="submit" class="btn btn-default">Logar</button>
             </div>
         </div>
     </form>
 
     <div class="cads">
-        <a href="#">cadastra-se</a> |
+        <a href="../public/cadastro_usuario.php">cadastra-se</a> |
         <a href="#">esqueci a senha</a>
     </div>
 

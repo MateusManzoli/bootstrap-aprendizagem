@@ -76,6 +76,14 @@ $noticia = buscarNoticia($_GET['id']);
                         <input name="imagem" type="text" class="form-control" maxlength="150" value="<?php echo '../imagens/' . $noticia['imagem']; ?>">
                     </div>
                 </div>
+                
+                 <div class="form-group-a">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Legenda_imagem</label>
+                    <div class="col-sm-10-a">
+                        <input name="legenda_imagem" type="text" class="form-control" maxlength="150" value="<?php echo $noticia['legenda_imagem'];?>">
+                    </div>
+                </div>
+
 
                 <legend>Conteudo</legend>
                 <textarea name="conteudo" class="form-control" ><?php echo $noticia['conteudo']; ?></textarea>

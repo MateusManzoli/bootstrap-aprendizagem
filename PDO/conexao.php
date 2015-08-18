@@ -17,7 +17,7 @@ function pesquisar($sql) {
 
 function inserir($sql) {
     $conexao = conectar();
-
+    
     $statement = $conexao->exec($sql);
     //lastInsertId retorna os resultados por id
     return $conexao->lastInsertId();
@@ -33,9 +33,9 @@ function excluir($sql) {
 }
 
 function editar($sql) {
-     
+
     $conexao = conectar();
- 
+
     $statement = $conexao->query($sql);
     //var_dump($sql);exit;
     //return $statement;
