@@ -41,6 +41,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="../public/contato.php">Fale Conosco</a></li>
                             <li><a href="../public/cadastro_usuario.php">Cadastrar Usuario</a></li>
+                            <li><a href="../public/gerenciar_usuarios.php">Gerenciar Usuario</a></li>
                             <li><a href="../public/cadastro_noticias.php">Cadastrar Noticia</a></li>
                             <li><a href="../public/gerenciar_noticias.php">Gerenciar Noticias</a></li>
                         </ul>

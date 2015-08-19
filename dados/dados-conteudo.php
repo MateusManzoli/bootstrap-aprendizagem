@@ -1,5 +1,5 @@
 <?php
-include_once '../gerenciar/gerenciador.php';
+include_once '../gerenciar/noticia/gerenciador-noticias.php';
 
 print_r($_POST);
 

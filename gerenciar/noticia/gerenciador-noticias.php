@@ -1,8 +1,5 @@
 <?php
-
-// faz a inclusao para conectar ao bd
 include_once '../PDO/conexao.php';
-
 //funcao para buscar noticias
 function buscarNoticiasMenuPrincipal() {
     //metodo para buscar noticas
@@ -10,6 +7,7 @@ function buscarNoticiasMenuPrincipal() {
     //retorna resultados da busca
     return pesquisar($sql);
 }
+
 
 function buscarNoticia($id) {
     $buscar = "SELECT * FROM aprendizagem.noticias where id = $id";
@@ -28,7 +26,7 @@ function buscarNoticiasPorPesquisa($pesquisa) {
 function cadastrarNoticia($dados) {
     validarDadosTela($dados);
     // faz o texto da inserção com os valores que serao preenchidos publicacao etc...
-    //addslashes permite usar os aspas(apóstrofo)
+    //addslashes permite usar os aspas''(apóstrofo)
     $cadastrar = "
         INSERT INTO aprendizagem.noticias SET
             publicacao = '" . addslashes($dados['publicacao']) . "',

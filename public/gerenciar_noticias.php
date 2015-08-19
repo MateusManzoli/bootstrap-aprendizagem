@@ -1,10 +1,10 @@
 <?php
 include_once '../dados/dados-cabecalho.php';
-include_once '../gerenciar/gerenciador.php';
+include_once '../gerenciar/noticia/gerenciador-noticias.php';
 
 // o post recebe o nome do submit
 if ($_POST['excluir']) {
-    excluirNoticias($_POST['excluir']);
+    excluirNoticias($_POST['id_noticia']);
 }
 
 $noticias = buscarNoticiasMenuPrincipal();
@@ -18,6 +18,7 @@ $noticias = buscarNoticiasMenuPrincipal();
 
         <div class="geral">
             <form method="post" action="gerenciar_noticias.php">
+                <input type="hidden" name="excluir" value="1"/>
                 <table class="table table-bordered">
                     <tr style="text-align: center; font-family: monospace; font-size: 20px;">
                         <td>ID</td>
@@ -32,7 +33,7 @@ $noticias = buscarNoticiasMenuPrincipal();
                             <td><?php echo $noticia['subtitulo'] ?></td>
                             <td><?php echo $noticia['legenda_imagem'] ?></td>
                             <!-- é necessario que o button tenha um name-->
-                            <td><button name="excluir" type="submit" class="btn btn-default navbar-btn" value="<?php echo $noticia['id']; ?>">Excluir</button></td>
+                            <td><button name="id_noticia" type="submit" class="btn btn-default navbar-btn" value="<?php echo $noticia['id']; ?>">Excluir</button></td>
                             <td><a href="edicao.php?id=<?php echo $noticia['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
                         </tr>
                     <?php } ?>

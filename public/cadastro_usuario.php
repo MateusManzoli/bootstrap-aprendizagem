@@ -3,14 +3,11 @@
 include_once '../dados/dados-cabecalho.php';
 include_once '../gerenciar/login/gerenciador-login.php';
 
-print_r($_POST);
-if ($_POST) {
-        cadastrarUsuario($_POST);
+if (isset($_POST['cadastrar'])) {
+        cadastrarUsuarios($_POST);
     }
 ?>
 
-
-?>
 <html>
     <?php include_once '../dados/dados-head.php'; ?>
     <link rel="stylesheet" type="text/css" href="../estilos-paginas/cadastro-usuario.css"/>
@@ -18,9 +15,9 @@ if ($_POST) {
         <?php include_once '../dados/dados-cabecalho.php'; ?>
         <div class="geral">
             <form action="cadastro_usuario.php" class="form-horizontal-a" method="post"> 
-
+                   
                 <legend><h2>Cadastro Usuario</h2></legend>
-               
+                <input type="hidden" name="cadastrar" value="1">
 
                 <div class="form-group-a">
                     <label  class="col-sm-2 control-label">Nome Usuario</label>

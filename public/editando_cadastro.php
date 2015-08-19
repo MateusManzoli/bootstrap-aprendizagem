@@ -1,29 +1,27 @@
 <?php
 include_once '../dados/dados-cabecalho.php';
-include_once '../gerenciar/noticia/gerenciador-noticias.php';
+include_once '../gerenciar/login/gerenciador-login.php';
 
 // post armazena os dados 
-// se post existir ele ira cadastrar as noticias, 
-
+// se post existir ele ira cadastrar as noticias
+print_r($_POST);
 try {
     $execute = [];
     // post armazena os dados 
 // se post existir ele ira cadastrar as noticias, 
     if ($_POST) {
-        editarNoticia($_POST);
-        
-        $execute['mensagem'] = "Editada Com sucesso";
+        editarUsuario($_POST);
+
+        $execute['mensagem'] = "Cadrasto editado com sucesso";
         $execute['tipo'] = "alert-success";
     }
-} catch (Exception $execute) {
-    
-    $execute['mensagem'] = $execute->getMessage();
+    // a variavel do exception nao pode ser a mesma da mensagem e tipo
+} catch (Exception $e) {
+    $execute['mensagem'] = $e->getMessage();
     $execute['tipo'] = "alert-danger";
 }
 
-$noticia = buscarNoticia($_GET['id']);
-
-
+$usuario = buscarUsuario($_GET['id']);
 ?>
 
 <html>
@@ -33,7 +31,7 @@ $noticia = buscarNoticia($_GET['id']);
         <?php include_once '../dados/dados-cabecalho.php'; ?>
         <div class="geral">
 
-            <form class="form-horizontal-a" method="post" action="edicao.php?id=<?php echo $_GET['id']; ?>"> 
+            <form class="form-horizontal-a" method="post" action="editando_cadastro.php?id=<?php echo $_GET['id']; ?>"> 
                 <input type="hidden" name="editar" value="1"/>
                 <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"/>
 
@@ -45,48 +43,36 @@ $noticia = buscarNoticia($_GET['id']);
                         echo $execute['mensagem'];
                         ?>
                     </div>
-
                 <?php } ?>
 
-                <legend><h2>Dados da Noticia</h2></legend>
+                <legend><h2>Dados do Usuario</h2></legend>
                 <div class="form-group-a">
-                    <label  class="col-sm-2 control-label">Publicação</label>
+                    <label  class="col-sm-2 control-label">Nome</label>
                     <div class="col-sm-10-a">
-                        <input name="publicacao" type="text" class="form-control" maxlength="300" value="<?php echo $noticia['publicacao']; ?>">
-                    </div>
-                </div>
-
-                <div class="form-group-a">
-                    <label  class="col-sm-2 control-label">Manchete</label>
-                    <div class="col-sm-10-a">
-                        <input  name="manchete" type="text" class="form-control" id="inputEmail3" maxlength="300" value="<?php echo $noticia['manchete'] ?>"> 
+                        <input name="nome" type="text" class="form-control" maxlength="60" value="<?php echo $usuario['nome'] ?>">
                     </div>
                 </div>
 
                 <div class="form-group-a">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Subtitulo</label>
+                    <label  class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10-a">
-                        <input name="subtitulo" type="text" class="form-control" value="<?php echo $noticia['subtitulo']; ?>">
+                        <input  name="email" type="email" class="form-control" id="inputEmail3" maxlength="80" value="<?php echo $usuario['email'] ?>"> 
                     </div>
                 </div>
 
                 <div class="form-group-a">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Imagem</label>
+                    <label for="inputEmail3" class="col-sm-2 control-label">Senha</label>
                     <div class="col-sm-10-a">
-                        <input name="imagem" type="text" class="form-control" maxlength="150" value="<?php echo '../imagens/' . $noticia['imagem']; ?>">
-                    </div>
-                </div>
-                
-                 <div class="form-group-a">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Legenda_imagem</label>
-                    <div class="col-sm-10-a">
-                        <input name="legenda_imagem" type="text" class="form-control" maxlength="150" value="<?php echo $noticia['legenda_imagem'];?>">
+                        <input name="senha" type="text" class="form-control" maxlength="25" value="<?php echo $usuario['senha'] ?>">
                     </div>
                 </div>
 
-
-                <legend>Conteudo</legend>
-                <textarea name="conteudo" class="form-control" ><?php echo $noticia['conteudo']; ?></textarea>
+                <div class="form-group-a">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Data de Nascimento</label>
+                    <div class="col-sm-10-a">
+                        <input name="data_nascimento" type="text" class="form-control" maxlength="10" value="<?php echo $usuario['data_nascimento'] ?>">
+                    </div>
+                </div>
 
                 <div class="form-group-b">
                     <div class="col-sm-offset-2 col-sm-10-a">
@@ -101,3 +87,4 @@ $noticia = buscarNoticia($_GET['id']);
         include_once '../dados/dados-rodape.php';
         ?>
     </body>
+</html>

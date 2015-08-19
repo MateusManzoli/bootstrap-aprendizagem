@@ -1,20 +1,20 @@
 <?php
 include_once '../dados/dados-cabecalho.php';
-include_once '../gerenciar/gerenciador.php';
+include_once '../gerenciar/noticia/gerenciador-noticias.php';
 try {
-    $execucao = [];
+    $execute = [];
     // post armazena os dados 
 // se post existir ele ira cadastrar as noticias, 
     if ($_POST) {
 
         cadastrarNoticia($_POST);
 
-        $execucao["mensagem"] = "Noticia cadastrda com sucesso";
-        $execucao["tipo"] = "alert-success";
+        $execute["mensagem"] = "Noticia cadastrda com sucesso";
+        $execute["tipo"] = "alert-success";
     }
-} catch (Exception $exc) {
-    $execucao['mensagem'] = $exc->getMessage();
-    $execucao['tipo'] = "alert-danger";
+} catch (Exception $execute) {
+    $execute['mensagem'] = $execute->getMessage();
+    $execute['tipo'] = "alert-danger";
 }
 ?>
 
@@ -27,9 +27,9 @@ try {
 
             <form action="cadastro_noticias.php" class="form-horizontal-a" method="post"> 
 
-                <?php if (!empty($execucao)) { ?>
-                    <div class="alert <?php echo $execucao['tipo']; ?>">
-                        <?php echo $execucao['mensagem']; ?>
+                <?php if (!empty($execute)) { ?>
+                    <div class="alert <?php echo $execute['tipo']; ?>">
+                        <?php echo $execute['mensagem']; ?>
                     </div>
                 <?php } ?>
                 <legend><h2>Dados da Noticia</h2></legend>

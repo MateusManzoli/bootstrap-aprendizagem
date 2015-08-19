@@ -17,7 +17,7 @@ function pesquisar($sql) {
 
 function inserir($sql) {
     $conexao = conectar();
-    
+
     $statement = $conexao->exec($sql);
     //lastInsertId retorna os resultados por id
     return $conexao->lastInsertId();
