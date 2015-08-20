@@ -12,8 +12,8 @@ try {
         $execute["mensagem"] = "Noticia cadastrda com sucesso";
         $execute["tipo"] = "alert-success";
     }
-} catch (Exception $execute) {
-    $execute['mensagem'] = $execute->getMessage();
+} catch (Exception $e) {
+    $execute['mensagem'] = $e->getMessage();
     $execute['tipo'] = "alert-danger";
 }
 ?>
