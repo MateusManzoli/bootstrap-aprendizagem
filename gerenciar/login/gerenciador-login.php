@@ -1,4 +1,5 @@
 <?php
+
 include_once '/../../PDO/conexao.php';
 
 //md5 é utilizado para colocar codigos na senha
@@ -16,40 +17,39 @@ function cadastrarUsuarios($dados) {
     return inserir($cadastrarUsu);
 }
 
-function buscarUsuarios(){
+function buscarUsuarios() {
     $sql = "SELECT * FROM aprendizagem.usuario";
     return pesquisar($sql);
 }
 
-function buscarUsuario($id){
+function buscarUsuario($id) {
     $buscar = "select * from aprendizagem.usuario where id = $id";
     $usuario = pesquisar($buscar);
     return $usuario[0];
 }
 
-function excluirUsuario($id){
+function excluirUsuario($id) {
     $deletar = "delete from aprendizagem.usuario where id = $id";
     return excluir($deletar);
 }
 
-function editarUsuario($dados){
+function editarUsuario($dados) {
     echo 'sadasd';
     $atualizar = "UPDATE aprendizagem.usuario SET 
             nome = '" . addslashes($dados['nome']) . "',
             email = '" . addslashes($dados['email']) . "',
             senha = '" . addslashes($dados['senha']) . "',
-            data_nascimento = '" .addslashes($dados['data_nascimento']). "'
+            data_nascimento = '" . addslashes($dados['data_nascimento']) . "'
             where id = {$dados['id']} ";
 
     return editar($atualizar);
 }
 
-function formatarDataVisualizacao($data){
-    
+function formatarDataVisualizacao($data) {
+
     $dataFormatada = DateTime::createFromFormat('Y-m-d', $data);
     echo $dataFormatada->format('d/m/Y');
 }
-
 
 function validarUsuarios($dados) {
     // empty 'vazio'
@@ -69,5 +69,16 @@ function validarUsuarios($dados) {
     if (empty($dados['data_nascimento'])) {
         throw new Exception('O campo data de nascimento precisa ser preenchido');
     }
-    
+}
+
+function validarLogin($email, $senha) {
+    //prepara o texto para ir pro banco de dados
+    $login = "select * from aprendizagem.usuario where email = '" . $email . "' && senha ='" . md5($senha) . "'";
+
+//a variavel logar recebe o metodo pesquisar que envia o texto do login para o banco de dados
+    $logar = pesquisar($login);
+// verifica o logar
+    if (!$logar) {
+        throw new Exception('O nome de usuário e a senha fornecidos não correspondem às informações em nossos registros.<br>Verifique-as e tente novamente.');
+    }
 }
