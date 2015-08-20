@@ -44,7 +44,7 @@ if (isset($_POST['cadastrar'])) {
                 <div class="form-group-a">
                     <label for="inputEmail3" class="col-sm-2 control-label">Data Nascimento</label>
                     <div class="col-sm-10-a">
-                        <input name="nascimento" type="date" class="form-control" maxlength="10" placeholder="DD/MM/AAAA"  required/>
+                        <input name="data_nascimento" type="date" class="form-control" maxlength="10" placeholder="DD/MM/AAAA"  required/>
                     </div>
                 </div>
 

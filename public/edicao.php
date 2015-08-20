@@ -15,9 +15,9 @@ try {
         $execute['mensagem'] = "Editada Com sucesso";
         $execute['tipo'] = "alert-success";
     }
-} catch (Exception $execute) {
+} catch (Exception $e) {
     
-    $execute['mensagem'] = $execute->getMessage();
+    $execute['mensagem'] = $e->getMessage();
     $execute['tipo'] = "alert-danger";
 }
 

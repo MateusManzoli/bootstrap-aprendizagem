@@ -6,7 +6,7 @@ function cadastrarUsuarios($dados) {
     validarUsuarios($dados);
     // formato que será passado no formulario d m Y
     //formato que sera armazenado no BD Y-m-d
-    $data_nascimento = DateTime::createFromFormat('d/m/Y', $dados['nascimento']);
+    $data_nascimento = DateTime::createFromFormat('d/m/Y', $dados['data_nascimento']);
     $cadastrarUsu = "INSERT INTO aprendizagem.usuario SET
             nome = '" . ($dados['nome']) . "',
             email = '" . ($dados['email']) . "',
