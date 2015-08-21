@@ -3,7 +3,7 @@ include_once '../PDO/conexao.php';
 //funcao para buscar noticias
 function buscarNoticiasMenuPrincipal() {
     //metodo para buscar noticas
-    $sql = 'SELECT  * FROM aprendizagem.noticias';
+    $sql = "SELECT  * FROM aprendizagem.noticias order by id desc";
     //retorna resultados da busca
     return pesquisar($sql);
 }
@@ -18,7 +18,7 @@ function buscarNoticia($id) {
 
 function buscarNoticiasPorPesquisa($pesquisa) {
     // manchete passado no pesquisa nao esta correto pois o nome do formulario de pesquisa era "pesquisa"
-    $sql = "select * from aprendizagem.noticias where manchete like '%{$pesquisa['pesquisa']}%' or conteudo like '%{$pesquisa['pesquisa']}%'";
+    $sql = "select * from aprendizagem.noticias where manchete like '%{$pesquisa}%' or conteudo like '%{$pesquisa}%'";
    
     return pesquisar($sql);
 }

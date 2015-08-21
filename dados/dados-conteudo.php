@@ -1,10 +1,8 @@
 <?php
 include_once '../gerenciar/noticia/gerenciador-noticias.php';
 
-print_r($_POST);
-
-if($_POST){
-    $noticias = buscarNoticiasPorPesquisa($_POST);
+if(isset($_POST['pesquisa'])){
+    $noticias = buscarNoticiasPorPesquisa($_POST['pesquisa']);
 } 
 else { 
     $noticias = buscarNoticiasMenuPrincipal(); 
