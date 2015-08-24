@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <?php include_once '../dados/dados-head.php'; ?>

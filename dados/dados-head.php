@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,3 +11,4 @@
         <script src="../bootstrap/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="../estilos-paginas/estilos.css"/>
     </head>
+    

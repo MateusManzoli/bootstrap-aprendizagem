@@ -1,12 +1,10 @@
 <?php
-
 session_start();
 
 include_once '../dados/dados-cabecalho.php';
 include_once '../gerenciar/login/gerenciador-login.php';
 
 try {
-    
     validarLogin($_POST['email'], $_POST['senha']);
     
     $mensagem = "Login realizado com sucesso";

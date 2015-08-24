@@ -21,21 +21,5 @@
                 <li><a href="../public/gerenciar_noticias.php">Sudeste</a></li>
             </ul>
         </div>
-
-        <div class="dropup">
-            <li class="btn  dropdown-toggle"  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Gerenciar
-                <span class="caret"></span>
-            </li>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li><a href="../public/contato.php">Fale Conosco</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="../public/cadastro_usuario.php">Cadastrar Usuario</a></li>
-                <li><a href="../public/editando_cadastro.php">Gerenciar Usuario</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="../public/cadastro_noticias.php">Cadastrar Noticias</a></li>
-                <li><a href="../public/gerenciar_noticias.php">Gerenciar Noticias</a></li>
-            </ul>
-        </div>
     </ul>
 </div>    
