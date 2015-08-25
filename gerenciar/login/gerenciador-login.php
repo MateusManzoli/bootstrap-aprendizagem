@@ -72,7 +72,7 @@ function validarLogin($email, $senha) {
     return ($_SESSION = array(
         'usuario' => array(
             'email' => $email,
-            'senha' => $email,
+            'senha' => $senha,
             'nome' => $logar[0]['nome'],
         ),
         'horarios' => array(

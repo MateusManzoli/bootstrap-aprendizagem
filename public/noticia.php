@@ -6,6 +6,7 @@ $noticia = buscarNoticia($_GET['id']);
 
 <html lang="pt-br">
     <?php include_once '../dados/dados-head.php'; ?>
+    <meta charset="UTF-8"/>
     <link rel="stylesheet" type="text/css" href="../estilos-paginas/estilo-noticia.css"/>
     <body>
 

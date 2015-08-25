@@ -16,7 +16,7 @@ else {
                 <div class="thumbnail" >
                     <a href=" noticia.php?id=<?php echo $noticia['id'] //informou que o link sera diferente de acordo com o id ?>"> <img src="../imagens/<?php echo $noticia['imagem']; // escolhe a imagem para cada id ?>"/>
                         <div class="caption">
-                            <h4><?php echo substr( $noticia['manchete'],0,45) //buscou a manchete  ?></h4>
+                            <h4><?php echo substr( $noticia['manchete'],0,45) //buscou a manchete  SUBSTR define a quantidade de caracteres ?></h4>
                             <p><?php echo substr( $noticia['subtitulo'], 0,65)//buscou o subtitulo?></p>
                         </div>
                     </a>

@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <?php include_once '../gerenciar/login/gerenciador-login.php'; ?>
 <html>
     <nav class="navbar navbar-inverse  navbar-fixed-top">
@@ -46,6 +46,7 @@
                                 <li><a href="../public/gerenciar_noticias.php">Gerenciar Noticias</a></li>
                             <?php } ?>
                         </ul>
-                        </div><!--/.nav-collapse -->
                         </div>
+            <!--/.nav-collapse -->
+        </div>
                         </nav>

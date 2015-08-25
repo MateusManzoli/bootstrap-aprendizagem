@@ -21,6 +21,7 @@ try {
 <html>
     <?php include_once '../dados/dados-head.php'; ?>
     <link rel="stylesheet" type="text/css" href="../estilos-paginas/estilo-cadastro-noticia.css"/>
+    <meta charset="UTF-8">
     <body>
         <?php include_once '../dados/dados-cabecalho.php'; ?>
         <div class="geral">
