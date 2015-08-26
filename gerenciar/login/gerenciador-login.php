@@ -1,5 +1,5 @@
 <?php
-include_once '/../../PDO/conexao.php';
+include_once '../../PDO/conexao.php';
 //md5 é utilizado para colocar codigos na senha
 function cadastrarUsuarios($dados) {
     validarUsuarios($dados);
@@ -57,6 +57,7 @@ function validarUsuarios($dados) {
         throw new Exception('O campo data de nascimento precisa ser preenchido');
     }
 }
+
 function validarLogin($email, $senha) {
 //prepara o texto para ir pro banco de dados
     $login = "select * from aprendizagem.usuario where email = '" . $email . "' && senha ='" . md5($senha) . "'";

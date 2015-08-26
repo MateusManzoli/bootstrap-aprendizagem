@@ -1,41 +1,40 @@
-<!DOCTYPE html>
+<?php
+include_once '../../gerenciar/noticia/gerenciador-noticias.php';
+
+if ($_POST) {
+    publicarMensagem($_POST);
+}
+?>
 <html>
-    <?php include_once '../dados/dados-head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="../estilos-paginas/fale-conosco.css"/>
+<?php include_once '../../dados/dados-head.php'; ?>
+    <link rel="stylesheet" type="text/css" href="../../estilos-paginas/fale-conosco.css"/>
     <body>
-        <?php include_once '../dados/dados-cabecalho.php'; ?>
-        <form class="form-horizontal-a" method="post">
+<?php include_once '../../dados/dados-cabecalho.php'; ?>
+        <form class="form-horizontal-a" method="post" action="contato.php">
             <legend>Dados do Usuario</legend>
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Nome</label>
                 <div class="col-sm-10-a">
-                    <input type="text" class="form-control" placeholder="Nome..." required>
+                    <input name="nome" type="text" class="form-control" placeholder="Nome..." required>
                 </div>
             </div>
 
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10-a">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="exemplo@hotmail.com"required>
-                </div>
-            </div>
-
-            <div class="form-group-a">
-                <label for="inputEmail3" class="col-sm-2 control-label">Senha</label>
-                <div class="col-sm-10-a">
-                    <input type="password" class="form-control"required>
+                    <input name="email" type="email" class="form-control" id="inputEmail3" placeholder="exemplo@hotmail.com"required>
                 </div>
             </div>
 
             <div class="radio" >
                 <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked >
+                    <input name="masc" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked >
                     Masculino
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                    <input name="fem" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
                     Feminino
                 </label>
             </div>
@@ -43,9 +42,7 @@
             <div class="form-group-a" required>
                 <label for="inputEmail3" class="col-sm-2 control-label">Nascimento</label><br>
                 <div class="col-sm-10-a">
-                    <input type="date" name="dia" size="2" maxlength="2" placeholder="dd"> 
-                    <input type="date" name="mes" size="2" maxlength="2" placeholder="mm"> 
-                    <input type="date" name="ano" size="4" maxlength="4" placeholder="aaaa">
+                    <input name="nascimento" type="text" class="form-control" maxlength="10" placeholder="dd/mm/aaaa">
                 </div>
             </div>
 
@@ -53,14 +50,14 @@
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Logradouro</label>
                 <div class="col-sm-10-a">
-                    <input type="text" class="form-control" placeholder="Rua, Av..." required>
+                    <input name="logradouro" type="text" class="form-control" placeholder="Rua, Av..." required>
                 </div>
             </div>
 
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Estado</label>
                 <div class="col-sm-10-a">
-                    <select name="id_estados" id="id_estados" >
+                    <select name="estado" id="id_estados" >
                         <option>Escolha o Estado</option>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
@@ -97,20 +94,20 @@
         <div class="form-group-a">
             <label  class="col-sm-2 control-label">Cep</label>
             <div class="col-sm-10-a">
-                <input type="text" class="form-control" size="9" maxlength="9" placeholder="00000-000" required>
+                <input name="cep" type="text" class="form-control" size="9" maxlength="9" placeholder="00000-000" required>
             </div>
         </div>
 
         <div class="form-group-a">
             <label  class="col-sm-2 control-label">Cidade</label>
             <div class="col-sm-10-a">
-                <input type="text" class="form-control" required>
+                <input name="cidade" type="text" class="form-control" required>
             </div>
         </div>
 
 
         <legend>Mensagem do Usuario</legend>
-        <textarea class="form-control" required></textarea>
+        <textarea name="mensagem" class="form-control" required></textarea>
 
         <div class="form-group-b">
             <div class="col-sm-offset-2 col-sm-10-a">
@@ -119,8 +116,8 @@
         </div>
 
     </form>
-    <?php include_once '../dados/dados-menulateral.php'; ?>
-    <?php include_once '../dados/dados-rodape.php'; ?>
+<?php include_once '../../dados/dados-menulateral.php'; ?>
+    <?php include_once '../../dados/dados-rodape.php'; ?>
 
 </body>
 </html>

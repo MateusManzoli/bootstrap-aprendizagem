@@ -1,6 +1,21 @@
 <?php
 include_once '../../PDO/conexao.php';
-//funcao para buscar noticias
+//md5 é utilizado para colocar codigos na senha
+function publicarSolicitacao($dados) {
+// formato que será passado no formulario d m Y
+//formato que sera armazenado no BD Y-m-d
+    $data_nascimento = DateTime::createFromFormat('d/m/Y', $dados['data_nascimento']);
+    $publicar = "INSERT INTO aprendizagem.fale_conosco SET
+        nome = '" . ($dados['nome']) . "',
+        email = '" . ($dados['email']) . "',
+        sexo = '" . ($dados['sexo']) . "',
+        nascimento = '" . $data_nascimento->format('Y-m-d') . "',
+        logradouro = '" . ($dados['logradouro']) . "',
+        estado = '" . ($dados['estado']) . "',
+        cidade = '" . ($dados['cidade']) . "',
+        mensagem = '" . ($dados['mensagem']) . "',";
+    return inserir($publicar);
+}
 function buscarNoticiasMenuPrincipal() {
     //metodo para buscar noticas
     $sql = "SELECT  * FROM aprendizagem.noticias order by id desc";
@@ -93,3 +108,4 @@ function validarDadosTela($dados) {
         throw new Exception('O campo conteudo precisa ser preenchido');
     }
 }
+

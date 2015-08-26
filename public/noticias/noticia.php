@@ -1,17 +1,17 @@
 <?php
-include_once '../gerenciar/noticia/gerenciador-noticias.php';
+include_once '../../gerenciar/noticia/gerenciador-noticias.php';
 
 $noticia = buscarNoticia($_GET['id']);
 ?>
 
 <html lang="pt-br">
-    <?php include_once '../dados/dados-head.php'; ?>
+    <?php include_once '../../dados/dados-head.php'; ?>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="../estilos-paginas/estilo-noticia.css"/>
+    <link rel="stylesheet" type="text/css" href="../../estilos-paginas/estilo-noticia.css"/>
     <body>
 
         <!--navbar Fixa -->
-        <?php include_once '../dados/dados-cabecalho.php';
+        <?php include_once '../../dados/dados-cabecalho.php';
         ?>
 
         <div class="conteudo">
@@ -23,7 +23,7 @@ $noticia = buscarNoticia($_GET['id']);
                 <div class="col-sm-6 col-md-12">
                     <div class="thumbnail b">
                         <a class="btn" data-toggle="modal" data-target="#myModal">
-                            <img src="<?php echo '../imagens/' . $noticia['imagem']; ?>" >
+                            <img src="<?php echo '../../imagens/' . $noticia['imagem']; ?>" >
                         </a>
                     </div>
                 </div>
@@ -40,7 +40,7 @@ $noticia = buscarNoticia($_GET['id']);
                             <h4 class="modal-title"><?php echo $noticia['legenda_imagem']; ?></h4>
                         </div>
                         <div class="modal-body">
-                            <img src="<?php echo '../imagens/' . $noticia['imagem']; ?>"/>
+                            <img src="<?php echo '../../imagens/' . $noticia['imagem']; ?>"/>
                         </div>
                         <div class="modal-footer">
                         </div>
@@ -51,7 +51,7 @@ $noticia = buscarNoticia($_GET['id']);
 
             <p> <?php echo nl2br(htmlspecialchars($noticia['conteudo'])); //nl2br Insere quebra HTML antes de todas newlines em uma string ?></p>
         </div>
-        <?php include_once '../dados/dados-menulateral.php'; ?>
-        <?php include_once '../dados/dados-rodape.php'; ?>
+        <?php include_once '../../dados/dados-menulateral.php'; ?>
+        <?php include_once '../../dados/dados-rodape.php'; ?>
     </body>
 </html>

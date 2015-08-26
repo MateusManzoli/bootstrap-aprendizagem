@@ -1,6 +1,6 @@
 <?php
-include_once '../dados/dados-cabecalho.php';
-include_once '../gerenciar/noticia/gerenciador-noticias.php';
+include_once '../../dados/dados-cabecalho.php';
+include_once '../../gerenciar/noticia/gerenciador-noticias.php';
 
 // o post recebe o nome do submit
 if ($_POST['excluir']) {
@@ -12,8 +12,8 @@ $noticias = buscarNoticiasMenuPrincipal();
 ?>
 <html>
 
-    <?php include_once '../dados/dados-head.php' ?>
-    <link rel="stylesheet" type="text/css" href="../estilos-paginas/tabela_gerenciar-noticias.css"/>
+    <?php include_once '../../dados/dados-head.php' ?>
+    <link rel="stylesheet" type="text/css" href="../../estilos-paginas/tabela_gerenciar-noticias.css"/>
     <body>
 
         <div class="geral">
@@ -43,5 +43,5 @@ $noticias = buscarNoticiasMenuPrincipal();
 
     </body>
 </html>
-<?php include_once '../dados/dados-menulateral.php'; ?>
-<?php include_once '../dados/dados-rodape.php'; ?>
+<?php include_once '../../dados/dados-menulateral.php'; ?>
+<?php include_once '../../dados/dados-rodape.php'; ?>

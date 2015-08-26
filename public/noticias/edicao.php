@@ -1,6 +1,6 @@
 <?php
-include_once '../dados/dados-cabecalho.php';
-include_once '../gerenciar/noticia/gerenciador-noticias.php';
+include_once '../../dados/dados-cabecalho.php';
+include_once '../../gerenciar/noticia/gerenciador-noticias.php';
 
 // post armazena os dados 
 // se post existir ele ira cadastrar as noticias, 
@@ -27,10 +27,10 @@ $noticia = buscarNoticia($_GET['id']);
 ?>
 
 <html>
-    <?php include_once '../dados/dados-head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="../estilos-paginas/estilo-cadastro-noticia.css"/>
+    <?php include_once '../../dados/dados-head.php'; ?>
+    <link rel="stylesheet" type="text/css" href="../../estilos-paginas/estilo-cadastro-noticia.css"/>
     <body>
-        <?php include_once '../dados/dados-cabecalho.php'; ?>
+        <?php include_once '../../dados/dados-cabecalho.php'; ?>
         <div class="geral">
 
             <form class="form-horizontal-a" method="post" action="edicao.php?id=<?php echo $_GET['id']; ?>"> 
@@ -97,7 +97,7 @@ $noticia = buscarNoticia($_GET['id']);
         </div>
 
         <?php
-        include_once '../dados/dados-menulateral.php';
-        include_once '../dados/dados-rodape.php';
+        include_once '../../dados/dados-menulateral.php';
+        include_once '../../dados/dados-rodape.php';
         ?>
     </body>

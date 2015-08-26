@@ -1,6 +1,6 @@
 <?php
-include_once '../dados/dados-cabecalho.php';
-include_once '../gerenciar/noticia/gerenciador-noticias.php';
+include_once '../../dados/dados-cabecalho.php';
+include_once '../../gerenciar/noticia/gerenciador-noticias.php';
 try {
     $execute = [];
     // post armazena os dados 
@@ -17,16 +17,15 @@ try {
     $execute['tipo'] = "alert-danger";
 }
 ?>
-
 <html>
-    <?php include_once '../dados/dados-head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="../estilos-paginas/estilo-cadastro-noticia.css"/>
+    <?php include_once '../../dados/dados-head.php'; ?>
+    <link rel="stylesheet" type="text/css" href="../../estilos-paginas/estilo-cadastro-noticia.css"/>
     <meta charset="UTF-8">
     <body>
-        <?php include_once '../dados/dados-cabecalho.php'; ?>
+        <?php include_once '../../dados/dados-cabecalho.php'; ?>
         <div class="geral">
 
-            <form action="cadastro_noticias.php" class="form-horizontal-a" method="post"> 
+            <form action="cadastro.php" class="form-horizontal-a" method="post"> 
 
                 <?php if (!empty($execute)) { ?>
                     <div class="alert <?php echo $execute['tipo']; ?>">
@@ -82,8 +81,8 @@ try {
     </form>       
 
     <?php
-    include_once '../dados/dados-menulateral.php';
-    include_once '../dados/dados-rodape.php';
+    include_once '../../dados/dados-menulateral.php';
+    include_once '../../dados/dados-rodape.php';
     ?>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
-include_once '../dados/dados-cabecalho.php';
-include_once '../gerenciar/login/gerenciador-login.php';
+include_once '../../dados/dados-cabecalho.php';
+include_once '../../gerenciar/login/gerenciador-login.php';
 
 //delete recebe o valor do hidden || id_usuario valor que receber o id no button
 if (!empty($_POST['delete'])) {
@@ -10,12 +10,12 @@ if (!empty($_POST['delete'])) {
 $usuarios = buscarUsuarios();
 ?>
 <html>
-    <link rel="stylesheet" type="text/css" href="../estilos-paginas/gerenciar-usuarios.css"/>
-    <?php include_once '../dados/dados-head.php'; ?>
+    <link rel="stylesheet" type="text/css" href="../../estilos-paginas/gerenciar-usuarios.css"/>
+    <?php include_once '../../dados/dados-head.php'; ?>
     <body>
 
         <div class="geral">
-            <form method="post" action="../public/gerenciar_usuarios.php">
+            <form method="post" action="../usuario/gerenciar.php">
                 <input type="hidden" name="delete" value="1"/>
                 <table class="table table-bordered">
                     <tr style="text-align: center; font-family: monospace; font-size: 20px;">
@@ -35,7 +35,7 @@ $usuarios = buscarUsuarios();
                             <td><?php echo $usuario['data_nascimento'] ?></td>
                             <!-- é necessario que o button tenha um name-->
                             <td><button name="id_usuario" type="submit" class="btn btn-default navbar-btn" value="<?php echo $usuario['id']; ?>">Excluir</button></td>
-                            <td><a href="editando_cadastro.php?id=<?php echo $usuario['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
+                            <td><a href="../usuario/edicao.php?id=<?php echo $usuario['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
                         </tr>
                     <?php } ?>
                 </table>
@@ -43,7 +43,7 @@ $usuarios = buscarUsuarios();
         </div>
 
 
-        <?php include_once '../dados/dados-menulateral.php'; ?>
-        <?php include_once '../dados/dados-rodape.php'; ?>
+        <?php include_once '../../dados/dados-menulateral.php'; ?>
+        <?php include_once '../../dados/dados-rodape.php'; ?>
     </body>
 </html>

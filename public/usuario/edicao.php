@@ -1,6 +1,6 @@
 <?php
-include_once '../dados/dados-cabecalho.php';
-include_once '../gerenciar/login/gerenciador-login.php';
+include_once '../../dados/dados-cabecalho.php';
+include_once '../../gerenciar/login/gerenciador-login.php';
 // post armazena os dados 
 // se post existir ele ira cadastrar as noticias
 print_r($_POST);
@@ -22,12 +22,12 @@ try {
 $usuario = buscarUsuario($_GET['id']);
 ?>
 <html>
-    <?php include_once '../dados/dados-head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="../estilos-paginas/estilo-cadastro-noticia.css"/>
+    <?php include_once '../../dados/dados-head.php'; ?>
+    <link rel="stylesheet" type="text/css" href="../../estilos-paginas/estilo-cadastro-noticia.css"/>
     <body>
-        <?php include_once '../dados/dados-cabecalho.php'; ?>
+        <?php include_once '../../dados/dados-cabecalho.php'; ?>
         <div class="geral">
-            <form class="form-horizontal-a" method="post" action="editando_cadastro.php?id=<?php echo $_GET['id']; ?>"> 
+            <form class="form-horizontal-a" method="post" action="../usuario/edicao.php?id=<?php echo $_GET['id']; ?>"> 
                 <input type="hidden" name="editar" value="1"/>
                 <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"/>
                 <?php
@@ -72,8 +72,8 @@ $usuario = buscarUsuario($_GET['id']);
             </form>
         </div>
         <?php
-        include_once '../dados/dados-menulateral.php';
-        include_once '../dados/dados-rodape.php';
+        include_once '../../dados/dados-menulateral.php';
+        include_once '../../dados/dados-rodape.php';
         ?>
     </body>
 </html>

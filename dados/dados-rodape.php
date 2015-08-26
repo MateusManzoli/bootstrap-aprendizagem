@@ -1,6 +1,6 @@
 <div class="rodape">
     <ul class="nav">
-        <li class="active"><a href="../public/index.php">Home</a></li>
+        <li class="active"><a href="../public/inicial/index.php">Home</a></li>
         <li><a href="#">Saúde</a></li>
         <li><a href="#">Esporte</a></li>
         <li><a href="#">Economia</a></li>
@@ -14,11 +14,11 @@
                 <span class="caret"></span>
             </li>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li><a href="../public/contato.php">Centro-Oeste</a></li>
-                <li><a href="../public/cadastro_noticias.php">Nordeste</a></li>
-                <li><a href="../public/gerenciar_noticias.php">Norte</a></li>
-                <li><a href="../public/gerenciar_noticias.php">Sul</a></li>
-                <li><a href="../public/gerenciar_noticias.php">Sudeste</a></li>
+                <li><a href="#">Centro-Oeste</a></li>
+                <li><a href="#">Nordeste</a></li>
+                <li><a href="#">Norte</a></li>
+                <li><a href="#">Sul</a></li>
+                <li><a href="#">Sudeste</a></li>
             </ul>
         </div>
     </ul>

@@ -1,50 +1,45 @@
 <?php
-include_once '../gerenciar/login/gerenciador-login.php';
-
+include_once'../gerenciar/login/gerenciador-login.php';
 ?>
 <div class="menulateral" >
     <?php if (empty($_SESSION['logado'])) { ?>
-        <form class="form-horizontal" action="../public/processo_login.php" method="post" >
-            <input type="hidden" name="login" value="1">
-            <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="text" name="email" class="form-control" id="inputEmail3" placeholder="Email" >
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
-                <div class="col-sm-10">
-                    <input name="senha" type="password" class="form-control" id="inputPassword3" placeholder="Senha">
-                </div>
-            </div>
+    
+    <div class="container">
 
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Entrar</button>
-                </div>
-            </div>
+        <form class="form-signin" action="../public/login/processo_login.php?" method="post">
+        <h2 class="form-signin-heading">Realize o Login</h2>
+        <label for="inputEmail" class="sr-only">Email </label>
+        <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+        <label for="inputPassword" class="sr-only">Senha</label>
+        <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+    </div> <!-- /container -->
+
+
             <div class="cads">
                 <a href="../public/cadastro_usuario.php">cadastra-se</a> |
                 <a href="#">esqueci a senha</a>
             </div>
-        </form>
+    </form>
 
         <?php
     } else {
         ?>
 
-        <form class="form-horizontal" method="post" name="id" action="../public/processo_login.php?id=<?php echo $_GET['id']; ?>">
+        <form class="form-horizontal" method="post" name="id" action="../public/login/processo_login.php?id=<?php echo $_GET['id']; ?>">
             <input type="hidden" name="editar" value="1"/>
             <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"/>
             <div class="form-group">
-                <?php  //a sessao tem a posicao usuario que define os dados do usuario e na frente voce coloca o dado que voce deseja colocar na tela?>
-                <?php echo 'Bem Vindo ' . '<b>' . $_SESSION['usuario']['nome']  . '</b>' . '!'?>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">sair</button>
-                </div>
+                <?php //a sessao tem a posicao usuario que define os dados do usuario e na frente voce coloca o dado que voce deseja colocar na tela ?>
+               <div 
+                   class="alert " role="alert"> <?php echo 'Bem Vindo ' . '<b>' . $_SESSION['usuario']['nome'] . '</b>'?>
+               <button class="btn btn-lg btn-primary btn-block" type="submit" >sair</button>
+               </div>              
             </div>
         </form>
         <?php

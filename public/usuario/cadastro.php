@@ -1,8 +1,8 @@
 
 <?php
 
-include_once '../dados/dados-cabecalho.php';
-include_once '../gerenciar/login/gerenciador-login.php';
+include_once '../../dados/dados-cabecalho.php';
+include_once '../../gerenciar/login/gerenciador-login.php';
 
 if (isset($_POST['cadastrar'])) {
         cadastrarUsuarios($_POST);
@@ -10,12 +10,12 @@ if (isset($_POST['cadastrar'])) {
 ?>
 
 <html>
-    <?php include_once '../dados/dados-head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="../estilos-paginas/cadastro-usuario.css"/>
+    <?php include_once '../../dados/dados-head.php'; ?>
+    <link rel="stylesheet" type="text/css" href="../../estilos-paginas/cadastro-usuario.css"/>
     <body>
-        <?php include_once '../dados/dados-cabecalho.php'; ?>
+        <?php include_once '../../dados/dados-cabecalho.php'; ?>
         <div class="geral">
-            <form action="cadastro_usuario.php" class="form-horizontal-a" method="post"> 
+            <form action="cadastro.php" class="form-horizontal-a" method="post"> 
                    
                 <legend><h2>Cadastro Usuario</h2></legend>
                 <input type="hidden" name="cadastrar" value="1">
@@ -60,6 +60,6 @@ if (isset($_POST['cadastrar'])) {
 </html>
 
 <?php
-include_once '../dados/dados-menulateral.php';
-include_once '../dados/dados-rodape.php';
+include_once '../../dados/dados-menulateral.php';
+include_once '../../dados/dados-rodape.php';
 ?>
