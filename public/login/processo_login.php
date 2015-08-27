@@ -9,7 +9,8 @@ try {
     $mensagem = "Login realizado com sucesso";
 } catch (Exception $ex) {
     //$mensagem = $ex->getMessage();
-    header('location: index.php');
+    //dentro do header pode passar o caminho da pasta.
+    header('location: ../inicial/index.php ');
 }
 ?>
 <html>

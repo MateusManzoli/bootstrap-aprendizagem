@@ -1,12 +1,12 @@
 <?php
-include_once'../gerenciar/login/gerenciador-login.php';
+include_once'../../gerenciar/login/gerenciador-login.php';
 ?>
 <div class="menulateral" >
     <?php if (empty($_SESSION['logado'])) { ?>
     
     <div class="container">
 
-        <form class="form-signin" action="../public/login/processo_login.php?" method="post">
+        <form class="form-signin" action="../../public/login/processo_login.php?" method="post">
         <h2 class="form-signin-heading">Realize o Login</h2>
         <label for="inputEmail" class="sr-only">Email </label>
         <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
@@ -22,7 +22,7 @@ include_once'../gerenciar/login/gerenciador-login.php';
 
 
             <div class="cads">
-                <a href="../public/cadastro_usuario.php">cadastra-se</a> |
+                <a href="../../public/usuario/cadastro.php">cadastra-se</a> |
                 <a href="#">esqueci a senha</a>
             </div>
     </form>
@@ -31,7 +31,7 @@ include_once'../gerenciar/login/gerenciador-login.php';
     } else {
         ?>
 
-        <form class="form-horizontal" method="post" name="id" action="../public/login/processo_login.php?id=<?php echo $_GET['id']; ?>">
+        <form class="form-horizontal" method="post" name="id" action="../../public/login/processo_login.php?id=<?php echo $_GET['id']; ?>">
             <input type="hidden" name="editar" value="1"/>
             <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"/>
             <div class="form-group">
@@ -46,13 +46,13 @@ include_once'../gerenciar/login/gerenciador-login.php';
     }
     ?>
     <div class="link">
-        <a href="https://twitter.com" target="_blanck"> <img src="../imagens/twitter.jpg"></a> <br>
-        <a href="https://facebook.com" target="_blanck"> <img src="../imagens/facebook.jpg"> </a>
+        <a href="https://twitter.com" target="_blanck"> <img src="../../imagens/twitter.jpg"></a> <br>
+        <a href="https://facebook.com" target="_blanck"> <img src="../../imagens/facebook.jpg"> </a>
     </div>
 
     <div class="video" align="center">
-        <video controls="controls" poster="../imagens/video-mini02.jpg">
-            <source src="../_media/how-it-feels.mp4" type="video/mp4"/>
+        <video controls="controls" poster="../../imagens/video-mini02.jpg">
+            <source src="../../_media/how-it-feels.mp4" type="video/mp4"/>
         </video>
     </div>
 

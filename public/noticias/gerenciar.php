@@ -17,7 +17,7 @@ $noticias = buscarNoticiasMenuPrincipal();
     <body>
 
         <div class="geral">
-            <form method="post" action="gerenciar_noticias.php">
+            <form method="post" action="gerenciar.php">
                 <input type="hidden" name="excluir" value="1"/>
                 <table class="table table-bordered">
                     <tr style="text-align: center; font-family: monospace; font-size: 20px;">

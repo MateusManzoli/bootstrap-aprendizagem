@@ -11,7 +11,6 @@ function buscarNoticiasMenuPrincipal() {
 
 function buscarNoticia($id) {
     $buscar = "SELECT * FROM aprendizagem.noticias where id = $id";
-
     $noticia = pesquisar($buscar);
     return $noticia[0];
 }

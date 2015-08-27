@@ -1,5 +1,4 @@
 <?php
-
 //faz a canexao com o BD
 //$conn = new PDO('mysql:host=localhost;dbname=meuBancoDeDados', $username, $password); modelo para conexao
 function conectar() {

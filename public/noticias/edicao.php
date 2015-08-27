@@ -73,7 +73,7 @@ $noticia = buscarNoticia($_GET['id']);
                 <div class="form-group-a">
                     <label for="inputEmail3" class="col-sm-2 control-label">Imagem</label>
                     <div class="col-sm-10-a">
-                        <input name="imagem" type="text" class="form-control" maxlength="150" value="<?php echo '../imagens/' . $noticia['imagem']; ?>">
+                        <input name="imagem" type="text" class="form-control" maxlength="150" value="<?php echo '../../imagens/' . $noticia['imagem']; ?>">
                     </div>
                 </div>
                 
