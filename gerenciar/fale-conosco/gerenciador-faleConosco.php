@@ -3,100 +3,65 @@
 include_once '../../PDO/conexao.php';
 
 //md5 é utilizado para colocar codigos na senha
-function publicarSolicitacao($dados) {
+function enviarSolicitacao($dados) {
+    validarSolicitacao($dados);
 // formato que será passado no formulario d m Y
 //formato que sera armazenado no BD Y-m-d
-    $data_nascimento = DateTime::createFromFormat('d/m/Y', $dados['data_nascimento']);
-    $publicar = "INSERT INTO aprendizagem.fale_conosco SET
-        nome = '" . ($dados['nome']) . "',
-        email = '" . ($dados['email']) . "',
-        sexo = '" . ($dados['sexo']) . "',
-        nascimento = '" . $data_nascimento->format('Y-m-d') . "',
-        logradouro = '" . ($dados['logradouro']) . "',
-        estado = '" . ($dados['estado']) . "',
-        cidade = '" . ($dados['cidade']) . "',
-        mensagem = '" . ($dados['mensagem']) . "',";
-    return inserir($publicar);
+    $date_nascimento = DateTime::createFromFormat('d/m/Y', $dados['nascimento']);
+    $enviar = "INSERT INTO aprendizagem.atendimento SET
+            nome = '" . addslashes(($dados['nome'])) . "',
+            email = '" . ($dados['email']) . "',
+            sexo = '" . ($dados['optionsRadios']) . "',
+            cidade = '" . addslashes(($dados['cidade'])) . "',            
+            logradouro = '" . addslashes(($dados['logradouro'])) . "',
+            estado = '" . addslashes(($dados['estado'])) . "',
+            assunto = '" . ($dados['assunto']) . "',
+            mensagem = '" . addslashes(($dados['mensagem'])) . "',
+            nascimento = '" . $date_nascimento->format('Y-m-d') . "'";
+    echo $enviar;
+    return inserir($enviar);
 }
 
 function buscarSolicitacoes() {
-    //metodo para buscar noticas
-    $sql = "SELECT  * FROM aprendizagem.fale_conosco order by id desc";
-    //retorna resultados da busca
+    $sql = "SELECT * FROM aprendizagem.atendimento";
     return pesquisar($sql);
 }
 
 function buscarSolicitacao($id) {
-    $buscar = "SELECT * FROM aprendizagem.noticias where id = $id";
-
-    $noticia = pesquisar($buscar);
-    return $noticia[0];
+    $buscar = "select * from aprendizagem.atendimento where id = $id";
+    $usuario = pesquisar($buscar);
+    return $usuario[0];
 }
-
-function buscarSolicitacaoPorPesquisa($pesquisa) {
-    // manchete passado no pesquisa nao esta correto pois o nome do formulario de pesquisa era "pesquisa"
-    $sql = "select * from aprendizagem.fale_conosco where nome like '%{$pesquisa}%' or mensagem like '%{$pesquisa}%'";
-
-    return pesquisar($sql);
-}
-
 
 function excluirSolicitacao($id) {
-    $excluir = "delete from `aprendizagem`.`fale_Conosco` where id = $id ";
-    return excluir($excluir);
+    $deletar = "delete from aprendizagem.atendimento where id = $id";
+    return excluir($deletar);
 }
 
-/*function editarNoticia($dados) {
-    validarDadosTela($dados);
-
-    $editar = "UPDATE aprendizagem.noticias SET 
-
-            publicacao = '" . addslashes($dados['publicacao']) . "',
-            manchete = '" . addslashes($dados['manchete']) . "',
-            subtitulo = '" . addslashes($dados['subtitulo']) . "',
-            imagem = '" . addslashes($dados['imagem']) . "',
-            legenda_imagem = '" . addslashes($dados['legenda_imagem']) . "',
-            conteudo = '" . addslashes($dados['conteudo']) . "'
-            where id = {$dados['id']} ";
-
-    return editar($editar);
-}*/
-
-function validarDadosTela($dados) {
-    // empty 'vazio'
-    if (empty($dados)) {
-        throw new Exception("Os campos precisam ser preenchidos");
-    }
-
+function validarSolicitacao($dados) {
+// empty 'vazio'
     if (empty($dados['nome'])) {
-        throw new Exception("O campo <b>nome</b> precisa ser preenchido");
+        throw new Exception('O campo nome precisa ser preenchido');
     }
-
     if (empty($dados['email'])) {
-        throw new Exception("O campo <b>email</b> precisa ser preenchido");
+        throw new Exception('O campo email precisa ser preenchido');
     }
-
-    if (empty($dados['sexo'])) {
-        throw new Exception("O campo <b>sexo</b> precisa ser preenchido");
+    if (empty($dados['optionsRadios'])) {
+        throw new Exception('O campo Sexo precisa ser preenchido');
     }
-
     if (empty($dados['nascimento'])) {
-        throw new Exception("O campo <b>nascimento</b> precisa ser preenchido");
+        throw new Exception('O campo sexo precisa ser preenchido');
     }
-
     if (empty($dados['logradouro'])) {
-        throw new Exception("O campo <b>logradouro</b> precisa ser preenchido");
+        throw new Exception('O campo logradouro precisa ser preenchido');
     }
-
     if (empty($dados['estado'])) {
-        throw new Exception("O campo <b>estado</b> precisa ser preenchido");
+        throw new Exception('O campo estado precisa ser preenchido');
     }
-    
-    if (empty($dados['cidade'])) {
-        throw new Exception("O campo <b>cidade</b> precisa ser preenchido");
+    if (empty($dados['assunto'])) {
+        throw new Exception('O campo assunto precisa ser preenchido');
     }
     if (empty($dados['mensagem'])) {
-        throw new Exception("O campo <b>mensagem</b> precisa ser preenchido");
+        throw new Exception('O campo mensagem precisa ser preenchido');
     }
-    
 }

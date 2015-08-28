@@ -6,7 +6,7 @@ include_once'../../gerenciar/login/gerenciador-login.php';
     
     <div class="container">
 
-        <form class="form-signin" action="../../public/login/processo_login.php?" method="post">
+        <form class="form-signin" action="../../public/login/processo_login.php?id=<?php echo $_GET['id']; ?>" method="post">
         <h2 class="form-signin-heading">Realize o Login</h2>
         <label for="inputEmail" class="sr-only">Email </label>
         <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
@@ -31,9 +31,9 @@ include_once'../../gerenciar/login/gerenciador-login.php';
     } else {
         ?>
 
-        <form class="form-horizontal" method="post" name="id" action="../../public/login/processo_login.php?id=<?php echo $_GET['id']; ?>">
+        <form class="form-horizontal" method="post" name="id" action="../../public/login/processo_login.php">
             <input type="hidden" name="editar" value="1"/>
-            <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"/>
+            
             <div class="form-group">
                 <?php //a sessao tem a posicao usuario que define os dados do usuario e na frente voce coloca o dado que voce deseja colocar na tela ?>
                <div 
@@ -42,9 +42,7 @@ include_once'../../gerenciar/login/gerenciador-login.php';
                </div>              
             </div>
         </form>
-        <?php
-    }
-    ?>
+        <?php } ?>
     <div class="link">
         <a href="https://twitter.com" target="_blanck"> <img src="../../imagens/twitter.jpg"></a> <br>
         <a href="https://facebook.com" target="_blanck"> <img src="../../imagens/facebook.jpg"> </a>

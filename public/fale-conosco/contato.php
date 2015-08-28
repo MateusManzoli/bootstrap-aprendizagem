@@ -1,56 +1,60 @@
 <?php
-include_once '../../gerenciar/noticia/gerenciador-noticias.php';
+include_once '../../gerenciar/fale-conosco/gerenciador-faleConosco.php';
 
-if ($_POST) {
-    publicarMensagem($_POST);
+var_dump($_POST);
+if ($_POST['publicar']) {
+    enviarSolicitacao($_POST);
 }
 ?>
 <html>
-<?php include_once '../../dados/dados-head.php'; ?>
+    <?php include_once '../../dados/dados-head.php'; ?>
     <link rel="stylesheet" type="text/css" href="../../estilos-paginas/fale-conosco.css"/>
     <body>
-<?php include_once '../../dados/dados-cabecalho.php'; ?>
+        <?php include_once '../../dados/dados-cabecalho.php'; ?>
         <form class="form-horizontal-a" method="post" action="contato.php">
+            <input type="hidden" name="publicar" value="1">
             <legend>Dados do Usuario</legend>
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Nome</label>
                 <div class="col-sm-10-a">
-                    <input name="nome" type="text" class="form-control" placeholder="Nome..." required>
+                    <input name="nome" type="text" class="form-control" placeholder="Nome Completo" required>
                 </div>
             </div>
-
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10-a">
-                    <input name="email" type="email" class="form-control" id="inputEmail3" placeholder="exemplo@hotmail.com"required>
+                    <input name="email" type="email" class="form-control" id="inputEmail3" placeholder="exemplo@hotmail.com"required >
                 </div>
             </div>
-
             <div class="radio" >
                 <label>
-                    <input name="masc" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked >
-                    Masculino
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="M" checked >
+                    M
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input name="fem" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                    Feminino
+                    <input  type="radio" name="optionsRadios" id="optionsRadios2" value="F">
+                    F
                 </label>
             </div>
-
             <div class="form-group-a" required>
                 <label for="inputEmail3" class="col-sm-2 control-label">Nascimento</label><br>
                 <div class="col-sm-10-a">
-                    <input name="nascimento" type="text" class="form-control" maxlength="10" placeholder="dd/mm/aaaa">
+                    <input name="nascimento" type="text" class="form-control" maxlength="10" placeholder="DD/MM/AAAA">
                 </div>
             </div>
-
-            <legend>Informações do Usuario</legend>
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Logradouro</label>
                 <div class="col-sm-10-a">
                     <input name="logradouro" type="text" class="form-control" placeholder="Rua, Av..." required>
+                </div>
+            </div>
+
+            <div class="form-group-a">
+                <label  class="col-sm-2 control-label">Cidade</label>
+                <div class="col-sm-10-a">
+                    <input name="cidade" type="text" class="form-control" placeholder="Cidade"required>
                 </div>
             </div>
 
@@ -89,35 +93,23 @@ if ($_POST) {
                     </select>
                 </div>
             </div>
-        </div>
-
-        <div class="form-group-a">
-            <label  class="col-sm-2 control-label">Cep</label>
-            <div class="col-sm-10-a">
-                <input name="cep" type="text" class="form-control" size="9" maxlength="9" placeholder="00000-000" required>
+            <div class="form-group-a" required>
+                <label for="inputEmail3" class="col-sm-2 control-label">Assunto</label><br>
+                <div class="col-sm-10-a">
+                    <input name="assunto" type="text" class="form-control" >
+                </div>
             </div>
-        </div>
-
-        <div class="form-group-a">
-            <label  class="col-sm-2 control-label">Cidade</label>
-            <div class="col-sm-10-a">
-                <input name="cidade" type="text" class="form-control" required>
+            <legend>Mensagem do Usuario</legend>
+            <textarea name="mensagem" class="form-control a" required></textarea>
+            <div class="form-group-b">
+                <div class="col-sm-offset-2 col-sm-10-a">
+                    <button type="submit" class="btn btn-default">Enviar</button>
+                </div>
             </div>
-        </div>
+        </form>
+        <?php include_once '../../dados/dados-menulateral.php'; ?>
+        <?php include_once '../../dados/dados-rodape.php'; ?>
 
-
-        <legend>Mensagem do Usuario</legend>
-        <textarea name="mensagem" class="form-control" required></textarea>
-
-        <div class="form-group-b">
-            <div class="col-sm-offset-2 col-sm-10-a">
-                <button type="submit" class="btn btn-default">Enviar</button>
-            </div>
-        </div>
-
-    </form>
-<?php include_once '../../dados/dados-menulateral.php'; ?>
-    <?php include_once '../../dados/dados-rodape.php'; ?>
-
-</body>
+    </body>
 </html>
+
