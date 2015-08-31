@@ -40,7 +40,7 @@ function cadastrarNoticia($dados) {
 }
 
 function excluirNoticias($id) {
-    $excluir = "delete from `aprendizagem`.`noticias` where id = $id ";
+    $excluir = "delete from `aprendizagem`.`noticias` where id = $id";
     return excluir($excluir);
 }
 

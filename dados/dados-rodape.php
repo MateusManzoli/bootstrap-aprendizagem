@@ -1,6 +1,6 @@
-<div class="rodape">
+<div class="rodape" style= 'width: 100%;'>
     <ul class="nav">
-        <li class="active"><a href="../public/inicial/index.php">Home</a></li>
+        <li class="active"><a href="../../public/inicial/index.php">Home</a></li>
         <li><a href="#">Saúde</a></li>
         <li><a href="#">Esporte</a></li>
         <li><a href="#">Economia</a></li>

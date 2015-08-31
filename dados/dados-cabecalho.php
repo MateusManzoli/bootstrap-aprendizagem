@@ -42,7 +42,7 @@
                             <?php if (!empty($_SESSION['logado'])) { ?>
                             <li><a href="../../public/fale-conosco/gerenciar.php">Solicitacoes</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="../../public/usuario/cadastro.php">Cadastrar Usuario</a></li>
+                                <li><a href="../../public/usuario/cadastro.php">Cadastre-se</a></li>
                                 <li><a href="../../public/usuario/gerenciar.php">Gerenciar Usuario</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="../../public/noticias/cadastro.php">Cadastrar Noticia</a></li>

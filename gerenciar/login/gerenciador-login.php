@@ -51,8 +51,9 @@ function validarUsuarios($dados) {
         throw new Exception('O campo email precisa ser preenchido');
     }
     if (empty($dados['senha'])) {
-        throw new Exception('O campo senha precisa ser preenchido');
+        throw new Exception('O campo senha precisa ser preenchido com 6 caracteres ou mais');
     }
+
     if (empty($dados['data_nascimento'])) {
         throw new Exception('O campo data de nascimento precisa ser preenchido');
     }

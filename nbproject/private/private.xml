@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>gerenciar/fale-conosco/gerenciador-faleConosco.php</url>
+            <bookmark id="1">
+                <name/>
+                <line>10</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="Desenv">
             <file>file:/C:/Users/mateus/desenv/bootstrap-aprendizagem/estilos.css</file>
@@ -11,7 +20,6 @@
         <group>
             <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/gerenciar/fale-conosco/gerenciador-faleConosco.php</file>
             <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/fale-conosco/gerenciar.php</file>
-            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/inicial/index.php</file>
             <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/fale-conosco/contato.php</file>
         </group>
     </open-files>

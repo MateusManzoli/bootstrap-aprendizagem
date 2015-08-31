@@ -9,7 +9,7 @@ try {
 
         cadastrarNoticia($_POST);
 
-        $execute["mensagem"] = "Noticia cadastrda com sucesso";
+        $execute["mensagem"] = "Noticia cadastrada com sucesso";
         $execute["tipo"] = "alert-success";
     }
 } catch (Exception $e) {

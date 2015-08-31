@@ -18,7 +18,6 @@ function enviarSolicitacao($dados) {
             assunto = '" . ($dados['assunto']) . "',
             mensagem = '" . addslashes(($dados['mensagem'])) . "',
             nascimento = '" . $date_nascimento->format('Y-m-d') . "'";
-    echo $enviar;
     return inserir($enviar);
 }
 
@@ -34,8 +33,8 @@ function buscarSolicitacao($id) {
 }
 
 function excluirSolicitacao($id) {
-    $deletar = "delete from aprendizagem.atendimento where id = $id";
-    return excluir($deletar);
+    $excluir = "delete from aprendizagem.atendimento where id = $id";
+    return excluir($excluir);
 }
 
 function validarSolicitacao($dados) {
@@ -50,7 +49,7 @@ function validarSolicitacao($dados) {
         throw new Exception('O campo Sexo precisa ser preenchido');
     }
     if (empty($dados['nascimento'])) {
-        throw new Exception('O campo sexo precisa ser preenchido');
+        throw new Exception('O campo nascimento precisa ser preenchido');
     }
     if (empty($dados['logradouro'])) {
         throw new Exception('O campo logradouro precisa ser preenchido');

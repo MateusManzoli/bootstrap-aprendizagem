@@ -1,9 +1,19 @@
 <?php
 include_once '../../gerenciar/fale-conosco/gerenciador-faleConosco.php';
 
-var_dump($_POST);
-if ($_POST['publicar']) {
-    enviarSolicitacao($_POST);
+try {
+    $execute = [];
+    // post armazena os dados 
+// se post existir ele ira cadastrar as noticias, 
+    if ($_POST['publicar']) {
+        enviarSolicitacao($_POST);
+
+        $execute["mensagem"] = "Solicitação Enviada com sucesso";
+        $execute["tipo"] = "alert-success";
+    }
+} catch (Exception $e) {
+    $execute['mensagem'] = $e->getMessage();
+    $execute['tipo'] = "alert-danger";
 }
 ?>
 <html>
@@ -12,18 +22,24 @@ if ($_POST['publicar']) {
     <body>
         <?php include_once '../../dados/dados-cabecalho.php'; ?>
         <form class="form-horizontal-a" method="post" action="contato.php">
+            <?php if (!empty($execute)) { ?>
+                <div class="alert <?php echo $execute['tipo']; ?>">
+                    <?php echo $execute['mensagem']; ?>
+                </div>
+            <?php } ?>
+
             <input type="hidden" name="publicar" value="1">
             <legend>Dados do Usuario</legend>
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Nome</label>
                 <div class="col-sm-10-a">
-                    <input name="nome" type="text" class="form-control" placeholder="Nome Completo" required>
+                    <input name="nome" type="text" class="form-control" maxlength="60" placeholder="Nome Completo" >
                 </div>
             </div>
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10-a">
-                    <input name="email" type="email" class="form-control" id="inputEmail3" placeholder="exemplo@hotmail.com"required >
+                    <input name="email" type="email" class="form-control" maxlength="80" id="inputEmail3" placeholder="exemplo@hotmail.com" >
                 </div>
             </div>
             <div class="radio" >
@@ -47,14 +63,14 @@ if ($_POST['publicar']) {
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Logradouro</label>
                 <div class="col-sm-10-a">
-                    <input name="logradouro" type="text" class="form-control" placeholder="Rua, Av..." required>
+                    <input name="logradouro" type="text" class="form-control" maxlength="70" placeholder="Rua, Av..." >
                 </div>
             </div>
 
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Cidade</label>
                 <div class="col-sm-10-a">
-                    <input name="cidade" type="text" class="form-control" placeholder="Cidade"required>
+                    <input name="cidade" type="text" class="form-control" placeholder="Cidade">
                 </div>
             </div>
 
@@ -100,7 +116,7 @@ if ($_POST['publicar']) {
                 </div>
             </div>
             <legend>Mensagem do Usuario</legend>
-            <textarea name="mensagem" class="form-control a" required></textarea>
+            <textarea name="mensagem" class="form-control a" ></textarea>
             <div class="form-group-b">
                 <div class="col-sm-offset-2 col-sm-10-a">
                     <button type="submit" class="btn btn-default">Enviar</button>
@@ -109,7 +125,6 @@ if ($_POST['publicar']) {
         </form>
         <?php include_once '../../dados/dados-menulateral.php'; ?>
         <?php include_once '../../dados/dados-rodape.php'; ?>
-
     </body>
 </html>
 
