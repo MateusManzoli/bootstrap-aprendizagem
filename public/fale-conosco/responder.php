@@ -1,25 +1,22 @@
 <?php
 include_once '../../dados/dados-cabecalho.php';
-include_once '../../gerenciar/login/gerenciador-login.php';
+include_once '../../gerenciar/fale-conosco/gerenciador-faleConosco.php';
+include_once '../../gerenciar/resposta-faleConosco/gerenciar-resposta.php';
 // post armazena os dados 
 // se post existir ele ira cadastrar as noticias
-print_r($_POST);
+
 try {
     $execute = [];
-    // post armazena os dados 
-// se post existir ele ira cadastrar as noticias, 
-    if ($_POST) {
-        editarUsuario($_POST);
-
-        $execute['mensagem'] = "Cadrasto editado com sucesso";
+    if ($_POST['id']) {
+        enviarResposta($_POST);
+        $execute['mensagem'] = "Resposta enviada com sucesso";
         $execute['tipo'] = "alert-success";
     }
-    // a variavel do exception nao pode ser a mesma da mensagem e tipo
 } catch (Exception $e) {
     $execute['mensagem'] = $e->getMessage();
     $execute['tipo'] = "alert-danger";
 }
-$usuario = buscarUsuario($_GET['id']);
+$solicitacao = buscarSolicitacao($_GET['id']);
 ?>
 <html>
     <?php include_once '../../dados/dados-head.php'; ?>
@@ -27,9 +24,9 @@ $usuario = buscarUsuario($_GET['id']);
     <body>
         <?php include_once '../../dados/dados-cabecalho.php'; ?>
         <div class="geral">
-            <form class="form-horizontal-a" method="post" action="../usuario/edicao.php?id=<?php echo $_GET['id']; ?>"> 
+            <form class="form-horizontal-a" method="post" action=""> 
                 <input type="hidden" name="editar" value="1"/>
-                <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"/>
+                <input type="hidden" name="id" value="<?php echo $solicitacao['id'] ?>"/>
                 <?php
                 if (!empty($execute)) {
                     ?>
@@ -39,34 +36,11 @@ $usuario = buscarUsuario($_GET['id']);
                         ?>
                     </div>
                 <?php } ?>
-                <legend><h2>Dados do Usuario</h2></legend>
-                <div class="form-group-a">
-                    <label  class="col-sm-2 control-label">Nome</label>
-                    <div class="col-sm-10-a">
-                        <input name="nome" type="text" class="form-control" maxlength="60" value="<?php echo $usuario['nome'] ?>">
-                    </div>
-                </div>
-                <div class="form-group-a">
-                    <label  class="col-sm-2 control-label">Email</label>
-                    <div class="col-sm-10-a">
-                        <input  name="email" type="email" class="form-control" id="inputEmail3" maxlength="80" value="<?php echo $usuario['email'] ?>"> 
-                    </div>
-                </div>
-                <div class="form-group-a">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Senha</label>
-                    <div class="col-sm-10-a">
-                        <input name="senha" type="text" class="form-control"  maxlength="25" value="<?php echo $usuario['senha'] ?>">
-                    </div>
-                </div>
-                <div class="form-group-a">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Data de Nascimento</label>
-                    <div class="col-sm-10-a">
-                        <input name="data_nascimento" type="text" class="form-control" maxlength="10" value="<?php echo $usuario['data_nascimento'] ?>">
-                    </div>
-                </div>
+                <legend><h2>Respondendo Solicitação <?php echo $solicitacao['id'] ?> </h2></legend>
+                <textarea name="mensagem" class="form-control a" ></textarea>
                 <div class="form-group-b">
                     <div class="col-sm-offset-2 col-sm-10-a">
-                        <button Type="submit" class="btn btn-default" >Atualizar</button>
+                        <button name="enviar" Type="submit" class="btn btn-default">Responder</button>
                     </div>
                 </div>
             </form>
@@ -75,5 +49,5 @@ $usuario = buscarUsuario($_GET['id']);
         include_once '../../dados/dados-menulateral.php';
         include_once '../../dados/dados-rodape.php';
         ?>
-    </body>
+    </body>/
 </html>

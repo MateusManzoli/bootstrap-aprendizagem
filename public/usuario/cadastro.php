@@ -30,7 +30,7 @@ if (isset($_POST['cadastrar'])) {
                 <div class="form-group-a">
                     <label  class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10-a">
-                        <input name="email" type="text" class="form-control" id="inputEmail3" maxlength="80" placeholder="Email" value="@hotmail.com"required/>
+                        <input name="email" type="text" class="form-control" id="inputEmail3" maxlength="80" placeholder="Email" required/>
                     </div>
                 </div>
 

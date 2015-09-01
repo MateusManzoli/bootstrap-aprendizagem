@@ -3,7 +3,7 @@ include_once '../../PDO/conexao.php';
 //funcao para buscar noticias
 function buscarNoticiasMenuPrincipal() {
     //metodo para buscar noticas
-    $sql = "SELECT  * FROM aprendizagem.noticias order by id desc";
+    $sql = "SELECT  * FROM aprendizagem.noticias order by id desc limit 18";
     //retorna resultados da busca
     return pesquisar($sql);
 }
