@@ -49,5 +49,5 @@ $solicitacao = buscarSolicitacao($_GET['id']);
         include_once '../../dados/dados-menulateral.php';
         include_once '../../dados/dados-rodape.php';
         ?>
-    </body>/
+    </body>
 </html>
