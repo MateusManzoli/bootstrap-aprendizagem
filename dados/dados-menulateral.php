@@ -3,9 +3,7 @@ include_once'../../gerenciar/login/gerenciador-login.php';
 ?>
 <div class="menulateral" >
     <?php if (empty($_SESSION['logado'])) { ?>
-
         <div class="container">
-
             <form class="form-signin" action="../../public/login/processo_login.php?id=<?php echo $_GET['id']; ?>" method="post">
                 <h2 class="form-signin-heading">Realize o Login</h2>
                 <label for="inputEmail" class="sr-only">Email </label>
@@ -19,21 +17,16 @@ include_once'../../gerenciar/login/gerenciador-login.php';
                 </div>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
         </div> <!-- /container -->
-
-
         <div class="cads">
             <a href="../../public/usuario/cadastro.php">cadastra-se</a> |
             <a href="#">esqueci a senha</a>
         </div>
     </form>
-
     <?php
 } else {
     ?>
-
     <form class="form-horizontal" method="post" name="id" action="../../public/login/processo_login.php">
         <input type="hidden" name="editar" value="1"/>
-
         <div class="form-group">
             <?php //a sessao tem a posicao usuario que define os dados do usuario e na frente voce coloca o dado que voce deseja colocar na tela ?>
             <div 
@@ -47,18 +40,31 @@ include_once'../../gerenciar/login/gerenciador-login.php';
     <a href="https://twitter.com" target="_blanck"> <img src="../../imagens/twitter.jpg"></a> <br>
     <a href="https://facebook.com" target="_blanck"> <img src="../../imagens/facebook.jpg"> </a>
 </div>
-
 <div class="video" align="center">
     <video controls="controls" poster="../../imagens/video-mini02.jpg">
         <source src="../../_media/how-it-feels.mp4" type="video/mp4"/>
     </video>
 </div>
-
 <div class="list-group">
     <a href="#" class="list-group-item list-group-item-warning">Anuciante</a>
     <a href="#" class="list-group-item list-group-item-warning">Anuciante</a>
     <a href="#" class="list-group-item list-group-item-warning">Anuciante</a>
     <a href="#" class="list-group-item list-group-item-warning">Anuciante</a>
 </div>
+<a class="twitter-share-button"
+   href="https://twitter.com/intent/tweet?text=Hello%20world">
+    Tweet</a>
+<div>
+    <a class="twitter-timeline" href="https://twitter.com/hashtag/corgi" data-widget-id="639847731478069248">corgi Tweets</a>
+    <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + "://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");</script>
+</div>          
 
 </div>

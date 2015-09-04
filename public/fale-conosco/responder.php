@@ -9,6 +9,7 @@ try {
     $execute = [];
     if ($_POST['id']) {
         enviarResposta($_POST);
+        enviarEmail($_POST);
         $execute['mensagem'] = "Resposta enviada com sucesso";
         $execute['tipo'] = "alert-success";
     }
