@@ -4,7 +4,6 @@ function enviarResposta($solicitacao) {
     $resposta = "INSERT INTO aprendizagem.atendimento_resposta SET
             atendimento_id = '" . ($solicitacao['id']) . "',
             mensagem = '". addslashes(($solicitacao['mensagem'])) ."'";
-echo $resposta;
     return inserir($resposta);
 }
 /*function excluirResposta($id) {

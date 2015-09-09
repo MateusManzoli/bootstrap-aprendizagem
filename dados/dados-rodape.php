@@ -6,8 +6,6 @@
         <li><a href="#">Economia</a></li>
         <li><a href="#">Educação</a></li>
         <li><a href="#">Politica</a></li>
-
-
         <div class="dropup">
             <li class="btn dropdown-toggle"  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Região

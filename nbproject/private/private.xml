@@ -5,7 +5,7 @@
             <url>gerenciar/fale-conosco/gerenciador-faleConosco.php</url>
             <bookmark id="1">
                 <name/>
-                <line>10</line>
+                <line>8</line>
                 <key/>
             </bookmark>
         </file>
@@ -18,7 +18,10 @@
             <file>file:/C:/Users/mateus/desenv/bootstrap-aprendizagem/public/contato.php</file>
         </group>
         <group>
-            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/dados/dados-menulateral.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/dados/dados-cabecalho.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/gerenciar/tipo-noticia/gerenciar-tipoNoticia.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/noticias/noticia.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/noticias/gerenciar.php</file>
             <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/inicial/index.php</file>
         </group>
     </open-files>

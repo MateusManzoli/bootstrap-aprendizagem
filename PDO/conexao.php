@@ -4,7 +4,6 @@
 function conectar() {
     return new PDO('mysql:host=localhost;dbname=aprendizagem', 'root', 'mateus123');
 }
-
 function pesquisar($sql) {
     //conecta a função pesquisar ao banco de dados
     $conexao = conectar();
@@ -13,28 +12,19 @@ function pesquisar($sql) {
     // busca o resultado... fetchAll serve para retorna varios arquivos.
     return $statement->fetchAll();
 }
-
 function inserir($sql) {
     $conexao = conectar();
-
     $statement = $conexao->exec($sql);
     //lastInsertId retorna os resultados por id
     return $conexao->lastInsertId();
 }
-
 function excluir($sql) {
-
     $conexao = conectar();
-
     $statement = $conexao->query($sql);
-
     return $statement->execute();
 }
-
 function editar($sql) {
-
     $conexao = conectar();
-
     $statement = $conexao->query($sql);
     //var_dump($sql);exit;
     //return $statement;

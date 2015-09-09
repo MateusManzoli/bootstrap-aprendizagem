@@ -31,7 +31,7 @@ include_once'../../gerenciar/login/gerenciador-login.php';
             <?php //a sessao tem a posicao usuario que define os dados do usuario e na frente voce coloca o dado que voce deseja colocar na tela ?>
             <div 
                 class="alert " role="alert"> <?php echo 'Bem Vindo ' . '<b>' . $_SESSION['usuario']['nome'] . '</b>' ?>
-                <button class="btn btn-lg btn-primary btn-block" type="submit" >sair</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">sair</button>
             </div>              
         </div>
     </form>
@@ -45,15 +45,6 @@ include_once'../../gerenciar/login/gerenciador-login.php';
         <source src="../../_media/how-it-feels.mp4" type="video/mp4"/>
     </video>
 </div>
-<div class="list-group">
-    <a href="#" class="list-group-item list-group-item-warning">Anuciante</a>
-    <a href="#" class="list-group-item list-group-item-warning">Anuciante</a>
-    <a href="#" class="list-group-item list-group-item-warning">Anuciante</a>
-    <a href="#" class="list-group-item list-group-item-warning">Anuciante</a>
-</div>
-<a class="twitter-share-button"
-   href="https://twitter.com/intent/tweet?text=Hello%20world">
-    Tweet</a>
 <div>
     <a class="twitter-timeline" href="https://twitter.com/hashtag/corgi" data-widget-id="639847731478069248">corgi Tweets</a>
     <script>!function (d, s, id) {
@@ -64,7 +55,6 @@ include_once'../../gerenciar/login/gerenciador-login.php';
                 js.src = p + "://platform.twitter.com/widgets.js";
                 fjs.parentNode.insertBefore(js, fjs);
             }
-        }(document, "script", "twitter-wjs");</script>
+        }(document, "script", "twitter-wjs");</script> 
 </div>          
-
 </div>

@@ -7,7 +7,6 @@ and open the template in the editor.
     Created on : 04/08/2015, 15:00:22
     Author     : DESEN
 */
-
 .geral{
     float: left;
     padding-top: 6%;
@@ -16,7 +15,6 @@ and open the template in the editor.
     max-width: 950px;
     position: relative;
 }
-
 .cabecalho tr{
     text-align: center;
     font-family: monospace;

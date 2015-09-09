@@ -1,7 +1,5 @@
 <?php
-
 include_once '../../PDO/conexao.php';
-
 //md5 é utilizado para colocar codigos na senha
 function enviarSolicitacao($dados) {
     validarSolicitacao($dados);
@@ -20,23 +18,19 @@ function enviarSolicitacao($dados) {
             nascimento = '" . $date_nascimento->format('Y-m-d') . "'";
     return inserir($enviar);
 }
-
 function buscarSolicitacoes() {
     $sql = "SELECT * FROM aprendizagem.atendimento";
     return pesquisar($sql);
 }
-
 function buscarSolicitacao($id) {
     $buscar = "select * from aprendizagem.atendimento where id = $id";
     $usuario = pesquisar($buscar);
     return $usuario[0];
 }
-
 function excluirSolicitacao($id) {
     $excluir = "delete from aprendizagem.atendimento where id = $id";
     return excluir($excluir);
 }
-
 function validarSolicitacao($dados) {
 // empty 'vazio'
     if (empty($dados['nome'])) {

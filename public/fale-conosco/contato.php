@@ -1,9 +1,8 @@
 <?php
 include_once '../../gerenciar/fale-conosco/gerenciador-faleConosco.php';
-
 try {
     $execute = [];
-    // post armazena os dados 
+ // post armazena os dados 
 // se post existir ele ira cadastrar as noticias, 
     if ($_POST['publicar']) {
         enviarSolicitacao($_POST);
@@ -27,7 +26,6 @@ try {
                     <?php echo $execute['mensagem']; ?>
                 </div>
             <?php } ?>
-
             <input type="hidden" name="publicar" value="1">
             <legend>Dados do Usuario</legend>
             <div class="form-group-a">
@@ -66,14 +64,12 @@ try {
                     <input name="logradouro" type="text" class="form-control" maxlength="70" placeholder="Rua, Av..." >
                 </div>
             </div>
-
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Cidade</label>
                 <div class="col-sm-10-a">
                     <input name="cidade" type="text" class="form-control" placeholder="Cidade">
                 </div>
             </div>
-
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Estado</label>
                 <div class="col-sm-10-a">

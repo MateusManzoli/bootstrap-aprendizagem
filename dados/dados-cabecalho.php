@@ -1,7 +1,9 @@
-<?php session_start();
+<?php
+session_start();
+include_once '../../gerenciar/tipo-noticia/gerenciar-tipoNoticia.php';
 
- include_once'../../gerenciar/login/gerenciador-login.php'; ?>
-
+$categorias = buscarCategorias();
+?> 
 <html>
     <nav class="navbar navbar-inverse  navbar-fixed-top">
         <div class="container">
@@ -16,16 +18,11 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="../../public/inicial/index.php">Home</a></li>
-                    <li><a href="#">Saúde</a></li>
-                    <li><a href="#">Esporte</a></li>
-                    <li><a href="#">Economia</a></li>
-                    <li><a href="#">Educação</a></li>
-                    <li><a href="#">Politica</a></li>
-                    <form class="navbar-form navbar-right" action="../../public/inicial/index.php" method="post">
-                        <input type="text" name="pesquisa" class="form-control" placeholder="Pesquisar Por...">
-                    </form>
-                    <li class="dropdown">
+                    <?php foreach ($categorias as $categoria): ?>
+                        <li>
+                            <a href="<?= $categoria['link']; ?>" name="<?= $categoria['nome']; ?>" > <?= $categoria['nome']; ?></a>
+                        <?php endforeach; ?>
+                        <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sua Região <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Centro-Oeste</a></li>
@@ -35,7 +32,7 @@
                             <li><a href="#">Sudeste</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                        <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gerenciar<span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
                             <li><a href="../../public/fale-conosco/contato.php">Fale Conosco</a></li>
@@ -49,7 +46,17 @@
                                 <li><a href="../../public/noticias/gerenciar.php">Gerenciar Noticias</a></li>
                             <?php } ?>
                         </ul>
-                        </div>
-                            <!--/.nav-collapse -->
+                    
+                </ul>
+                
+                <form class="navbar-form navbar-right" action="../../public/inicial/index.php" method="post">
+                    <input  type="text" name="pesquisa" class="form-control" placeholder="Pesquisar Por...">
+                </form>
+                <!-- dropdown -->
+ 
+            </div>
         </div>
-                        </nav>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+</html>

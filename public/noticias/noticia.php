@@ -1,24 +1,19 @@
 <?php
 include_once '../../gerenciar/noticia/gerenciador-noticias.php';
-
 $noticia = buscarNoticia($_GET['id']);
 ?>
-
 <html lang="pt-br">
     <?php include_once '../../dados/dados-head.php'; ?>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" type="text/css" href="../../estilos-paginas/estilo-noticia.css"/>
     <body>
-
         <!--navbar Fixa -->
         <?php include_once '../../dados/dados-cabecalho.php';
         ?>
-
         <div class="conteudo">
             <h5><?php echo $noticia['publicacao']; ?></h5>
             <h1><?php echo $noticia['manchete']; ?></h1>
             <h2><?php echo $noticia['subtitulo']; ?></h2>
-
             <div class="container">
                 <div class="col-sm-6 col-md-12">
                     <div class="thumbnail b">                        <a class="btn" data-toggle="modal" data-target="#myModal">
@@ -27,7 +22,6 @@ $noticia = buscarNoticia($_GET['id']);
                     </div>
                 </div>
             </div>
-
             <!-- Trigger the modal with a button -->
             <!-- Modal -->
             <div class="modal fade" id="myModal" role="dialog">
@@ -47,8 +41,6 @@ $noticia = buscarNoticia($_GET['id']);
                     </div>
                 </div>
             </div>
-
-
             <p> <?php echo nl2br(htmlspecialchars($noticia['conteudo'])); //nl2br Insere quebra HTML antes de todas newlines em uma string    ?></p>
         </div>
         <?php include_once '../../dados/dados-menulateral.php'; ?>

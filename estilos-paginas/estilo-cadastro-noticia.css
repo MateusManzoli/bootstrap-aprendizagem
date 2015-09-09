@@ -7,8 +7,6 @@ and open the template in the editor.
     Created on : 03/08/2015, 15:15:53
     Author     : DESEN
 */
-
-
 .form-horizontal-a{
     float: left;
     padding-top: 7%;
@@ -18,11 +16,9 @@ and open the template in the editor.
 .col-sm-10-a{
     padding: 5px;
 }
-
 .form-group-b{
     float: left ;
 }
-
 .alert-danger {
     background-color: white;
     border: none;

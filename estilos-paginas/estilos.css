@@ -1,8 +1,6 @@
-
 body{
     font-size: 14.4px;
 }
-
 .noticias{
     border-right: 1px solid #e0e0e0;
     text-align: left;
@@ -10,113 +8,89 @@ body{
     padding-top: 5%;
     padding-left: 2%;
     padding-right: 1%;
-
 }
-
 .noticias a{
     color: black;
 }
-
 .row{
     max-width: 855px;
     float: left;
     margin-right: 15px;
     margin-left: 15px;
 }
-
 .thumbnail img{
     float: left;
     border-radius: 15px;
 }
-
 .pagination li a:hover{
     background: #EEE;
 }
-
 .menulateral{
     padding-top: 5%;
     padding-right: 4%;
     float: right;
 }
-
 .menulateral img{
     float: right;
 }
-
-
-
 .cads{
     text-align: center;
     padding-bottom: 10px;
     text-align: center;
     border-bottom: 1px solid #CFCFCF;
 }
-
 .cads a{
     color: #9D9D9D;
 }
-
 .link img{
     margin-right: 70px;
     width: 140px;
     height: 140px;
     padding: 10px;
 }
-
 .video video{
     width: 250px;
     border-radius: 10px;
 }
-
 .anuciantes{
     display: block;
     text-align: center;
     font-family: monospace;
     padding: 3px;
 }
-
 .anuciantes p{
     padding: 3px;
     text-align: center;
 }
-
 .anuciantes a{
     text-decoration: none;
     color: black;
 }
-
 .list-group a{
     background-color: transparent;
     text-align: center;
     color: #9D9D9D;
 }
-
 .list-group a:hover{
     background: #EEE;
     color: #337AB7;
 }
-
 .rodape{
     display: inline-block;
     width: 1420px;
     border-top: 1px solid #ddd;
     background-color: #363636;
 }
-
 .rodape a{
     color: #CFCFCF;
 }
-
 .rodape li{
     
     color: #CFCFCF;
 }
-
 .rodape li:hover{
     color: #CFCFCF;
-
 }
-
 .thumbnail > a  img{
     width: 500px;
     height: 190px;

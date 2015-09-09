@@ -11,7 +11,6 @@ function cadastrarUsuarios($dados) {
             email = '" . ($dados['email']) . "',
             senha = '" . md5($dados['senha']) . "',
             data_nascimento = '" . $data_nascimento->format('Y-m-d') . "'";
-
     return inserir($cadastrarUsu);
 }
 function buscarUsuarios() {
@@ -38,7 +37,6 @@ function editarUsuario($dados) {
     return editar($atualizar);
 }
 function formatarDataVisualizacao($data) {
-
     $dataFormatada = DateTime::createFromFormat('Y-m-d', $data);
     echo $dataFormatada->format('d/m/Y');
 }
@@ -53,12 +51,10 @@ function validarUsuarios($dados) {
     if (empty($dados['senha'])) {
         throw new Exception('O campo senha precisa ser preenchido com 6 caracteres ou mais');
     }
-
     if (empty($dados['data_nascimento'])) {
         throw new Exception('O campo data de nascimento precisa ser preenchido');
     }
 }
-
 function validarLogin($email, $senha) {
 //prepara o texto para ir pro banco de dados
     $login = "select * from aprendizagem.usuario where email = '" . $email . "' && senha ='" . md5($senha) . "'";
@@ -81,6 +77,6 @@ function validarLogin($email, $senha) {
             'data' => date('d/m/Y'),
             'hora' => date('H:i:s'),
         ),
-        'logado' => true,    
+        'logado' => true,
     ));
 }
