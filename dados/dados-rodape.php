@@ -1,11 +1,14 @@
+<?php
+include_once '../../gerenciar/noticia/gerenciador-noticias.php';
+include_once '../../gerenciar/tipo-noticia/gerenciar-tipoNoticia.php';
+
+$categorias = buscarCategorias();
+?>
 <div class="rodape" style= 'width: 100%;'>
     <ul class="nav">
-        <li class="active"><a href="../../public/inicial/index.php">Home</a></li>
-        <li><a href="#">Saúde</a></li>
-        <li><a href="#">Esporte</a></li>
-        <li><a href="#">Economia</a></li>
-        <li><a href="#">Educação</a></li>
-        <li><a href="#">Politica</a></li>
+        <?php foreach ($categorias as $categoria): ?>
+        <li><a href="<?= $categoria['link']. '?categoria='.$categoria['id']; ?>" name="<?= $categoria['nome']; ?>" > <?= $categoria['nome']; ?></a></li>
+        <?php endforeach; ?>
         <div class="dropup">
             <li class="btn dropdown-toggle"  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Região
