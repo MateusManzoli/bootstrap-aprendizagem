@@ -10,6 +10,14 @@ function buscarNoticiasMenuPrincipal() {
     return pesquisar($sql);
 }
 
+function buscarNoticiasPorCategoria($categoria) {
+    //metodo para buscar noticas
+    $sql = "SELECT  * FROM aprendizagem.noticias where categoria = $categoria order by id desc limit 18 ";
+    //retorna resultados da busca
+    return pesquisar($sql);
+}
+
+
 function buscarNoticia($id) {
     $buscar = "SELECT * FROM aprendizagem.noticias where id = $id";
     $noticia = pesquisar($buscar);
@@ -34,6 +42,7 @@ function cadastrarNoticia($dados) {
             subtitulo = '" . addslashes($dados['subtitulo']) . "',
             imagem = '" . addslashes($dados['imagem']) . "',
             legenda_imagem = '" . addslashes($dados['legenda_imagem']) . "',
+            categoria = '" .addslashes($dados['pagina']) . "',
             conteudo = '" . addslashes($dados['conteudo']) . "'
         ";
     echo $cadastrar;

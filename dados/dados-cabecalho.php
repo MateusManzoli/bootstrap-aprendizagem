@@ -20,7 +20,7 @@ $categorias = buscarCategorias();
                 <ul class="nav navbar-nav">
                     <?php foreach ($categorias as $categoria): ?>
                         <li>
-                            <a href="<?= $categoria['link']; ?>" name="<?= $categoria['nome']; ?>" > <?= $categoria['nome']; ?></a>
+                            <a href="<?= $categoria['link']. '?categoria='.$categoria['id']; ?>" name="<?= $categoria['nome']; ?>" > <?= $categoria['nome']; ?></a>
                         <?php endforeach; ?>
                         <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sua Região <span class="caret"></span></a>

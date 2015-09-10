@@ -2,7 +2,10 @@
 include_once '../../gerenciar/noticia/gerenciador-noticias.php';
 if (isset($_POST['pesquisa'])) {
     $noticias = buscarNoticiasPorPesquisa($_POST['pesquisa']);
-} else {
+}elseif($_GET['categoria']){
+  $noticias = buscarNoticiasPorCategoria($_GET['categoria']);
+} 
+else {
     $noticias = buscarNoticiasMenuPrincipal();
 }
 ?>

@@ -31,7 +31,7 @@ include_once'../../gerenciar/login/gerenciador-login.php';
             <?php //a sessao tem a posicao usuario que define os dados do usuario e na frente voce coloca o dado que voce deseja colocar na tela ?>
             <div 
                 class="alert " role="alert"> <?php echo 'Bem Vindo ' . '<b>' . $_SESSION['usuario']['nome'] . '</b>' ?>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">sair</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" >sair</button>
             </div>              
         </div>
     </form>

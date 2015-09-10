@@ -1,9 +1,11 @@
 <?php
 include_once '../../dados/dados-cabecalho.php';
 include_once '../../gerenciar/noticia/gerenciador-noticias.php';
+include_once '../../gerenciar/tipo-noticia/gerenciar-tipoNoticia.php';
+$categorias = buscarCategorias();
 try {
     $execute = [];
-    // post armazena os dados 
+// post armazena os dados 
 // se post existir ele ira cadastrar as noticias, 
     if ($_POST) {
         cadastrarNoticia($_POST);
@@ -60,37 +62,30 @@ try {
                         <input name="legenda_imagem" type="text" class="form-control">
                     </div>
                 </div>
-
                 <div class="form-group-a">
                     <label  class="col-sm-2 control-label">Pagina</label>
                     <div class="col-sm-10-a">
-                        <select name="estado" id="id_estados" >
+                        <select name="pagina" id="id" >
                             <option>Escolha a Pagina</option>
-                            <option value="hm">Home</option>
-                            <option value="sd">Saude</option>
-                            <option value="ep">Esporte</option>
-                            <option value="ec">Economia</option>
-                            <option value="ed">Educacao</option>
-                            <option value="pt">Politica</option>
+                            <?php foreach ($categorias as $categoria) { ?>
+                            <option value="<?php echo $categoria['id']; ?>"> <?= $categoria['nome']; // <?= nao precisa dar echo  ?> </option>
+                            <?php } ?>
 
                         </select>
                     </div>
                 </div>
-
-
                 <legend>Conteudo</legend>
                 <textarea name="conteudo" class="form-control" ></textarea>
-
                 <div class="form-group-b">
                     <div class="col-sm-offset-2 col-sm-10-a">
                         <button type="submit" class="btn btn-default" >Cadastrar</button>
                     </div>
                 </div>
-        </form> 
+            </form> 
         </div>
-    <?php
-    include_once '../../dados/dados-menulateral.php';
-    include_once '../../dados/dados-rodape.php';
-    ?>
-</body>
+        <?php
+        include_once '../../dados/dados-menulateral.php';
+        include_once '../../dados/dados-rodape.php';
+        ?>
+    </body>
 </html>
