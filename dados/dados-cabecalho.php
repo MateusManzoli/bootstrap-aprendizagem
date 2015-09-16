@@ -58,5 +58,6 @@ $categorias = buscarCategorias();
         </div>
         <!--/.nav-collapse -->
     </div>
+    
 </nav>
 </html>
