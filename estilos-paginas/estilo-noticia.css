@@ -7,6 +7,9 @@ and open the template in the editor.
     Created on : 04/08/2015, 16:58:10
     Author     : DESEN
 */
+body{
+    background: #ebebeb;
+}
 .conteudo{
     float: left;
     max-width: 800px;

@@ -7,6 +7,9 @@ and open the template in the editor.
     Created on : 31/08/2015, 14:28:52
     Author     : DESEN
 */
+body{
+    background: #ebebeb;
+}
 .geral {
     width: 700px;
     padding-top: 7%;

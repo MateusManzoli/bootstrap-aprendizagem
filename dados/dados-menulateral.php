@@ -7,13 +7,13 @@ include_once'../../gerenciar/login/gerenciador-login.php';
             <form class="form-signin" action="../../public/login/processo_login.php" method="post">
                 <h2 class="form-signin-heading">Realize o Login</h2>
                 <label for="inputEmail" class="sr-only">Email </label>
-                <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+                <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus/>
                 <label for="inputPassword" class="sr-only">Senha</label>
-                <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Senha" required/>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
+                        <input type="checkbox" value="remember-me"> Remember me</label>
+                   
                 </div>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
         </div> <!-- /container -->
@@ -25,7 +25,7 @@ include_once'../../gerenciar/login/gerenciador-login.php';
     <?php
 } else {
     ?>
-    <form class="form-horizontal" method="post" name="id" action="../../public/login/processo_login.php">
+    <form class="form-horizontal" method="post" name="id" action="../../public/login/sair.php?">
         <input type="hidden" name="editar" value="1"/>
         <div class="form-group">
             <?php //a sessao tem a posicao usuario que define os dados do usuario e na frente voce coloca o dado que voce deseja colocar na tela ?>
@@ -37,9 +37,11 @@ include_once'../../gerenciar/login/gerenciador-login.php';
     </form>
 <?php } ?>
 <div class="link">
-    <a href="https://twitter.com" target="_blanck"> <img src="../../imagens/twitter.jpg"></a> <br>
+    <a href="https://twitter.com" target="_blanck"> <img src="../../imagens/twitter.jpg"></a> 
     <a href="https://facebook.com" target="_blanck"> <img src="../../imagens/facebook.jpg"> </a>
+    <a href="../../public/indiceMassa/imc.php"><img src="../../imagens/calculo-imc.jpg"</a>
 </div>
+
 <div class="video" align="center">
     <video controls="controls" poster="../../imagens/video-mini02.jpg">
         <source src="../../_media/how-it-feels.mp4" type="video/mp4"/>

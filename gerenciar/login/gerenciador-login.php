@@ -80,3 +80,9 @@ function validarLogin($email, $senha) {
         'logado' => true,
     ));
 }
+
+//funcao para destruir o login do usuario
+function sair() {
+    unset($_SESSION);
+    session_destroy();
+}

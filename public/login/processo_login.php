@@ -1,8 +1,5 @@
 <?php
-//oculta os erros da tela
-ini_set('display_errors', 0);
-error_reporting(0);
-
+//oculta os erros
 include_once '../../dados/dados-cabecalho.php';
 include_once '../../gerenciar/login/gerenciador-login.php';
 

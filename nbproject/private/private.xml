@@ -18,12 +18,11 @@
             <file>file:/C:/Users/mateus/desenv/bootstrap-aprendizagem/public/contato.php</file>
         </group>
         <group>
-            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/menu/economia.php</file>
-            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/dados/dados-cabecalho.php</file>
-            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/dados/dados-conteudo.php</file>
-            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/menu/saude.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/estilos-paginas/estilo-imc.css</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/gerenciar/calculo-imc/gerenciarCalculoImc.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/noticias/noticia.php</file>
             <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/inicial/index.php</file>
-            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/noticias/cadastro.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/indiceMassa/imc.php</file>
         </group>
     </open-files>
 </project-private>
