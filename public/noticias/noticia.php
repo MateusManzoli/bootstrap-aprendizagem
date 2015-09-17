@@ -21,6 +21,7 @@ $noticia = buscarNoticia($_GET['id']);
                         </a>
                     </div>
                 </div>
+                
             </div>
             <!-- Trigger the modal with a button -->
             <!-- Modal -->

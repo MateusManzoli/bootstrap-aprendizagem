@@ -45,10 +45,11 @@ include_once'../../gerenciar/login/gerenciador-login.php';
 <br><iframe src="http://widget.tempoagora.com.br/selos/r7_2/Widget/" scrolling="no" frameborder="0" height="235px" width="300"></iframe>
 
 <div class="video" align="center">
-    <video controls="controls" poster="../../imagens/video-mini02.jpg">
-        <source src="../../_media/how-it-feels.mp4" type="video/mp4"/>
+    <video controls="controls" poster="../../imagens/hojeEuToTerrivel.jpg">
+        <source src="../../_media/cristiano.mp4" type="video/mp4"/>
     </video>
 </div>
+
 <?php if (!empty($_SESSION['logado'])) { ?>
     <div>
         <a class="twitter-timeline" href="https://twitter.com/hashtag/corgi" data-widget-id="639847731478069248">corgi Tweets</a>
