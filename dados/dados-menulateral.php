@@ -39,8 +39,10 @@ include_once'../../gerenciar/login/gerenciador-login.php';
 <div class="link">
     <a href="https://twitter.com" target="_blanck"> <img src="../../imagens/twitter.jpg"></a> 
     <a href="https://facebook.com" target="_blanck"> <img src="../../imagens/facebook.jpg"> </a>
-    <a href="../../public/indiceMassa/imc.php"><img src="../../imagens/calculo-imc.jpg"</a>
+    <a href="../../public/indiceMassa/imc.php"> <img src="../../imagens/calculo-imc.jpg"> </a>
 </div>
+
+<br><iframe src="http://widget.tempoagora.com.br/selos/r7_2/Widget/" scrolling="no" frameborder="0" height="235px" width="300"></iframe>
 
 <div class="video" align="center">
     <video controls="controls" poster="../../imagens/video-mini02.jpg">

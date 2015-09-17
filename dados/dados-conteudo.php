@@ -20,8 +20,8 @@ if (isset($_POST['pesquisa'])) {
                 <div class="thumbnail" >
                     <a href="../../public/noticias/noticia.php?id=<?php echo $noticia['id'] // o link sera diferente de acordo com o id    ?>"> <img src="../../imagens/<?php echo $noticia['imagem']; // seleciona a imagem de cada id    ?>"/>
                         <div class="caption">
-                            <h4><?php echo substr($noticia['manchete'], 0, 42) //busca a manchete | SUBSTR define a quantidade de caracteres    ?></h4>
-                            <p><?php echo substr($noticia['subtitulo'], 0, 55)//busca o subtitulo   ?></p>
+                            <h4><?php echo substr($noticia['manchete'], 0, 41) //busca a manchete | SUBSTR define a quantidade de caracteres    ?></h4>
+                            <p><?php echo substr($noticia['subtitulo'], 0, 54)//busca o subtitulo   ?></p>
                         </div>
                     </a>
                 </div>
