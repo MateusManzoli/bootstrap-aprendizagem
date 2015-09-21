@@ -12,7 +12,7 @@ try {
 ?>
 <html>    <link rel="stylesheet" type="text/css" href="../../estilos-paginas/estilo-precesso-login.css"/>
     <?php include_once '../../dados/dados-head.php'; ?>
-    <div class="login"><?php echo $mensagem; ?> </div>
+    <div class="login "><?php echo $mensagem; ?> </div>
 </html>
 <?php
 include_once '../../dados/dados-menulateral.php';

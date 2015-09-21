@@ -53,20 +53,7 @@ body{
     width: 300px;
     border-radius: 10px;
 }
-.anuciantes{
-    display: block;
-    text-align: center;
-    font-family: monospace;
-    padding: 3px;
-}
-.anuciantes p{
-    padding: 3px;
-    text-align: center;
-}
-.anuciantes a{
-    text-decoration: none;
-    color: black;
-}
+
 .list-group a{
     background-color: transparent;
     text-align: center;
@@ -84,7 +71,7 @@ body{
 }
 
 .nav li >a:focus, .nav li >a:hover{
-    background: none;
+    background: #363636;
     color: whitesmoke;
 }
 

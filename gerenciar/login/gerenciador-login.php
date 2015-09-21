@@ -27,7 +27,6 @@ function excluirUsuario($id) {
     return excluir($deletar);
 }
 function editarUsuario($dados) {
-    echo 'sadasd';
     $atualizar = "UPDATE aprendizagem.usuario SET 
             nome = '" . addslashes($dados['nome']) . "',
             email = '" . addslashes($dados['email']) . "',

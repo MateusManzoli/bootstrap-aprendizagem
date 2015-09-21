@@ -29,8 +29,8 @@ $noticias = buscarNoticiasMenuPrincipal();
                             <td><?php echo $noticia['subtitulo'] ?></td>
                             <td><?php echo $noticia['legenda_imagem'] ?></td>
                             <!-- é necessario que o button tenha um name-->
-                            <td><button name="id_noticia" type="submit" class="btn btn-default navbar-btn" value="<?php echo $noticia['id']; ?>">Excluir</button></td>
-                            <td><a href="edicao.php?id=<?php echo $noticia['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
+                            <td><button name="id_noticia" type="submit" class="btn btn-default navbar-btn  glyphicon glyphicon-remove" value="<?php echo $noticia['id']; ?>">Excluir</button></td>
+                            <td><a href="edicao.php?id=<?php echo $noticia['id']; ?>" class="btn btn-default navbar-btn glyphicon glyphicon-pencil">Editar</a></td>
                         </tr>
                     <?php } ?>
                 </table>
