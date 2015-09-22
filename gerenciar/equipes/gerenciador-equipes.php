@@ -1,7 +1,8 @@
 <?php
+
 include_once '../../PDO/conexao.php';
 
-function buscarEquipes(){
+function buscarEquipes() {
     $buscar = "SELECT * FROM aprendizagem.equipe";
     $equipe = pesquisar($buscar);
     return $equipe;
@@ -12,12 +13,13 @@ function buscarEquipe($id) {
     $equipe = pesquisar($buscar);
     return $equipe[0];
 }
+
 function buscarEquipePorPesquisa($pesquisa) {
     // manchete passado no pesquisa nao esta correto pois o nome do formulario de pesquisa era "pesquisa"
     $sql = "select * from aprendizagem.equipe where nome like '%{$pesquisa}%' or conteudo like '%{$pesquisa}%'";
-
     return pesquisar($sql);
 }
+
 function cadastrarEquipe($dados) {
     validarDadosEquipe($dados);
     // faz o texto da inserção com os valores que serao preenchidos publicacao etc...
@@ -40,9 +42,10 @@ function editarEquipe($dados) {
             cidade = '" . addslashes($dados['cidade']) . "',
             presidente = '" . addslashes($dados['presidente']) . "'
             where id = {$dados['id']} ";
-            echo $editar;
+    echo $editar;
     return editar($editar);
 }
+
 
 function excluirEquipe($id) {
     $excluir = "delete from `aprendizagem`.`equipe` where id = $id";
@@ -65,8 +68,45 @@ function validarDadosEquipe($dados) {
     }
 }
 
-function selecionarPatrocinio(){
+function selecionarPatrocinio() {
     $selecionar = "SELECT * FROM aprendizagem.patrocinador";
     $selec = pesquisar($selecionar);
     return $selec;
+}
+
+function inserirPatrocinio($dados) {
+    //verifica se ja existe os dados na tabela, se existi nao cadastra
+    if (verificarRegistros($dados['patrocinador_id'], $dados['equipe_id'])) {   
+        try {
+            throw new Exception("Os dados ja existem em nossos registros");
+        } catch (Exception $ex) {
+            echo $ex->getMessage();
+        }
+    } else {
+        $inserir = " INSERT INTO aprendizagem.equipe_patrocinio SET
+            patrocinador_id = '" . addslashes($dados['patrocinador_id']) . "',
+            equipe_id = '" . addslashes($dados['equipe_id']) . "'
+        ";
+        echo($inserir);
+        //retorna o metodo inserir que contem os valores da variavel
+        return inserir($inserir);
+    }
+}
+
+function verificarRegistros($patrocinador_id,$equipe_id) {
+    $verificar = "select * from aprendizagem.equipe_patrocinio where patrocinador_id = $patrocinador_id && equipe_id = $equipe_id";
+    $verificacao = pesquisar($verificar);
+    return $verificacao;
+}
+
+
+function contratarAtleta($dados) {
+    // faz o texto da inserção com os valores que serao preenchidos publicacao etc...
+    //addslashes permite usar os aspas''(apóstrofo)
+    $contratar = "
+        INSERT INTO aprendizagem.equipe_atleta SET
+           atleta_id = '" . addslashes($dados['atleta_id']) . "',
+           equipe_id = '" . addslashes($dados['equipe_id']) . "'";
+    //retorna o metodo inserir que contem os valores da variavel
+    return inserir($contratar);
 }

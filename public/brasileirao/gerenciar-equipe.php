@@ -2,13 +2,23 @@
 include_once '../../dados/dados-cabecalho.php';
 include_once '../../gerenciar/equipes/gerenciador-equipes.php';
 include_once '../../gerenciar/atletas/gerenciador-atletas.php';
-//delete recebe o valor do hidden || id_usuario valor que receber o id no button
-if (!empty($_POST['delete'])) {
+
+if (!empty($_POST['id_usuario'])) {
     excluirEquipe($_POST['id_usuario']);
+}
+if (!empty($_POST['patrocinador_id'])) {
+    inserirPatrocinio($_POST);
+}    
+
+if(!empty($_POST['atleta_id'])){
+    contratarAtleta($_POST);
 }
 $equipes = buscarEquipes();
 $patrocinadores = selecionarPatrocinio();
 $atletas = buscarAtletas();
+
+
+
 ?>
 <html>
     <link rel="stylesheet" type="text/css" href="../../estilos-paginas/gerenciar-usuarios.css"/>
@@ -17,8 +27,9 @@ $atletas = buscarAtletas();
         <div class="geral" >
             <form method="post" action="gerenciar-equipe.php" >
                 <input type="hidden" name="delete" value="1"/>
+                <input type="hidden" name="patrocinio" value="1"/>
                 <table class="table table-bordered">
-                    <tr style="text-align: center; font-family: monospace; font-size: 20px; ">
+                    <tr style="text-align: center; font-family: monospace; font-size: 20px;">
                         <td>ID</td>
                         <td>Nome</td>
                         <td>cidade</td>
@@ -28,7 +39,8 @@ $atletas = buscarAtletas();
                         <td>Jogadores</td>
                     </tr>
                     <?php foreach ($equipes as $equipe) { ?> 
-                        <tr  style="text-align: center;">
+                        <tr style="text-align: center;">
+                        <input type="hidden" name='equipe_id' id="equipe" value="<?php echo $equipe['id']; ?>">
                             <td><?php echo $equipe['id']; ?></td>
                             <td><?php echo $equipe['nome'] ?></td>
                             <td><?php echo $equipe['cidade'] ?></td>
@@ -50,11 +62,10 @@ $atletas = buscarAtletas();
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                 <h4 class="modal-title">Lista de patrocinadores disponivel</h4>
                                             </div>
-                                            <select name="pagina" id="id" >
+                                            <select name="patrocinador_id" id="patrocinador_id" >
                                                 <option>Patrocinadores</option>
                                                 <?php foreach ($patrocinadores as $patrocinador) { ?>
-                                                    <option value="<?php echo $patrocinador['id']; ?>" > <?= $patrocinador['nome']; // <?= nao precisa dar echo        ?> 
-                                                    </option>
+                                                    <option value="<?php echo $patrocinador['id']; ?>" ><?= $patrocinador['nome']; ?></option>
                                                 <?php } ?>
                                             </select>
                                             <div class="modal-footer">
@@ -79,10 +90,10 @@ $atletas = buscarAtletas();
                                                 <h4 class="modal-title">Atletas disponiveis para sua equipe</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <select name="jogadores" >
+                                                <select name="atleta_id" id="atleta_id">
                                                     <option>Atletas</option>
                                                     <?php foreach ($atletas as $atleta) { ?>
-                                                    <option value="<?php echo $atleta['id']; ?>" > <?= $atleta['nome'];?> <?= $atleta['posicao'];  // <?= nao precisa dar echo ?>
+                                                        <option value="<?php echo $atleta['id']; ?>" > <?= $atleta['nome']; ?> | <?= $atleta['posicao'];  // <?= nao precisa dar echo  ?>
                                                         </option>
                                                     <?php } ?>
                                                 </select>
