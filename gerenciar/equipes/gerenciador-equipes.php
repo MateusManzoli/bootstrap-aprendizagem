@@ -101,12 +101,11 @@ function verificarRegistros($patrocinador_id,$equipe_id) {
 
 
 function contratarAtleta($dados) {
-    // faz o texto da inserção com os valores que serao preenchidos publicacao etc...
-    //addslashes permite usar os aspas''(apóstrofo)
     $contratar = "
         INSERT INTO aprendizagem.equipe_atleta SET
            atleta_id = '" . addslashes($dados['atleta_id']) . "',
            equipe_id = '" . addslashes($dados['equipe_id']) . "'";
-    //retorna o metodo inserir que contem os valores da variavel
+
+    echo $contratar;
     return inserir($contratar);
 }
