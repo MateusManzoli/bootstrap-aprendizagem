@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once '../../gerenciar/tipo-noticia/gerenciar-tipoNoticia.php';
-
+include_once '../../gerenciar/login/gerenciador-login.php';
 $categorias = buscarCategorias();
 ?> 
 <html>
@@ -49,15 +49,17 @@ $categorias = buscarCategorias();
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gerenciar<span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-                            <li><a href="../../public/fale-conosco/contato.php">Fale Conosco</a></li>
                             <?php if (!empty($_SESSION['logado'])) { ?>
                                 <li><a href="../../public/fale-conosco/gerenciar.php">Solicitacoes</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="../../public/usuario/cadastro.php">Cadastre-se</a></li>
                                 <li><a href="../../public/usuario/gerenciar.php">Gerenciar Usuario</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="../../public/noticias/cadastro.php">Cadastrar Noticia</a></li>
+                                 <li><a href="../../public/noticias/cadastro.php">Cadastrar Noticia</a></li>
                                 <li><a href="../../public/noticias/gerenciar.php">Gerenciar Noticias</a></li>
+                            <?php }else{ ?>
+                                <li><a href="../../public/fale-conosco/contato.php">Fale Conosco</a></li>
+                                <li><a href="../../public/usuario/cadastro.php">Cadastre-se</a></li>
                             <?php } ?>
                         </ul>
 

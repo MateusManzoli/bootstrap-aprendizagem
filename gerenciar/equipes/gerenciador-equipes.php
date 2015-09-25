@@ -75,6 +75,7 @@ function selecionarPatrocinio() {
 }
 
 function inserirPatrocinio($dados) {
+    print_r($dados);
     //verifica se ja existe os dados na tabela, se existi nao cadastra
     if (verificarRegistros($dados['patrocinador_id'], $dados['equipe_id'])) {   
         try {

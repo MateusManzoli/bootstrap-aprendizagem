@@ -28,11 +28,12 @@ $equipes = buscarEquipes();
                         <td><?php echo $equipe['id']; ?></td>
                         <td><?php echo $equipe['nome'] ?></td>
                         <td><?php echo $equipe['cidade'] ?></td>
-                        <td><?php echo $equipe['presidente'] ?></td>  
+                        <td><?php echo $equipe['presidente'] ?></td>
+                        <?php $_SESSION['equipe_nome'] = $equipe['nome'] ?>
                         <!-- é necessario que o button tenha um name-->
                         <td><button name="excluir" type="submit" class="btn btn-default navbar-btn" value="<?php echo $equipe['id']; ?>">Excluir</button></td>
                         <td><a href="editar-equipe.php?id=<?php echo $equipe['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
-                        <td><a href="../gerenciar-equipes-brasileirao/atletasEpatrocinio.php?equipe_id=<?php echo $equipe['id']; ?> && equipe_nome=<?= $equipe['nome']?>" class="btn btn-default navbar-btn">Gerenciar</a></td>
+                        <td><a href="../gerenciar-equipes-brasileirao/atletasEpatrocinio.php?equipe_id=<?php echo $equipe['id']; ?>&equipe_nome=<?= $_SESSION['equipe_nome']?>" class="btn btn-default navbar-btn">Gerenciar</a></td>
                         <?php } ?>
                 </table>
             </form>

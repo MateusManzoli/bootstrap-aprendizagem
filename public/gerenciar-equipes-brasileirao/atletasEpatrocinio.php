@@ -2,7 +2,6 @@
 include_once '../../dados/dados-cabecalho.php';
 include_once '../../gerenciar/atletas/gerenciador-atletas.php';
 include_once '../../gerenciar/equipes/gerenciador-equipes.php';
-include_once '../../dados/oculta-erros.php';
 
 if (!empty($_POST['patrocinador_id']) && is_numeric($_POST['patrocinador_id'])) {
     inserirPatrocinio($_POST);
@@ -13,17 +12,18 @@ if (!empty($_POST['atleta_id']) && is_numeric($_POST['atleta_id'])) {
 $patrocinadores = selecionarPatrocinio();
 $atletas = buscarAtletas();
 ?>
+
 <html>
     <?php include_once '../../dados/dados-head.php'; ?>
     <link rel="stylesheet" type="text/css" href="../../estilos-paginas/atletasEpatrocinio.css"/>
     <body>
         <?php include_once '../../dados/dados-cabecalho.php'; ?>              
         <div class="geral">
-            <h3><?= $_GET['equipe_nome']; ?></h3>
+            <h3><?= $_SESSION['equipe_nome'] ?></h3>
             <form class="form-horizontal-a" method="post" action="atletasEpatrocinio.php">  
 
-                <input type="hidden" name='equipe_id' id="equipe_id" value="<?= $_GET['equipe_id']; ?>">
-                <input type="hidden" name='equipe_nome' id="equipe_nome" value="<?= $_GET['equipe_nome']; ?>">
+                <input type="hidden" name='equipe_id' id="equipe_id" value="<?= $_REQUEST['equipe_id']; ?>">
+                <input type="hidden" name='equipe_nome' id="equipe_nome" value="<?= $_REQUEST['equipe_nome']; ?>">
               
                 <legend><h2>Selecione o patrocinador</h2></legend>
                 <div class="form-group-a">
@@ -44,8 +44,8 @@ $atletas = buscarAtletas();
             </form>
             
             <form class="form-horizontal-a" method="post" action="atletasEpatrocinio.php">
-                <input type="hidden" name='equipe_id' id="equipe_id" value="<?= $_GET['equipe_id']; ?>">
-                <input type="hidden" name='equipe_nome' id="equipe_nome" value="<?= $_GET['equipe_nome']; ?>">
+                <input type="hidden" name='equipe_id' id="equipe_id" value="<?= $_REQUEST['equipe_id']; ?>">
+                <input type="hidden" name='equipe_nome' id="equipe_nome" value="<?= $_REQUEST['equipe_nome']; ?>">
                 <legend><h2>Contratar atleta</h2></legend>
                 <div class="form-group-a">
                     <div class="col-sm-10-a">
