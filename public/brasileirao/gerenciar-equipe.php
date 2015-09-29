@@ -22,9 +22,9 @@ $equipes = buscarEquipes();
                         <td>presidente</td>
                         <td colspan="3">Gerenciar</td>
                     </tr>
-                        <?php foreach ($equipes as $equipe) { ?>
-                        <tr style="text-align: center;">
-                        <input type="hidden" name='equipe_id' id="equipe" value="<?php echo $equipe['id']; ?>">
+                    <?php foreach ($equipes as $equipe) { ?>
+                        <tr style="text-align:center;" >
+                        <input type="hidden" name="equipe_id" id="equipe" value="<?php echo $equipe['id']; ?>">
                         <td><?php echo $equipe['id']; ?></td>
                         <td><?php echo $equipe['nome'] ?></td>
                         <td><?php echo $equipe['cidade'] ?></td>
@@ -33,8 +33,8 @@ $equipes = buscarEquipes();
                         <!-- é necessario que o button tenha um name-->
                         <td><button name="excluir" type="submit" class="btn btn-default navbar-btn" value="<?php echo $equipe['id']; ?>">Excluir</button></td>
                         <td><a href="editar-equipe.php?id=<?php echo $equipe['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
-                        <td><a href="../gerenciar-equipes-brasileirao/atletasEpatrocinio.php?equipe_id=<?php echo $equipe['id']; ?>&equipe_nome=<?= $_SESSION['equipe_nome']?>" class="btn btn-default navbar-btn">Gerenciar</a></td>
-                        <?php } ?>
+                        <td><a href="../gerenciar-equipes-brasileirao/atletasEpatrocinio.php?equipe_id=<?php echo $equipe['id']; ?>&equipe_nome=<?= $_SESSION['equipe_nome'] ?>" class="btn btn-default navbar-btn">Gerenciar</a></td>
+                    <?php } ?>
                 </table>
             </form>
         </div>

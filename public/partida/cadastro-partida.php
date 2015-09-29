@@ -2,9 +2,10 @@
 include_once '../../gerenciar/fale-conosco/gerenciador-faleConosco.php';
 include_once '../../gerenciar/partida/gerenciar-partida.php';
 
-if ($_POST['rodada']) {
-    cadastrarRodada($_POST);
+if (!empty($_POST['rodada'])) {
+    cadastrarPartida($_POST);
 }
+
 ?>
 <html>
     <?php include_once '../../dados/dados-head.php'; ?>
@@ -13,13 +14,24 @@ if ($_POST['rodada']) {
         <?php include_once '../../dados/dados-cabecalho.php'; ?>
         <form class="form-horizontal-a" method="post" action="cadastro-partida.php">
             <input type="hidden" name="rodada" value="1">
-            <legend>Dados da Rodada</legend>
-            <div class="form-group-a">
+            <h3>Dados da Rodada</h3>
+           <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Rodada</label>
                 <div class="col-sm-10-a">
-                    <input name="rodada_id" type="text" class="form-control" maxlength="60" placeholder="Rodada" >
+                    <input name="rodada_id" type="text" class="form-control" maxlength="60" placeholder="Rodada">
                 </div>
-            </div>
+            </div> 
+
+<!--             <div class="form-group-a">
+                <label  class="col-sm-2 control-label">Rodada</label>
+                <div class="col-sm-10-a">
+                    <select name="local" id="local" >
+                        <optgroup label="local">
+                            <option> <?/= rodada();?> </option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div> -->
 
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Local</label>
@@ -37,14 +49,12 @@ if ($_POST['rodada']) {
                 </div>
             </div>
 
-            <div class="form-group-a" required>
+            <div class="form-group-a">
                 <label for="inputEmail3" class="col-sm-2 control-label">Data</label><br>
                 <div class="col-sm-10-a">
                     <input name="data" type="text" class="form-control" placeholder="DD/MM/AAAA">
                 </div>
             </div>
-
-
 
             <div class="form-group-b">
                 <div class="col-sm-offset-2 col-sm-10-a">

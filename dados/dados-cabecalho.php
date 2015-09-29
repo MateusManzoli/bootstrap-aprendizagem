@@ -33,6 +33,13 @@ $categorias = buscarCategorias();
                             <li role="separator" class="divider"></li>
                             <li><a href="../../public/brasileirao/cadastro-atleta.php">Cadastro Atleta</a></li>
                             <li><a href="../../public/brasileirao/gerenciar-atleta.php">Gerenciar Atletas</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="../../public/rodada/cadastro-rodada.php">Cadastrar Rodada</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="../../public/partida/cadastro-partida.php">Cadastrar Partida</a></li>
+                            <li><a href="../../public/partida/gerenciar.php">Gerenciar Partida</a></li>
+
+
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -55,9 +62,9 @@ $categorias = buscarCategorias();
                                 <li><a href="../../public/usuario/cadastro.php">Cadastre-se</a></li>
                                 <li><a href="../../public/usuario/gerenciar.php">Gerenciar Usuario</a></li>
                                 <li role="separator" class="divider"></li>
-                                 <li><a href="../../public/noticias/cadastro.php">Cadastrar Noticia</a></li>
+                                <li><a href="../../public/noticias/cadastro.php">Cadastrar Noticia</a></li>
                                 <li><a href="../../public/noticias/gerenciar.php">Gerenciar Noticias</a></li>
-                            <?php }else{ ?>
+                            <?php } else { ?>
                                 <li><a href="../../public/fale-conosco/contato.php">Fale Conosco</a></li>
                                 <li><a href="../../public/usuario/cadastro.php">Cadastre-se</a></li>
                             <?php } ?>

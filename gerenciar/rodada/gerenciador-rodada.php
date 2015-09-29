@@ -15,7 +15,7 @@ function buscarRodada($id) {
 }
 
 function buscarRodadaPorPesquisa($pesquisa) {
-    $sql = "select * from aprendizagem.rodada where numero like '%{$pesquisa}%' or comentario like '%{$pesquisa}%'";
+    $sql = "select * from aprendizagem.rodada where numero like '%{$pesquisa}%'";
     return pesquisar($sql);
 }
 
@@ -23,9 +23,7 @@ function cadastrarRodada($dados) {
     validarDadosRodada($dados);
     $cadastrar = "
         INSERT INTO aprendizagem.rodada SET
-            numero = '" . addslashes($dados['nome']) . "',
-            comentario = '" . addslashes($dados['presidente']) . "'
-        ";
+            numero = '" . addslashes($dados['numero']) . "'";
     echo $cadastrar;
     return inserir($cadastrar);
 }
@@ -33,8 +31,7 @@ function cadastrarRodada($dados) {
 function editarRodada($dados) {
     validarDadosRodada($dados);
     $editar = "UPDATE aprendizagem.rodada SET 
-            numero = '" . addslashes($dados['rodada_id']) . "',
-            comentario = '" . addslashes($dados['mandante']) . "'
+            numero = '" . addslashes($dados['numero']) . "'
             where id = {$dados['id']} ";
     echo $editar;
     return editar($editar);
@@ -46,13 +43,7 @@ function excluirRodada($id) {
 }
 
 function validarDadosRodada($dados) {
-    if (empty($dados)) {
-        throw new Exception('Os campos precisam ser preenchidos');
-    }
-    if (empty($dados['partida_id'])) {
+    if (empty($dados['numero'])) {
         throw new Exception('O campo numero precisa ser preenchido');
-    }
-    if (empty($dados['equipe_id'])) {
-        throw new Exception('O campo comentario precisa ser preenchido');
     }
 }
