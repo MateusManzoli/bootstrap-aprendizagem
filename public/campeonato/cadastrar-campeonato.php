@@ -22,22 +22,12 @@ if ($_POST['campeonato']) {
             </div> 
 
                        <div class="form-group-a">
-                <label  class="col-sm-2 control-label">Nome</label>
+                <label  class="col-sm-2 control-label">Rodadas</label>
                 <div class="col-sm-10-a">
                     <input name="quantidade" type="text" class="form-control" maxlength="60" placeholder="Quantidade de Rodadas">
                 </div>
                        </div>
 
-            <div class="form-group-a">
-                <label  class="col-sm-2 control-label">Rodadas</label>
-                <div class="col-sm-10-a">
-                    <select name="estado" id="id_estados" >
-                        <optgroup label="Quantidade de rodadas">
-                        <option value=""></option>
-                    </optgroup>
-                    </select>
-                </div>
-            </div>
             
             <div class="form-group-b">
                 <div class="col-sm-offset-2 col-sm-10-a">

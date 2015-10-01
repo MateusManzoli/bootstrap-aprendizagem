@@ -54,7 +54,7 @@ function validarUsuarios($dados) {
         throw new Exception('O campo data de nascimento precisa ser preenchido');
     }
 }
-function validarLogin($email, $senha,$nivel) {
+function validarLogin($email, $senha) {
 //prepara o texto para ir pro banco de dados
     $login = "select * from aprendizagem.usuario where email = '" . $email . "' && senha ='" . md5($senha) . "'";
 //a variavel logar recebe o metodo pesquisar que envia o texto do login para o banco de dados

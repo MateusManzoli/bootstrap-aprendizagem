@@ -23,6 +23,7 @@ function cadastrarRodada($dados) {
     validarDadosRodada($dados);
     $cadastrar = "
         INSERT INTO aprendizagem.rodada SET
+        campeonato = '" . addslashes($dados['campeonato']) . "',
             numero = '" . addslashes($dados['numero']) . "'";
     echo $cadastrar;
     return inserir($cadastrar);

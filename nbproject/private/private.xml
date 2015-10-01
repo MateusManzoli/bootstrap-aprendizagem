@@ -18,10 +18,8 @@
             <file>file:/C:/Users/mateus/desenv/bootstrap-aprendizagem/public/contato.php</file>
         </group>
         <group>
-            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/gerenciar/partida/gerenciar-partida.php</file>
-            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/partida/gerenciar.php</file>
-            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/partida/editar.php</file>
-            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/usuario/edicao.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/campeonato/gerenciar.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/campeonato/cadastrar-campeonato.php</file>
         </group>
     </open-files>
 </project-private>

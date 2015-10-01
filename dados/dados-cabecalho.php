@@ -26,6 +26,7 @@ $categorias = buscarCategorias();
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brasileirao<span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <?php if (!empty($_SESSION['logado'])) { ?>
                             <li><a href="#">Rodada</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="../../public/brasileirao/cadastro-equipe.php">Cadastro Equipe</a></li>
@@ -34,11 +35,24 @@ $categorias = buscarCategorias();
                             <li><a href="../../public/brasileirao/cadastro-atleta.php">Cadastro Atleta</a></li>
                             <li><a href="../../public/brasileirao/gerenciar-atleta.php">Gerenciar Atletas</a></li>
                             <li role="separator" class="divider"></li>
+                            <li><a href="../../public/campeonato/cadastrar-campeonato.php">Cadastrar Campeonato</a></li>
+                            <li role="separator" class="divider"></li>
                             <li><a href="../../public/rodada/cadastro-rodada.php">Cadastrar Rodada</a></li>
                             <li><a href="../../public/rodada/gerenciar.php">Gerenciar Rodada</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="../../public/partida/cadastro-partida.php">Cadastrar Partida</a></li>
                             <li><a href="../../public/partida/gerenciar.php">Gerenciar Partida</a></li>
+                            <?php } else { ?>
+                            <li><a href="../../public/brasileirao/cadastro-equipe.php">Cadastro Equipe</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="../../public/brasileirao/cadastro-atleta.php">Cadastro Atleta</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="../../public/campeonato/cadastrar-campeonato.php">Cadastrar Campeonato</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="../../public/rodada/cadastro-rodada.php">Cadastrar Rodada</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="../../public/partida/cadastro-partida.php">Cadastrar Partida</a></li>
+                                <?php } ?>
                         </ul>
                     </li>
 
