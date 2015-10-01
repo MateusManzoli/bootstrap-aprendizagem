@@ -18,9 +18,10 @@
             <file>file:/C:/Users/mateus/desenv/bootstrap-aprendizagem/public/contato.php</file>
         </group>
         <group>
-            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/gerenciar/partida-equipe/gerenciador-partidaEquipe.php</file>
-            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/partida_equipe/cadastrar_partidaEquipe.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/gerenciar/partida/gerenciar-partida.php</file>
             <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/partida/gerenciar.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/partida/editar.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/usuario/edicao.php</file>
         </group>
     </open-files>
 </project-private>

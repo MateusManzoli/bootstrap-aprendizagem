@@ -1,10 +1,22 @@
 <?php
 include_once '../../gerenciar/fale-conosco/gerenciador-faleConosco.php';
 include_once '../../gerenciar/partida/gerenciar-partida.php';
+include_once '../../gerenciar/rodada/gerenciador-rodada.php';
 
-if (!empty($_POST['rodada'])) {
-    cadastrarPartida($_POST);
+
+
+try {
+    $execute = [];
+    if (!empty($_POST['cadastrarRodada'])) {
+        cadastrarPartida($_POST);
+        $execute["mensagem"] = "Partida cadastrada com êxito";
+        $execute["tipo"] = "alert-success";
+    }
+} catch (Exception $e) {
+    $execute['mensagem'] = $e->getMessage();
+    $execute['tipo'] = "alert-danger";
 }
+$rodadas = buscarRodadas();
 
 ?>
 <html>
@@ -13,26 +25,26 @@ if (!empty($_POST['rodada'])) {
     <body>
         <?php include_once '../../dados/dados-cabecalho.php'; ?>
         <form class="form-horizontal-a" method="post" action="cadastro-partida.php">
-            <input type="hidden" name="rodada" value="1">
-            <h3>Dados da Rodada</h3>
-           <div class="form-group-a">
-                <label  class="col-sm-2 control-label">Rodada</label>
-                <div class="col-sm-10-a">
-                    <input name="rodada_id" type="text" class="form-control" maxlength="60" placeholder="Rodada">
+                        <input type="hidden" name="cadastrarRodada" value="1">
+            <?php if (!empty($execute)) { ?>
+                <div class="alert <?php echo $execute['tipo']; ?>">
+                    <?php echo $execute['mensagem']; ?>
                 </div>
-            </div> 
-
-<!--             <div class="form-group-a">
-                <label  class="col-sm-2 control-label">Rodada</label>
+            <?php } ?>
+            <h3>Dados da Rodada</h3>
+            <div class="form-group-a">
+                <label  class="col-sm-2 control-label">Local</label>
                 <div class="col-sm-10-a">
-                    <select name="local" id="local" >
+                    <select name="rodada_id" id="rodada_id" >
                         <optgroup label="local">
-                            <option> <?/= rodada();?> </option>
+                            <?php foreach($rodadas as $rodada) { ?>
+                            <option value="<?php echo $rodada['id']?>"><?php echo $rodada['numero']?></option>
+                        <?php } ?>
                         </optgroup>
                     </select>
                 </div>
-            </div> -->
-
+            </div>
+            
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Local</label>
                 <div class="col-sm-10-a">

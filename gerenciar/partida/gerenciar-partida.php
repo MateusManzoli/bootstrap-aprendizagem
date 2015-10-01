@@ -30,20 +30,27 @@ function cadastrarPartida($dados) {
             rodada_id = '" . addslashes($dados['rodada_id']) . "',
             local = '" . addslashes($dados['local']) . "',
             data = '" . $data->format('Y-m-d') . "'";
-
     echo $cadastrar;
     //retorna o metodo inserir que contem os valores da variavel
     return inserir($cadastrar);
 }
+
+function editarPartida($dados) {
+    $atualizar = "UPDATE aprendizagem.partida SET 
+            rodada_id = '" . addslashes($dados['rodada_id']) . "',
+            local = '" . addslashes($dados['local']) . "',
+            data = '" . addslashes($dados['data']) . "'
+            where id = {$dados['id']} ";
+    return editar($atualizar);
+}
+
 
 function validarDadosPartida($dados) {
     // empty 'vazio'
     if (empty($dados)) {
         throw new Exception('Os campos precisam ser preenchidos');
     }
-    if (empty($dados['rodada_id'])) {
-        throw new Exception('O campo rodada_id precisa ser preenchido');
-    }
+
     if (empty($dados['local'])) {
         throw new Exception('O campo local precisa ser preenchido');
     }

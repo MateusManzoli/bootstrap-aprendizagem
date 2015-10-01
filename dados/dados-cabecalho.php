@@ -35,21 +35,10 @@ $categorias = buscarCategorias();
                             <li><a href="../../public/brasileirao/gerenciar-atleta.php">Gerenciar Atletas</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="../../public/rodada/cadastro-rodada.php">Cadastrar Rodada</a></li>
+                            <li><a href="../../public/rodada/gerenciar.php">Gerenciar Rodada</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="../../public/partida/cadastro-partida.php">Cadastrar Partida</a></li>
                             <li><a href="../../public/partida/gerenciar.php">Gerenciar Partida</a></li>
-
-
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sua Região <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Centro-Oeste</a></li>
-                            <li><a href="#">Nordeste</a></li>
-                            <li><a href="#">Norte</a></li>
-                            <li><a href="#">Sul</a></li>
-                            <li><a href="#">Sudeste</a></li>
                         </ul>
                     </li>
 
