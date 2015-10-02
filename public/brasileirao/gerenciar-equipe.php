@@ -17,6 +17,7 @@ $equipes = buscarEquipes();
                 <table class="table table-bordered">
                     <tr style="text-align: center; font-family: monospace; font-size: 20px;">
                         <td>ID</td>
+                        <td>Esporte</td>
                         <td>Nome</td>
                         <td>cidade</td>
                         <td>presidente</td>
@@ -26,6 +27,15 @@ $equipes = buscarEquipes();
                         <tr style="text-align:center;" >
                         <input type="hidden" name="equipe_id" id="equipe" value="<?php echo $equipe['id']; ?>">
                         <td><?php echo $equipe['id']; ?></td>
+                        <td>
+                            <?php
+                            if (empty($equipe['esporte'])) {
+                                echo '-';
+                            } else {
+                                echo $equipe['esporte'];
+                            }
+                            ?>
+                        </td>
                         <td><?php echo $equipe['nome'] ?></td>
                         <td><?php echo $equipe['cidade'] ?></td>
                         <td><?php echo $equipe['presidente'] ?></td>
@@ -34,11 +44,11 @@ $equipes = buscarEquipes();
                         <td><button name="excluir" type="submit" class="btn btn-default navbar-btn" value="<?php echo $equipe['id']; ?>">Excluir</button></td>
                         <td><a href="editar-equipe.php?id=<?php echo $equipe['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
                         <td><a href="../gerenciar-equipes-brasileirao/atletasEpatrocinio.php?equipe_id=<?php echo $equipe['id']; ?>&equipe_nome=<?= $_SESSION['equipe_nome'] ?>" class="btn btn-default navbar-btn">Gerenciar</a></td>
-                    <?php } ?>
+<?php } ?>
                 </table>
             </form>
         </div>
-        <?php include_once '../../dados/dados-menulateral.php'; ?>
-        <?php include_once '../../dados/dados-rodape.php'; ?>
+<?php include_once '../../dados/dados-menulateral.php'; ?>
+<?php include_once '../../dados/dados-rodape.php'; ?>
     </body>
 </html>

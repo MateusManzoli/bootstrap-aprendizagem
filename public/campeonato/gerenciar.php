@@ -4,10 +4,10 @@ include_once '../../gerenciar/campeonato/gerenciador-campeonato.php';
 
 try {
     $execute = [];
-     if ($_POST['campeonato']) {
-         excluirCampeonato($_POST['id_partida']);
-        
-         $execute["mensagem"] = "Partida excluida com êxito";
+    if ($_POST['campeonato']) {
+        excluirCampeonato($_POST['id_campeonato']);
+
+        $execute["mensagem"] = "Campeonato excluido com êxito";
         $execute["tipo"] = "alert-success";
     }
 } catch (Exception $e) {
@@ -42,8 +42,8 @@ $campeonatos = buscarCampeonatos();
                             <td><?php echo $campeonato['quantidade_rodada'] ?></td>
                             <?php $_SESSION['id'] = $campeonato['id'] ?>
                             <!-- é necessario que o button tenha um name-->
-                            <td><a href="../partida/editar.php?id=<?php echo $campeonato['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
-                            <td><a href="../partida_equipe/cadastrar_partidaEquipe.php?rodada_id=<?= $campeonato['rodada_id']; ?>&partida_id=<?= $_SESSION['id'] ?>" class="btn btn-default navbar-btn">Gerenciar</a></td>
+                            <td><button name="id_campeonato" type="submit" class="btn btn-default navbar-btn" value="<?php echo $campeonato['id']; ?>">Excluir</button></td>
+                            <td><a href="../campeonato/editar.php?id=<?php echo $campeonato['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
                         </tr>
                     <?php } ?>
                 </table>

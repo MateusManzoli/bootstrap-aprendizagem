@@ -2,12 +2,12 @@
 
 include_once '../../PDO/conexao.php';
 
-function buscarEquipes() {
-    $buscar = "SELECT * FROM aprendizagem.equipe";
-    $equipe = pesquisar($buscar);
-    return $equipe;
+function buscarEsportes() {
+    $buscar = "SELECT * FROM aprendizagem.esporte";
+    $esporte = pesquisar($buscar);
+    return $esporte;
 }
-
+/*
 function buscarEquipe($id) {
     $buscar = "select * from aprendizagem.equipe where id = $id";
     $equipe = pesquisar($buscar);
@@ -26,7 +26,6 @@ function cadastrarEquipe($dados) {
     //addslashes permite usar os aspas''(apóstrofo)
     $cadastrar = "
         INSERT INTO aprendizagem.equipe SET
-            esporte = '". addslashes($dados['esporte_id']) ."',
             nome = '" . addslashes($dados['nome']) . "',
             cidade = '" . addslashes($dados['cidade']) . "',
             presidente = '" . addslashes($dados['presidente']) . "'
@@ -110,4 +109,4 @@ function contratarAtleta($dados) {
 
     echo $contratar;
     return inserir($contratar);
-}
+}*/

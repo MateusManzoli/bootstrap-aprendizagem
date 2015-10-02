@@ -1,7 +1,5 @@
 <?php
-
 include_once '../../PDO/conexao.php';
-
 function buscarPartidas() {
     $buscar = "SELECT * FROM aprendizagem.partida";
     $partida = pesquisar($buscar);

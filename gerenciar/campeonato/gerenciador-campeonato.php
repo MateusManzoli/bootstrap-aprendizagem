@@ -19,6 +19,7 @@ function buscarCampeonatoPorPesquisa($pesquisa) {
 }
 
 function cadastrarCampeonato($dados) {
+    validarDadosCampeonato($dados);
     $cadastrar = "
         INSERT INTO aprendizagem.campeonato SET
             nome = '" . addslashes($dados['nome']) . "',
@@ -28,7 +29,7 @@ function cadastrarCampeonato($dados) {
 }
 
 function editarCampeonato($dados) {
-    validarDadosPartidaEquipe($dados);
+    validarDadosCampeonato($dados);
     $editar = "UPDATE aprendizagem.campeonato SET 
             nome = '" . addslashes($dados['nome']) . "',
             quantidade_rodada = '" . addslashes($dados['quantidade']) . "'
@@ -40,4 +41,15 @@ function editarCampeonato($dados) {
 function excluirCampeonato($id) {
     $excluir = "delete from `aprendizagem`.`campeonato` where id = $id";
     return excluir($excluir);
+}
+
+
+function validarDadosCampeonato($dados) {
+    if (empty($dados['nome'])) {
+        throw new Exception('O campo nome precisa ser preenchido');
+    }
+    
+        if (empty($dados['quantidade'])) {
+        throw new Exception('O campo quantidade(rodada) precisa ser preenchido');
+    }
 }

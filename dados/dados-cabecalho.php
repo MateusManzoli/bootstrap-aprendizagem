@@ -36,6 +36,7 @@ $categorias = buscarCategorias();
                             <li><a href="../../public/brasileirao/gerenciar-atleta.php">Gerenciar Atletas</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="../../public/campeonato/cadastrar-campeonato.php">Cadastrar Campeonato</a></li>
+                            <li><a href="../../public/campeonato/gerenciar.php">Gerenciar Campeonato</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="../../public/rodada/cadastro-rodada.php">Cadastrar Rodada</a></li>
                             <li><a href="../../public/rodada/gerenciar.php">Gerenciar Rodada</a></li>

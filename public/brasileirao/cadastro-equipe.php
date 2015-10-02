@@ -1,20 +1,23 @@
 
 <?php
 include_once '../../gerenciar/equipes/gerenciador-equipes.php';
- try {
-  $execute = [];
-  // post armazena os dados
-  // se post existir ele ira cadastrar as noticias,
-  if ($_POST['publicar']) {
-      cadastrarEquipe($_POST);
+include_once '../../gerenciar/esporte/gerenciar-esporte.php';
+try {
+    $execute = [];
+    // post armazena os dados
+    // se post existir ele ira cadastrar as noticias,
+    if ($_POST['publicar']) {
+        cadastrarEquipe($_POST);
 
-  $execute["mensagem"] = "Cadastro de atleta realizado";
-  $execute["tipo"] = "alert-success";
-  }
-  } catch (Exception $e) {
-  $execute['mensagem'] = $e->getMessage();
-  $execute['tipo'] = "alert-danger";
-  } 
+        $execute["mensagem"] = "Cadastro de atleta realizado";
+        $execute["tipo"] = "alert-success";
+    }
+} catch (Exception $e) {
+    $execute['mensagem'] = $e->getMessage();
+    $execute['tipo'] = "alert-danger";
+}
+
+$esportes = buscarEsportes();
 ?>
 <html>
     <?php include_once '../../dados/dados-head.php'; ?>
@@ -29,7 +32,19 @@ include_once '../../gerenciar/equipes/gerenciador-equipes.php';
                     </div>
                 <?php } ?>
                 <input type="hidden" name="publicar" value="1">
-                <legend>Dados da Equipe</legend>
+                <h3>Dados da Equipe</h3>
+
+                <div class="col-sm-5-a">
+                    <label  class="col-sm-2 control-label">Esporte</label>
+                    <select name="esporte_id" id="esporte_id">    
+                        <optgroup label="esportes">
+                            <?php foreach ($esportes as $esporte) { ?>
+                                <option value="<?= $esporte['id'] ?>"><?= $esporte['nome']; ?></option>
+                            <?php } ?>
+                        </optgroup>
+                    </select>
+                </div>
+
                 <div class="form-group-a">
                     <label  class="col-sm-2 control-label">Nome</label>
                     <div class="col-sm-10-a">

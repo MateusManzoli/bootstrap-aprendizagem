@@ -1,8 +1,17 @@
 <?php
+
 include_once '../../PDO/conexao.php';
 
 function buscarPartidaEquipes() {
-    $buscar = "SELECT * FROM aprendizagem.partida_equipe";
+    $buscar = "SELECT pa.*,
+eqm.nome AS 'equipe_mandante_nome', eqm.cidade as 'equipe_mandante_cidade',
+eqv.nome AS 'equipe_visitante_nome', eqv.cidade as 'equipe_visitante_cidade'
+FROM aprendizagem.partida pa
+LEFT JOIN aprendizagem.partida_equipe pem ON ( pem.partida_id = pa.id AND pem.mandante = 1)
+LEFT JOIN aprendizagem.partida_equipe pev ON ( pev.partida_id = pa.id AND pev.mandante = 0)
+LEFT JOIN aprendizagem.equipe eqm ON (eqm.id = pem.equipe_id ) 
+LEFT JOIN aprendizagem.equipe eqv ON (eqv.id = pev.equipe_id ) 
+";
     $rodada = pesquisar($buscar);
     return $rodada;
 }
@@ -22,7 +31,7 @@ function tratarCadastroPartidaEquipe($dados) {
 
     $partidas = array(
         'casa' => array(
-            'partida_id' => $dados['partida_id'] ,
+            'partida_id' => $dados['partida_id'],
             'equipe_id' => $dados['casa_equipe_id'],
             'mandante' => 1,
         ),
@@ -33,7 +42,7 @@ function tratarCadastroPartidaEquipe($dados) {
         )
     );
     foreach ($partidas as $partida) {
-     cadastrarPartidaEquipe($partida);
+        cadastrarPartidaEquipe($partida);
     }
 }
 
@@ -52,7 +61,6 @@ function excluirPartidaEquipe($id) {
     return excluir($excluir);
 }
 
-
 function editarPartidaEquipe($dados) {
     validarDadosPartidaEquipe($dados);
     $editar = "UPDATE aprendizagem.partida_equipe SET 
@@ -68,12 +76,12 @@ function validarDadosPartidaEquipe($dados) {
     if (empty($dados['partida'])) {
         throw new Exception('O campo partida(id) precisa ser preenchido');
     }
-    
-        if (empty($dados['equipe'])) {
+
+    if (empty($dados['equipe'])) {
         throw new Exception('O campo equipe(id) precisa ser preenchido');
     }
-    
-        if (empty($dados['mandante'])) {
+
+    if (empty($dados['mandante'])) {
         throw new Exception('O campo mandante mandante ser preenchido');
     }
 }
