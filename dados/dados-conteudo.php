@@ -29,15 +29,5 @@ if (isset($_POST['pesquisa'])) {
         <?php } ?> 
     </div>
 
-
-
-
-    <div class="glb-bloco shopping-horizontal" >
-        <div class="glb-grid-12">
-            <script type="text/javascript">globo_shop_slot = "g1/home";
-                globo_color_text = "484848";</script>
-            <script type="text/javascript" src="http://vitrines.globo.com/vitrine/show_shop.js"></script>
-        </div>
-    </div>
-    <div id="banner_floating" class="tag-manager-publicidade-container"></div> 
 </div>
+

@@ -74,7 +74,7 @@ try {
                 <label  class="col-sm-2 control-label">Estado</label>
                 <div class="col-sm-10-a">
                     <select name="estado" id="id_estados" >
-                        <option>Escolha o Estado</option>
+                        <optgroup label="Escolha o Estado">
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
                         <option value="AP">Amapá</option>
@@ -102,6 +102,7 @@ try {
                         <option value="SP">São Paulo</option>
                         <option value="SE">Sergipe</option>
                         <option value="TO">Tocantis</option>
+                    </optgroup>
                     </select>
                 </div>
             </div>
