@@ -7,7 +7,7 @@ body{
     text-align: left;
     float: left;
     padding-top: 5%;
-    padding-left: 2%;
+    padding-left: 1%;
     padding-right: 1%;
 }
 .noticias a{
@@ -28,6 +28,7 @@ body{
 }
 .menulateral{
     padding-top: 5%;
+    padding-left: 4%;
     padding-right: 0.5%;
     float: right;
 }

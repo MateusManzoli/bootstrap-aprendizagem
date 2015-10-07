@@ -35,7 +35,7 @@ $rodadas = buscarRodadas();
                         <td colspan="2">Gerenciar</td>
                     </tr>
                     <?php foreach ($rodadas as $rodada) { ?> 
-                        <tr>
+                    <tr style="text-align: center;">
                             <td><?php echo $rodada['id']; ?></td>
                             <td><?php echo $rodada['numero'] ?></td>
                             <!-- é necessario que o button tenha um name-->

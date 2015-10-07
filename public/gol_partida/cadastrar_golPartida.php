@@ -1,6 +1,8 @@
 <?php
 include_once '../../gerenciar/fale-conosco/gerenciador-faleConosco.php';
 include_once '../../gerenciar/partida-gol/gerenciador_partidaGol.php';
+include_once '../../gerenciar/atletas/gerenciador-atletas.php';
+
 try {
     $execute = [];
     // post armazena os dados
@@ -15,6 +17,7 @@ try {
     $execute['mensagem'] = $e->getMessage();
     $execute['tipo'] = "alert-danger";
 }
+$atletas = buscarAtletaPorEquipe($_REQUEST['equipe_id']);
 ?>
 <html>
     <?php include_once '../../dados/dados-head.php'; ?>
@@ -28,45 +31,38 @@ try {
                 </div>
             <?php } ?>
             <input type="hidden" name="partida" value="1">
-            <h3>Gol</h3>
+            <input type="hidden" name="equipe_id" value="<?php $_REQUEST['equipe_id'];?>">
+            <h3>Cadastrar Gol para a equipe <?= $_REQUEST['equipe_nome']; ?></h3>
 
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Partida</label>
                 <div class="col-sm-10-a">
-                    <input name="partida_id" type="text" class="form-control" maxlength="60" value="<?= $_REQUEST['partida_id'] ?>" disabled>
+                    <input name="partida_id" type="text" class="form-control" maxlength="60" value="<?= $_REQUEST['partida_id'] ?>" readonly >
                 </div>
             </div>
-
-            <div class="form-group-a">
-                <label  class="col-sm-2 control-label">Equipe</label>
-                <div class="col-sm-10-a">
-                    <input name="equipe_nome" type="text" class="form-control" maxlength="60" value="<?= $_REQUEST['equipe_nome'] ?>" disabled>
-                </div>
-            </div> 
-
-            <div class="form-group-a">
-                <label  class="col-sm-2 control-label">Partida(gol)</label>
-                <div class="col-sm-10-a">
-                    <input name="equipe_id" type="text" class="form-control" maxlength="60" placeholder="Rodada">
-                </div>
-            </div> 
+                  
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Atleta</label>
                 <div class="col-sm-10-a">
-                    <input name="atleta_id" type="text" class="form-control" maxlength="60" placeholder="Rodada">
+                    <select name="atleta_id" id="atleta_id" >
+                        <optgroup label="Atleta"></optgroup>
+                        <?php foreach ($atletas as $atleta) { ?>
+                        <option value="<?= $atleta['id']; ?>"><?= $atleta['nome']; ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
-            </div> 
+            </div><br>
 
             <div class="form-group-a">
-                <label  class="col-sm-2 control-label">Minuto</label>
+                <label  class="col-sm-2 control-label">Minutos</label>
                 <div class="col-sm-10-a">
-                    <input name="minuto" type="text" class="form-control" maxlength="60" placeholder="Rodada">
+                    <input name="minuto" type="text" class="form-control" maxlength="60" placeholder="ex:10; 45; 80">
                 </div>
             </div> 
 
             <div class="form-group-b">
                 <div class="col-sm-offset-2 col-sm-10-a">
-                    <button type="submit" class="btn btn-default">Enviar</button>
+                    <button type="submit" class="btn btn-default">Cadastrar Gol</button>
                 </div>
             </div>
         </form>

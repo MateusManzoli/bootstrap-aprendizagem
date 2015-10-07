@@ -26,7 +26,7 @@ function cadastrarEquipe($dados) {
     //addslashes permite usar os aspas''(apóstrofo)
     $cadastrar = "
         INSERT INTO aprendizagem.equipe SET
-            esporte = '". addslashes($dados['esporte_id']) ."',
+            esporte = '" . addslashes($dados['esporte_id']) . "',
             nome = '" . addslashes($dados['nome']) . "',
             cidade = '" . addslashes($dados['cidade']) . "',
             presidente = '" . addslashes($dados['presidente']) . "'
@@ -46,7 +46,6 @@ function editarEquipe($dados) {
     echo $editar;
     return editar($editar);
 }
-
 
 function excluirEquipe($id) {
     $excluir = "delete from `aprendizagem`.`equipe` where id = $id";
@@ -78,7 +77,7 @@ function selecionarPatrocinio() {
 function inserirPatrocinio($dados) {
     print_r($dados);
     //verifica se ja existe os dados na tabela, se existi nao cadastra
-    if (verificarRegistros($dados['patrocinador_id'], $dados['equipe_id'])) {   
+    if (verificarRegistros($dados['patrocinador_id'], $dados['equipe_id'])) {
         try {
             throw new Exception("Os dados ja existem em nossos registros");
         } catch (Exception $ex) {
@@ -95,19 +94,34 @@ function inserirPatrocinio($dados) {
     }
 }
 
-function verificarRegistros($patrocinador_id,$equipe_id) {
+function verificarRegistros($patrocinador_id, $equipe_id) {
     $verificar = "select * from aprendizagem.equipe_patrocinio where patrocinador_id = $patrocinador_id && equipe_id = $equipe_id";
     $verificacao = pesquisar($verificar);
     return $verificacao;
 }
 
+function verificarAtletas($atleta_id, $equipe_id) {
+    $verificar = "select * from aprendizagem.equipe_atleta where atleta_id = $atleta_id && equipe_id = $equipe_id";
+    $verificacao = pesquisar($verificar);
+    return $verificacao;
+}
 
 function contratarAtleta($dados) {
-    $contratar = "
+    print_r($dados);
+    //verifica se ja existe os dados na tabela, se existi nao cadastra
+    if (verificarAtletas($dados['atleta_id'], $dados['equipe_id'])) {
+        try {
+            throw new Exception("Os dados ja existem em nossos registros");
+        } catch (Exception $ex) {
+            echo $ex->getMessage();
+        }
+    } else {
+        $contratar = "
         INSERT INTO aprendizagem.equipe_atleta SET
            atleta_id = '" . addslashes($dados['atleta_id']) . "',
            equipe_id = '" . addslashes($dados['equipe_id']) . "'";
 
-    echo $contratar;
-    return inserir($contratar);
+        echo $contratar;
+        return inserir($contratar);
+    }
 }

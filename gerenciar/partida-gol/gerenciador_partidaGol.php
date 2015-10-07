@@ -14,14 +14,12 @@ function buscarPartidaGol($id) {
 }
 
 function cadastrarPartidaGol($dados) {
-    validarDadosRodada($dados);
     $cadastrar = "
         INSERT INTO aprendizagem.partida_gol SET
-        partida_id = '" . addslashes($dados['campeonato']) . "',
-        equipe_id = '" . addslashes($dados['campeonato']) . "',
-        partida_gol = '" . addslashes($dados['campeonato']) . "',
-        atleta_id = '" . addslashes($dados['campeonato']) . "',
-        minuto = '" . addslashes($dados['numero']) . "'";
+        partida_id = '" . addslashes($dados['partida_id']) . "',
+        equipe_id = '" . addslashes($dados['equipe_id']) . "',
+        atleta_id = '" . addslashes($dados['atleta_id']) . "',
+        minuto = '" . addslashes($dados['minuto']) . "'";
     echo $cadastrar;
     return inserir($cadastrar);
 }

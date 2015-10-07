@@ -28,6 +28,3 @@ if (isset($_POST['pesquisa'])) {
             </div>
         <?php } ?> 
     </div>
-
-</div>
-

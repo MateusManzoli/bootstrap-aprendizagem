@@ -25,7 +25,7 @@ $atletas = buscarAtletas();
 
                     </tr>
                     <?php foreach ($atletas as $atleta) { ?> 
-                        <tr>
+                    <tr style="text-align: center;">
                             <td><?php echo $atleta['id']; ?></td>
                             <td><?php echo $atleta['nome'] ?></td>
                             <td><?php echo $atleta['nascimento'] ?></td>

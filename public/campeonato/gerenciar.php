@@ -36,7 +36,7 @@ $campeonatos = buscarCampeonatos();
                         <Td colspan="2">Gerenciar</td>
                     </tr>
                     <?php foreach ($campeonatos as $campeonato) { ?> 
-                        <tr>
+                    <tr style="text-align: center;">
                             <td><?php echo $campeonato['id']; ?></td>
                             <td><?php echo $campeonato['nome'] ?></td>
                             <td><?php echo $campeonato['quantidade_rodada'] ?></td>

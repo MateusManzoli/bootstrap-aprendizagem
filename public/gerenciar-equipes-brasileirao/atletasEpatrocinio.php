@@ -9,6 +9,7 @@ if (!empty($_POST['patrocinador_id']) && is_numeric($_POST['patrocinador_id'])) 
 if (!empty($_POST['atleta_id']) && is_numeric($_POST['atleta_id'])) {
     contratarAtleta($_POST);
 }
+
 $patrocinadores = selecionarPatrocinio();
 $atletas = buscarAtletas();
 ?>
@@ -21,10 +22,9 @@ $atletas = buscarAtletas();
         <div class="geral">
             <h3><?= $_SESSION['equipe_nome'] ?></h3>
             <form class="form-horizontal-a" method="post" action="atletasEpatrocinio.php">  
-
                 <input type="hidden" name='equipe_id' id="equipe_id" value="<?= $_REQUEST['equipe_id']; ?>">
                 <input type="hidden" name='equipe_nome' id="equipe_nome" value="<?= $_REQUEST['equipe_nome']; ?>">
-              
+
                 <legend><h2>Selecione o patrocinador</h2></legend>
                 <div class="form-group-a">
                     <div class="col-sm-10-a">
@@ -42,7 +42,7 @@ $atletas = buscarAtletas();
                     </div>
                 </div>
             </form>
-            
+
             <form class="form-horizontal-a" method="post" action="atletasEpatrocinio.php">
                 <input type="hidden" name='equipe_id' id="equipe_id" value="<?= $_REQUEST['equipe_id']; ?>">
                 <input type="hidden" name='equipe_nome' id="equipe_nome" value="<?= $_REQUEST['equipe_nome']; ?>">
@@ -52,8 +52,8 @@ $atletas = buscarAtletas();
                         <select name="atleta_id" id="atleta_id">
                             <option>Atletas</option>
                             <?php foreach ($atletas as $atleta) { ?>
-                                <option value="<?= $atleta['id']; ?>" > <?= $atleta['nome']; ?> | <?= $atleta['posicao'];  // <?= nao precisa dar echo        ?></option> 
-                        <?php } ?>
+                                <option value="<?= $atleta['id']; ?>" > <?= $atleta['nome']; ?> | <?= $atleta['posicao'];  // <?= nao precisa dar echo         ?></option> 
+                            <?php } ?>
                         </select>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ $atletas = buscarAtletas();
                         <button  Type="submit" class="btn btn-default" >Contratar</button>
                     </div>
                 </div>
-                
+
             </form>
         </div>
         <?php

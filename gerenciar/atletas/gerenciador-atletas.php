@@ -11,6 +11,14 @@ function buscarAtletas(){
     return $atleta;
 }
 
+function buscarAtletaPorEquipe($id){
+$buscar = "select * from equipe_atleta 
+left join atleta ON atleta.id = equipe_atleta.atleta_id
+where equipe_id = $id";
+$atleta = pesquisar($buscar);
+return $atleta;
+}
+
 function buscarAtletaPorPesquisa($pesquisa) {
     // manchete passado no pesquisa buscarNoticiasPorPesquisanao esta correto pois o nome do formulario de pesquisa era "pesquisa"
     $sql = "select * from aprendizagem.atleta where nome like '%{$pesquisa}%' or conteudo like '%{$pesquisa}%'";
