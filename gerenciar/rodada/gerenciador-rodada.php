@@ -3,7 +3,8 @@
 include_once '../../PDO/conexao.php';
 
 function buscarRodadas() {
-    $buscar = "SELECT * FROM aprendizagem.rodada";
+    $buscar = "SELECT * FROM aprendizagem.rodada
+    left join campeonato ON campeonato.id = rodada.campeonato_id";
     $rodada = pesquisar($buscar);
     return $rodada;
 }
@@ -23,7 +24,7 @@ function cadastrarRodada($dados) {
     validarDadosRodada($dados);
     $cadastrar = "
         INSERT INTO aprendizagem.rodada SET
-        campeonato = '" . addslashes($dados['campeonato']) . "',
+        campeonato_id = '" . addslashes($dados['campeonato']) . "',
             numero = '" . addslashes($dados['numero']) . "'";
     echo $cadastrar;
     return inserir($cadastrar);

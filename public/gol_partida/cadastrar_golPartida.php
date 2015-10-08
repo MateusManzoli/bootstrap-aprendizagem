@@ -32,8 +32,15 @@ $atletas = buscarAtletaPorEquipe($_REQUEST['equipe_id']);
             <?php } ?>
             <input type="hidden" name="partida" value="1">
             <input type="hidden" name="equipe_id" value="<?php $_REQUEST['equipe_id'];?>">
-            <h3>Cadastrar Gol para a equipe <?= $_REQUEST['equipe_nome']; ?></h3>
+            <h3>Cadastrar Gol para a equipe <?= $_SESSION['equipe_nome']; ?></h3>
 
+                        <div class="form-group-a">
+                <label  class="col-sm-2 control-label">Equipe</label>
+                <div class="col-sm-10-a">
+                    <input name="equipe_id" type="text" class="form-control" maxlength="60" value="<?= $_REQUEST['equipe_id'] ?>" readonly >
+                </div>
+            </div>
+            
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Partida</label>
                 <div class="col-sm-10-a">

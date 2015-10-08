@@ -2,14 +2,12 @@
 include_once '../../dados/dados-cabecalho.php';
 include_once '../../gerenciar/atletas/gerenciador-atletas.php';
 include_once '../../gerenciar/equipes/gerenciador-equipes.php';
-
 if (!empty($_POST['patrocinador_id']) && is_numeric($_POST['patrocinador_id'])) {
     inserirPatrocinio($_POST);
 }
 if (!empty($_POST['atleta_id']) && is_numeric($_POST['atleta_id'])) {
     contratarAtleta($_POST);
 }
-
 $patrocinadores = selecionarPatrocinio();
 $atletas = buscarAtletas();
 ?>
@@ -20,7 +18,7 @@ $atletas = buscarAtletas();
     <body>
         <?php include_once '../../dados/dados-cabecalho.php'; ?>              
         <div class="geral">
-            <h3><?= $_SESSION['equipe_nome'] ?></h3>
+            <h3><?= $_REQUEST['equipe_nome'] ?></h3>
             <form class="form-horizontal-a" method="post" action="atletasEpatrocinio.php">  
                 <input type="hidden" name='equipe_id' id="equipe_id" value="<?= $_REQUEST['equipe_id']; ?>">
                 <input type="hidden" name='equipe_nome' id="equipe_nome" value="<?= $_REQUEST['equipe_nome']; ?>">

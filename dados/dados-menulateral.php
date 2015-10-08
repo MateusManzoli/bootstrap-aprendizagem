@@ -38,9 +38,11 @@ include_once'../../gerenciar/login/gerenciador-login.php';
     </form>
 <?php } ?>
 <div class="link">
-    <a href="https://twitter.com" target="_blanck"> <img src="../../imagens/twitter.jpg"></a> 
-    <a href="https://facebook.com" target="_blanck"> <img src="../../imagens/facebook.jpg"> </a>
-    <a href="../../public/indiceMassa/imc.php"> <img src="../../imagens/calculo-imc.jpg"> </a>
+<ul class="imgExpande">
+<li><a href="https://twitter.com" target="_blanck"> <img src="../../imagens/twitter.jpg"></a></li>
+<li><a href="https://facebook.com" target="_blanck"> <img src="../../imagens/facebook.jpg"> </a></li>   
+<li> <a href="../../public/indiceMassa/imc.php"> <img src="../../imagens/calculo-imc.jpg"> </a></a></li>
+</ul>
 </div>
 
             <!-- tabela clima -->

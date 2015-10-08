@@ -32,13 +32,14 @@ $atletas = buscarAtletas();
                             <td><?php echo $atleta['sexo'] ?></td>
                             <td><?php echo $atleta['posicao'] ?></td>
                             <!-- é necessario que o button tenha um name-->
-                            <td><button name="id_usuario" type="submit" class="btn btn-default navbar-btn" value="<?php echo $atleta['id']; ?>">Excluir</button></td>
-                            <td><a href="editar-atleta.php?id=<?php echo $atleta['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
+                            <td><button name="id_usuario" type="submit" class="btn btn-default navbar-btn  glyphicon glyphicon-remove" value="<?php echo $atleta['id']; ?>">Excluir</button></td>
+                            <td><a href="editar-atleta.php?id=<?php echo $atleta['id']; ?>" class="btn btn-default navbar-btn glyphicon glyphicon-pencil">Editar</a></td>
                         </tr>
                     <?php } ?>
                 </table>
             </form>
         </div>
+                
         <?php include_once '../../dados/dados-menulateral.php'; ?>
         <?php include_once '../../dados/dados-rodape.php'; ?>
     </body>

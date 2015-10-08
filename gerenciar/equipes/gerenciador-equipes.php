@@ -26,7 +26,7 @@ function cadastrarEquipe($dados) {
     //addslashes permite usar os aspas''(apóstrofo)
     $cadastrar = "
         INSERT INTO aprendizagem.equipe SET
-            esporte = '" . addslashes($dados['esporte_id']) . "',
+            esporte_id = '" . addslashes($dados['esporte_id']) . "',
             nome = '" . addslashes($dados['nome']) . "',
             cidade = '" . addslashes($dados['cidade']) . "',
             presidente = '" . addslashes($dados['presidente']) . "'
@@ -118,8 +118,8 @@ function contratarAtleta($dados) {
     } else {
         $contratar = "
         INSERT INTO aprendizagem.equipe_atleta SET
-           atleta_id = '" . addslashes($dados['atleta_id']) . "',
-           equipe_id = '" . addslashes($dados['equipe_id']) . "'";
+           equipe_id = '" . addslashes($dados['equipe_id']) . "',
+           atleta_id = '" . addslashes($dados['atleta_id']) . "'";
 
         echo $contratar;
         return inserir($contratar);

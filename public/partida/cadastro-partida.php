@@ -2,6 +2,7 @@
 include_once '../../gerenciar/fale-conosco/gerenciador-faleConosco.php';
 include_once '../../gerenciar/partida/gerenciar-partida.php';
 include_once '../../gerenciar/rodada/gerenciador-rodada.php';
+include_once '../../gerenciar/campeonato/gerenciador-campeonato.php';
 
 
 
@@ -17,7 +18,6 @@ try {
     $execute['tipo'] = "alert-danger";
 }
 $rodadas = buscarRodadas();
-
 ?>
 <html>
     <?php include_once '../../dados/dados-head.php'; ?>
@@ -25,26 +25,27 @@ $rodadas = buscarRodadas();
     <body>
         <?php include_once '../../dados/dados-cabecalho.php'; ?>
         <form class="form-horizontal-a" method="post" action="cadastro-partida.php">
-                        <input type="hidden" name="cadastrarRodada" value="1">
+            <input type="hidden" name="cadastrarRodada" value="1">
             <?php if (!empty($execute)) { ?>
                 <div class="alert <?php echo $execute['tipo']; ?>">
                     <?php echo $execute['mensagem']; ?>
                 </div>
             <?php } ?>
             <h3>Dados da Rodada</h3>
-            <div class="form-group-a">
-                <label  class="col-sm-2 control-label">Local</label>
+
+            <div class="form-group-a"> 
+                <label  class="col-sm-2 control-label">Rodada</label>
                 <div class="col-sm-10-a">
                     <select name="rodada_id" id="rodada_id" >
                         <optgroup label="local">
-                            <?php foreach($rodadas as $rodada) { ?>
-                            <option value="<?php echo $rodada['id']?>"><?php echo $rodada['numero']?></option>
-                        <?php } ?>
+                            <?php foreach ($rodadas as $rodada) { ?>
+                                <option value="<?php echo $rodada['id'] ?>"><?php echo $rodada['nome'],' - '. $rodada['numero'] ?></option>
+                            <?php } ?>
                         </optgroup>
                     </select>
                 </div>
             </div>
-            
+
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Local</label>
                 <div class="col-sm-10-a">
