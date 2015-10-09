@@ -1,12 +1,9 @@
-
 <?php
 include_once '../../gerenciar/equipes/gerenciador-equipes.php';
 include_once '../../gerenciar/esporte/gerenciar-esporte.php';
 try {
     $execute = [];
-    // post armazena os dados
-    // se post existir ele ira cadastrar as noticias,
-    if ($_POST['publicar']) {
+    if (!empty($_POST)) {
         cadastrarEquipe($_POST);
 
         $execute["mensagem"] = "Cadastro de atleta realizado";

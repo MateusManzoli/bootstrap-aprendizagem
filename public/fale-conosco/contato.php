@@ -27,7 +27,7 @@ try {
                 </div>
             <?php } ?>
             <input type="hidden" name="publicar" value="1">
-            <legend>Dados do Usuario</legend>
+            <h3>Dados do Usuario</h3>
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Nome</label>
                 <div class="col-sm-10-a">

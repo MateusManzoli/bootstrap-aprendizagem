@@ -50,18 +50,18 @@ $partidas = buscarPartidaEquipes();
                         <Td colspan="2">Gerenciar</Td>
 
                     </tr>
-                    <?php foreach ($partidas as $partida) { ?> 
+                    <?php foreach ($partidas as $gol) { ?> 
                         <tr style="text-align: center; color: black;">
-                            <td><?= $partida['id']; ?></td>
-                            <td><?= $partida['rodada_id']; ?></td>
-                            <td><?= $partida['local']; ?></td>
-                            <td><?= $partida['data']; ?></td>
-                            <?php $_SESSION['id'] = $partida['id'] ?>
+                            <td><?= $gol['id']; ?></td>
+                            <td><?= $gol['rodada_id']; ?></td>
+                            <td><?= $gol['local']; ?></td>
+                            <td><?= $gol['data']; ?></td>
+                            <?php $_SESSION['id'] = $gol['id'] ?>
                             <?php
-                            if ($partida['equipe_mandante_nome'] & $partida['equipe_visitante_nome']) {
+                            if ($gol['equipe_mandante_nome'] & $gol['equipe_visitante_nome']) {
                                 ?>
-                                <td><?= $partida['equipe_mandante_nome'] ?><br><a href="../gol_partida/cadastrar_golPartida.php?equipe_nome=<?= $partida['equipe_mandante_nome']; ?>&partida_id=<?= $partida['id'] ?>&equipe_id=<?= $partida['equipe_mandante_id'] ?>" class="btn btn-default navbar-btn">Gol</a></td>
-                                <td><?= $partida['equipe_visitante_nome'] ?><br><a href="../gol_partida/cadastrar_golPartida.php?equipe_nome=<?= $partida['equipe_visitante_nome']; ?>&partida_id=<?= $partida['id'] ?>&equipe_id=<?= $partida['equipe_visitante_id'] ?>" class="btn btn-default navbar-btn">Gol</a></td>                            
+                                <td><?= $gol['equipe_mandante_nome'] ?><br><a href="../gol_partida/cadastrar_golPartida.php?equipe_nome=<?= $gol['equipe_mandante_nome']; ?>&partida_id=<?= $gol['id'] ?>&equipe_id=<?= $gol['equipe_mandante_id'] ?>" class="btn btn-default navbar-btn">Gol</a></td>
+                                <td><?= $gol['equipe_visitante_nome'] ?><br><a href="../gol_partida/cadastrar_golPartida.php?equipe_nome=<?= $gol['equipe_visitante_nome']; ?>&partida_id=<?= $gol['id'] ?>&equipe_id=<?= $gol['equipe_visitante_id'] ?>" class="btn btn-default navbar-btn">Gol</a></td>                            
                                 <?php
                             } else {
                                 ?>
@@ -70,8 +70,8 @@ $partidas = buscarPartidaEquipes();
                                 <?php
                             }
                             ?>
-                            <td><a href="../partida/editar.php?id=<?php echo $partida['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
-                            <td><a href="../partida_equipe/cadastrar_partidaEquipe.php?rodada_id=<?= $partida['rodada_id']; ?>&partida_id=<?= $_SESSION['id'] ?>" class="btn btn-default navbar-btn">Gerenciar</a></td>
+                            <td><a href="../partida/editar.php?id=<?php echo $gol['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
+                            <td><a href="../partida_equipe/cadastrar_partidaEquipe.php?rodada_id=<?= $gol['rodada_id']; ?>&partida_id=<?= $_SESSION['id'] ?>" class="btn btn-default navbar-btn">Gerenciar</a></td>
                         </tr>
                     <?php } ?>
                 </table>

@@ -1,20 +1,20 @@
 <?php
 include_once '../../dados/dados-head.php';
 include_once '../../dados/dados-cabecalho.php';
-include_once '../../gerenciar/partida-equipe/gerenciador-partidaEquipe.php';
+include_once '../../gerenciar/partida-gol/gerenciador_partidaGol.php';
 
 try {
     $execute = [];
-    if ($_POST['partida']) {
-        excluirPartidaEquipe($_POST['partida_rodada_id']);
-        $execute["mensagem"] = "Exclusao de partida rodada realizado";
+    if ($_POST['gol']) {
+        excluirPartidaGol($_POST['partida_gol_id']);
+        $execute["mensagem"] = "Exclusao de gol realizado";
         $execute["tipo"] = "alert-success";
     }
 } catch (Exception $e) {
     $execute['mensagem'] = $e->getMessage();
     $execute['tipo'] = "alert-danger";
 }
-$partidas = buscarPartidaEquipes();
+$gols = buscarPartidaGols();
 ?>
 <html>
     <link rel="stylesheet" type="text/css" href="../../estilos-paginas/gerenciar-usuarios.css"/>
@@ -27,25 +27,27 @@ $partidas = buscarPartidaEquipes();
                         <?php echo $execute['mensagem']; ?>
                     </div>
                 <?php } ?>
-                <input type="hidden" name="partida" value="1"/>
+                <input type="hidden" name="gol" value="1"/>
                 <table class="table table-bordered">
                     <tr style="text-align: center; font-family: monospace; font-size: 20px;">
                         <td>ID</td>
-                        <td>ID PARTIDA</td>
-                        <td>ID EQUIPE</td>
-                        <td>MANDANTE</td>
+                        <td>PARTIDA</td>
+                        <td>EQUIPE</td>
+                        <td>ATLETA</td>
+                        <td>MINUTO</td>
                         <td colspan="2">Gerenciar</td>
                     </tr>
-                    <?php foreach ($partidas as $gol) { ?> 
+                    <?php foreach ($gols as $gol) { ?> 
                     <tr style="text-align: center;">
                             <td><?php echo $gol['id']; ?></td>
                             <td><?php echo $gol['partida_id'] ?></td>
                             <td><?php echo $gol['equipe_id'] ?></td>
-                            <td><?php echo $gol['mandante'] ?></td>
+                            <td><?php echo $gol['atleta_id'] ?></td>
+                            <td><?php echo $gol['minuto'] ?></td>
                             
                             <!-- é necessario que o button tenha um name-->
-                            <td><button name="partida_rodada_id" type="submit" class="btn btn-default navbar-btn" value="<?php echo $gol['id']; ?>">Excluir</button></td>
-                            <td><a href="../partida_equipe/editar.php?id=<?php echo $gol['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
+                            <td><button name="partida_gol_id" type="submit" class="btn btn-default navbar-btn" value="<?php echo $gol['id']; ?>">Excluir</button></td>
+                            <td><a href="../gol_partida/editar.php?id=<?php echo $gol['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
                         </tr>
                     <?php } ?>
                 </table>

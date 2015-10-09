@@ -14,7 +14,7 @@ try {
     $execute['mensagem'] = $e->getMessage();
     $execute['tipo'] = "alert-danger";
 }
-$partida = buscarPartidaEquipe($_GET['id']);
+$gol = buscarPartidaEquipe($_GET['id']);
 ?>
 <html>
     <link rel="stylesheet" type="text/css" href="../../estilos-paginas/cadastro-atleta.css"/>
@@ -31,21 +31,21 @@ $partida = buscarPartidaEquipe($_GET['id']);
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Partida(Id)</label>
                 <div class="col-sm-10-a">
-                    <input name="partida" type="text" class="form-control"  value="<?php echo $partida['partida_id']; ?>">
+                    <input name="partida" type="text" class="form-control"  value="<?php echo $gol['partida_id']; ?>">
                 </div>
             </div>
 
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Equipe(Id)</label>
                 <div class="col-sm-10-a">
-                    <input name="equipe" type="text" class="form-control"  value="<?php echo $partida['equipe_id']; ?>">
+                    <input name="equipe" type="text" class="form-control"  value="<?php echo $gol['equipe_id']; ?>">
                 </div>
             </div> 
 
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Mandante</label>
                 <div class="col-sm-10-a">
-                    <input name="mandante" type="text" class="form-control"  value="<?php echo $partida['mandante']; ?>">
+                    <input name="mandante" type="text" class="form-control"  value="<?php echo $gol['mandante']; ?>">
                 </div>
             </div> 
 

@@ -1,22 +1,25 @@
 <?php
+
 include_once '../../PDO/conexao.php';
+
 function buscarAtleta($id) {
     $buscar = "SELECT * FROM aprendizagem.atleta where id = $id";
     $atleta = pesquisar($buscar);
     return $atleta[0];
 }
-function buscarAtletas(){
+
+function buscarAtletas() {
     $buscar = "SELECT * FROM aprendizagem.atleta";
     $atleta = pesquisar($buscar);
     return $atleta;
 }
 
-function buscarAtletaPorEquipe($id){
-$buscar = "select * from equipe_atleta 
+function buscarAtletaPorEquipe($id) {
+    $buscar = "select * from equipe_atleta 
 left join atleta ON atleta.id = equipe_atleta.atleta_id
 where equipe_id = $id";
-$atleta = pesquisar($buscar);
-return $atleta;
+    $atleta = pesquisar($buscar);
+    return $atleta;
 }
 
 function buscarAtletaPorPesquisa($pesquisa) {
@@ -29,8 +32,10 @@ function buscarAtletaPorPesquisa($pesquisa) {
 function cadastrarAtleta($dados) {
     validarDadosAtleta($dados);
     $nascimento = DateTime::createFromFormat('d/m/Y', $dados['nascimento']);
-    // faz o texto da inserção com os valores que serao preenchidos publicacao etc...
-    //addslashes permite usar os aspas''(apóstrofo)
+
+    if(verificar($dados['nome'])){
+        throw new Exception ("Atleta encontrado em nosso sistema");
+    }
     $cadastrar = "
         INSERT INTO aprendizagem.atleta SET
             nome = '" . addslashes($dados['nome']) . "',
@@ -42,6 +47,13 @@ function cadastrarAtleta($dados) {
     //retorna o metodo inserir que contem os valores da variavel
     return inserir($cadastrar);
 }
+
+function verificar($nome) {
+    $atleta = "select * from aprendizagem.atleta where nome = '{$nome}'";
+    $verificar = pesquisar($atleta);
+    return $verificar;
+}
+
 function excluirAtleta($id) {
     $excluir = "delete from `aprendizagem`.`atleta` where id = $id";
     return excluir($excluir);
@@ -57,7 +69,6 @@ function editarAtleta($dados) {
             where id = {$dados['id']} ";
     return editar($editar);
 }
-
 
 function formatarDataNascimento($data) {
     $dataFormatada = DateTime::createFromFormat('Y-m-d', $data);

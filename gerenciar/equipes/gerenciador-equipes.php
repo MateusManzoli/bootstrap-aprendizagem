@@ -22,8 +22,10 @@ function buscarEquipePorPesquisa($pesquisa) {
 
 function cadastrarEquipe($dados) {
     validarDadosEquipe($dados);
-    // faz o texto da inserção com os valores que serao preenchidos publicacao etc...
-    //addslashes permite usar os aspas''(apóstrofo)
+    
+    if(verificacao($dados['nome'], $dados['esporte_id'])){
+        throw new Exception('Ja possuimos esses dados em nosso sistema');
+    }
     $cadastrar = "
         INSERT INTO aprendizagem.equipe SET
             esporte_id = '" . addslashes($dados['esporte_id']) . "',
@@ -34,6 +36,12 @@ function cadastrarEquipe($dados) {
     echo $cadastrar;
     //retorna o metodo inserir que contem os valores da variavel
     return inserir($cadastrar);
+}
+
+function verificacao ($nome, $esporte){
+    $verificar = "select * from aprendizagem.equipe where nome = '{$nome}' && esporte_id = $esporte";
+    $equipe = pesquisar($verificar);
+    return $equipe;
 }
 
 function editarEquipe($dados) {
@@ -75,24 +83,20 @@ function selecionarPatrocinio() {
 }
 
 function inserirPatrocinio($dados) {
-    print_r($dados);
     //verifica se ja existe os dados na tabela, se existi nao cadastra
     if (verificarRegistros($dados['patrocinador_id'], $dados['equipe_id'])) {
-        try {
-            throw new Exception("Os dados ja existem em nossos registros");
-        } catch (Exception $ex) {
-            echo $ex->getMessage();
-        }
-    } else {
-        $inserir = " INSERT INTO aprendizagem.equipe_patrocinio SET
+       
+            throw new Exception("Sua equipe ja possui esse patrocinador");
+    }
+            $inserir = " INSERT INTO aprendizagem.equipe_patrocinio SET
             patrocinador_id = '" . addslashes($dados['patrocinador_id']) . "',
-            equipe_id = '" . addslashes($dados['equipe_id']) . "'
+            equipe_id = '" . addslashes($dados['equipe_id']) . "',
+            valor = '" . addslashes($dados['valor']) . "'
         ";
-        echo($inserir);
+            echo $inserir;
         //retorna o metodo inserir que contem os valores da variavel
         return inserir($inserir);
     }
-}
 
 function verificarRegistros($patrocinador_id, $equipe_id) {
     $verificar = "select * from aprendizagem.equipe_patrocinio where patrocinador_id = $patrocinador_id && equipe_id = $equipe_id";

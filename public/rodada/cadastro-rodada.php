@@ -2,18 +2,17 @@
 include_once '../../gerenciar/fale-conosco/gerenciador-faleConosco.php';
 include_once '../../gerenciar/rodada/gerenciador-rodada.php';
 include_once '../../gerenciar/campeonato/gerenciador-campeonato.php';
+
 try {
     $execute = [];
-    // post armazena os dados
-    // se post existir ele ira cadastrar as noticias,
-    if ($_POST['rodada']) {
+    if (!empty($_POST['campeonato']) && is_numeric($_POST['campeonato'])) {
         cadastrarRodada($_POST);
-
-        $execute["mensagem"] = "Cadastro da rodada realizado";
-        $execute["tipo"] = "alert-success";
+        
+       $execute["mensagem"] = "Cadastro da rodada realizado";
+       $execute["tipo"] = "alert-success";
     }
-} catch (Exception $e) {
-    $execute['mensagem'] = $e->getMessage();
+} catch (Exception $ex) {
+    $execute['mensagem'] = $ex->getMessage();
     $execute['tipo'] = "alert-danger";
 }
 

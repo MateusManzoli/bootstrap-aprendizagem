@@ -4,7 +4,7 @@ try {
     $execute = [];
     // post armazena os dados
     // se post existir ele ira cadastrar as noticias,
-    if ($_POST['publicar']) {
+    if ($_POST) {
         cadastrarAtleta($_POST);
 
         $execute["mensagem"] = "Cadastro de atleta realizado";
@@ -28,17 +28,17 @@ try {
                     </div>
                 <?php } ?>
                 <input type="hidden" name="publicar" value="1">
-                <legend>Dados do Atleta</legend>
+                <h3>Dados do Atleta</h3>
                 <div class="form-group-a">
                     <label  class="col-sm-2 control-label">Nome</label>
                     <div class="col-sm-10-a">
                         <input name="nome" type="text" class="form-control" maxlength="60" placeholder="Nome Completo" >
                     </div>
                 </div>
-                <div class="form-group-a" required>
+                <div class="form-group-a">
                     <label for="inputEmail3" class="col-sm-2 control-label">Nascimento</label><br>
                     <div class="col-sm-10-a">
-                        <input name="nascimento" type="text" class="form-control" maxlength="10" placeholder="DD/MM/AAAA">
+                        <input name="nascimento" type="text" class="form-control" maxlength="10" placeholder="DD/MM/AAAA" required>
                     </div>
                 </div>
                 

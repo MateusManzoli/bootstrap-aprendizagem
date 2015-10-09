@@ -25,9 +25,12 @@ function cadastrarPartidaGol($dados) {
 }
 
 function editarPartidaGol($dados) {
-    validarDadosRodada($dados);
+    validarDadosPartidaGol($dados);
     $editar = "UPDATE aprendizagem.partida_gol SET 
-            numero = '" . addslashes($dados['numero']) . "'
+            partida_id = '" . addslashes($dados['partida_id']) . "',
+            equipe_id = '" . addslashes($dados['equipe_id']) . "',
+            atleta_id = '" . addslashes($dados['atleta_id']) . "',
+            minuto = '" . addslashes($dados['minuto']) . "'
             where id = {$dados['id']} ";
     echo $editar;
     return editar($editar);
@@ -39,7 +42,16 @@ function excluirPartidaGol($id) {
 }
 
 function validarDadosPartidaGol($dados) {
-    if (empty($dados['numero'])) {
-        throw new Exception('O campo numero precisa ser preenchido');
+    if (empty($dados['partida_id'])) {
+        throw new Exception('O campo partida precisa ser preenchido');
+    }
+    if (empty($dados['equipe_id'])) {
+        throw new Exception('O campo equipe precisa ser preenchido');
+    }
+    if (empty($dados['atleta_id'])) {
+        throw new Exception('O campo atleta precisa ser preenchido');
+    }
+    if (empty($dados['minuto'])) {
+        throw new Exception('O campo minuto precisa ser preenchido');
     }
 }

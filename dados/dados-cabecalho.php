@@ -41,6 +41,7 @@ $categorias = buscarCategorias();
                                 <li role="separator" class="divider"></li>
                                 <li><a href="../../public/partida/cadastro-partida.php">Cadastrar Partida</a></li>
                                 <li><a href="../../public/partida/gerenciar.php">Gerenciar Partida</a></li>
+                                <li><a href="../../public/gol_partida/gerenciar.php">Gols Partida</a></li>
                             <?php } else { ?>
                                 <li><a href="../../public/brasileirao/cadastro-equipe.php">Cadastro Equipe</a></li>
                                 <li role="separator" class="divider"></li>

@@ -22,12 +22,21 @@ function buscarRodadaPorPesquisa($pesquisa) {
 
 function cadastrarRodada($dados) {
     validarDadosRodada($dados);
+    if (verificarRegistros($dados['campeonato'], $dados['numero'])) {
+            throw new Exception("Os dados ja existem em nossos registros");
+    } 
     $cadastrar = "
         INSERT INTO aprendizagem.rodada SET
         campeonato_id = '" . addslashes($dados['campeonato']) . "',
-            numero = '" . addslashes($dados['numero']) . "'";
-    echo $cadastrar;
+        numero = '" . addslashes($dados['numero']) . "'";
     return inserir($cadastrar);
+    }
+
+
+function verificarRegistros($campeonato_id, $numero) {
+    $verificar = "select * from aprendizagem.rodada where campeonato_id = $campeonato_id && numero = $numero";
+    $verificacao = pesquisar($verificar);
+    return $verificacao;
 }
 
 function editarRodada($dados) {

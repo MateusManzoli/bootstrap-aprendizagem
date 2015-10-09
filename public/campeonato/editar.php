@@ -14,7 +14,7 @@ try {
     $execute['mensagem'] = $e->getMessage();
     $execute['tipo'] = "alert-danger";
 }
-$partida = buscarCampeonato($_GET['id']);
+$gol = buscarCampeonato($_GET['id']);
 ?>
 <html>
     <link rel="stylesheet" type="text/css" href="../../estilos-paginas/cadastro-atleta.css"/>
@@ -31,14 +31,14 @@ $partida = buscarCampeonato($_GET['id']);
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Nome</label>
                 <div class="col-sm-10-a">
-                    <input name="nome" type="text" class="form-control"  value="<?php echo $partida['nome']; ?>">
+                    <input name="nome" type="text" class="form-control"  value="<?php echo $gol['nome']; ?>">
                 </div>
             </div>
 
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Quantidade(Rodada)</label>
                 <div class="col-sm-10-a">
-                    <input name="quantidade" type="text" class="form-control"  value="<?php echo $partida['quantidade_rodada']; ?>">
+                    <input name="quantidade" type="text" class="form-control"  value="<?php echo $gol['quantidade_rodada']; ?>">
                 </div>
             </div> 
             

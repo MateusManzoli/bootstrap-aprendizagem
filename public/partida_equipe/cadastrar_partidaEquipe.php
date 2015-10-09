@@ -13,7 +13,7 @@ $equipes = buscarEquipes($_GET['partida_id']);
         <?php include_once '../../dados/dados-cabecalho.php'; ?>
         <form class="form-horizontal-a" method="post" action="cadastrar_partidaEquipe.php">
             <input type="hidden" name="publicar" value="1">
-            <input type="hidden" name="id_partida" value="<?= $partida['partida_id']; ?>">
+            <input type="hidden" name="id_partida" value="<?= $gol['partida_id']; ?>">
             <input type="hidden" name='partida_id' id="equipe_id" value="<?= $_REQUEST['partida_id']; ?>">
 
             <legend>Dados do Confronto</legend>
