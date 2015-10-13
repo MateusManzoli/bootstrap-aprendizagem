@@ -5,8 +5,11 @@ include_once '../../PDO/conexao.php';
 function buscarPartidaEquipes() {
     $buscar = "SELECT pa.*,
 eqm.nome AS 'equipe_mandante_nome', eqm.cidade as 'equipe_mandante_cidade', eqm.id AS 'equipe_mandante_id',
-eqv.nome AS 'equipe_visitante_nome', eqv.cidade as 'equipe_visitante_cidade',eqv.id AS 'equipe_visitante_id'
+eqv.nome AS 'equipe_visitante_nome', eqv.cidade as 'equipe_visitante_cidade',eqv.id AS 'equipe_visitante_id',
+campeonato.nome AS 'campeonato_nome'
 FROM aprendizagem.partida pa
+LEFT JOIN rodada ON rodada.id = (pa.rodada_id)
+left join campeonato ON (campeonato.id = rodada.campeonato_id)
 LEFT JOIN aprendizagem.partida_equipe pem ON ( pem.partida_id = pa.id AND pem.mandante = 1)
 LEFT JOIN aprendizagem.partida_equipe pev ON ( pev.partida_id = pa.id AND pev.mandante = 0)
 LEFT JOIN aprendizagem.equipe eqm ON (eqm.id = pem.equipe_id ) 

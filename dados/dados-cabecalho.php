@@ -4,7 +4,7 @@ include_once '../../gerenciar/tipo-noticia/gerenciar-tipoNoticia.php';
 include_once '../../gerenciar/login/gerenciador-login.php';
 $categorias = buscarCategorias();
 ?> 
-<html>
+<html>            
     <nav class="navbar navbar-inverse  navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -18,15 +18,15 @@ $categorias = buscarCategorias();
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <?php foreach ($categorias as $categoria): ?>
+<?php foreach ($categorias as $categoria): ?>
                         <li>
                             <a href="<?= $categoria['link'] . '?categoria=' . $categoria['id']; ?>" name="<?= $categoria['nome']; ?>" > <?= $categoria['nome']; ?></a>
-                        <?php endforeach; ?>
+<?php endforeach; ?>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brasileirao<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <?php if (!empty($_SESSION['logado'])) { ?>
+<?php if (!empty($_SESSION['logado'])) { ?>
                                 <li><a href="../../public/brasileirao/cadastro-equipe.php">Cadastro Equipe</a></li>
                                 <li><a href="../../public/brasileirao/gerenciar-equipe.php">Gerenciar Equipes</a></li>
                                 <li role="separator" class="divider"></li>
@@ -42,7 +42,7 @@ $categorias = buscarCategorias();
                                 <li><a href="../../public/partida/cadastro-partida.php">Cadastrar Partida</a></li>
                                 <li><a href="../../public/partida/gerenciar.php">Gerenciar Partida</a></li>
                                 <li><a href="../../public/gol_partida/gerenciar.php">Gols Partida</a></li>
-                            <?php } else { ?>
+<?php } else { ?>
                                 <li><a href="../../public/brasileirao/cadastro-equipe.php">Cadastro Equipe</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="../../public/brasileirao/cadastro-atleta.php">Cadastro Atleta</a></li>
@@ -52,14 +52,14 @@ $categorias = buscarCategorias();
                                 <li><a href="../../public/rodada/cadastro-rodada.php">Cadastrar Rodada</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="../../public/partida/cadastro-partida.php">Cadastrar Partida</a></li>
-                            <?php } ?>
+<?php } ?>
                         </ul>
                     </li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gerenciar<span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-                            <?php if (!empty($_SESSION['logado'])) { ?>
+<?php if (!empty($_SESSION['logado'])) { ?>
                                 <li><a href="../../public/fale-conosco/contato.php">Fale Conosco</a></li>
                                 <li><a href="../../public/fale-conosco/gerenciar.php">Solicitacoes</a></li>
                                 <li role="separator" class="divider"></li>
@@ -68,10 +68,10 @@ $categorias = buscarCategorias();
                                 <li role="separator" class="divider"></li>
                                 <li><a href="../../public/noticias/cadastro.php">Cadastrar Noticia</a></li>
                                 <li><a href="../../public/noticias/gerenciar.php">Gerenciar Noticias</a></li>
-                            <?php } else { ?>
+<?php } else { ?>
                                 <li><a href="../../public/fale-conosco/contato.php">Fale Conosco</a></li>
                                 <li><a href="../../public/usuario/cadastro.php">Cadastre-se</a></li>
-                            <?php } ?>
+<?php } ?>
                         </ul>
 
                 </ul>

@@ -42,6 +42,7 @@ $partidas = buscarPartidaEquipes();
                 <table class="table table-bordered">
                     <tr style="text-align: center; font-family: monospace; font-size: 20px; color: black;">
                         <td>ID</td>
+                        <td>Campeonato</td>
                         <td>Rodada</td>
                         <td>Local</td>
                         <td>Data|Hora</td>
@@ -53,6 +54,7 @@ $partidas = buscarPartidaEquipes();
                     <?php foreach ($partidas as $gol) { ?> 
                         <tr style="text-align: center; color: black;">
                             <td><?= $gol['id']; ?></td>
+                            <td><?= $gol['campeonato_nome']; ?></td>
                             <td><?= $gol['rodada_id']; ?></td>
                             <td><?= $gol['local']; ?></td>
                             <td><?= $gol['data']; ?></td>

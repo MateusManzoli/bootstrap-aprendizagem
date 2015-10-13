@@ -4,8 +4,6 @@ include_once '../../gerenciar/partida/gerenciar-partida.php';
 include_once '../../gerenciar/rodada/gerenciador-rodada.php';
 include_once '../../gerenciar/campeonato/gerenciador-campeonato.php';
 
-
-
 try {
     $execute = [];
     if (!empty($_POST['cadastrarRodada'])) {
@@ -39,7 +37,7 @@ $rodadas = buscarRodadas();
                     <select name="rodada_id" id="rodada_id" >
                         <optgroup label="local">
                             <?php foreach ($rodadas as $rodada) { ?>
-                                <option value="<?php echo $rodada['id'] ?>"><?php echo $rodada['nome'],' - '. $rodada['numero'] ?></option>
+                                <option value="<?php echo $rodada['numero'] ?>"><?php echo $rodada['nome'],' - '. $rodada['numero'] ?></option>
                             <?php } ?>
                         </optgroup>
                     </select>
@@ -66,6 +64,13 @@ $rodadas = buscarRodadas();
                 <label for="inputEmail3" class="col-sm-2 control-label">Data</label><br>
                 <div class="col-sm-10-a">
                     <input name="data" type="text" class="form-control" placeholder="DD/MM/AAAA">
+                </div>
+            </div>
+            
+            <div class="form-group-a">
+                <label for="inputEmail3" class="col-sm-2 control-label">Horario</label><br>
+                <div class="col-sm-10-a">
+                    <input name="horario" type="text" class="form-control" placeholder="Horario do jogo">
                 </div>
             </div>
 

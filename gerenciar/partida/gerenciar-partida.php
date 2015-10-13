@@ -20,16 +20,13 @@ function buscarPartidaPorPesquisa($pesquisa) {
 
 function cadastrarPartida($dados) {
     validarDadosPartida($dados);
-    $data = DateTime::createFromFormat('d/m/Y', $dados['data']);
-    // faz o texto da inserção com os valores que serao preenchidos publicacao etc...
-    //addslashes permite usar os aspas''(apóstrofo)
+    $data = DateTime::createFromFormat('d/m/Y H:i:s',$dados['data'].$dados['horario']);
     $cadastrar = "
         INSERT INTO aprendizagem.partida SET
             rodada_id = '" . addslashes($dados['rodada_id']) . "',
             local = '" . addslashes($dados['local']) . "',
-            data = '" . $data->format('Y-m-d') . "'";
+            data = '" . $data->format('Y-m-d H:i:s') . "'";
     echo $cadastrar;
-    //retorna o metodo inserir que contem os valores da variavel
     return inserir($cadastrar);
 }
 
@@ -56,12 +53,6 @@ function validarDadosPartida($dados) {
         throw new Exception('O campo data precisa ser preenchido');
     }
 }
-/*
-function selecionarEquipe() {
-    $selecionar = "SELECT * FROM aprendizagem.equipe";
-    $selec = pesquisar($selecionar);
-    return $selec;
-}*/
 
 function rodada() {
     for ($i = 1; $i <= 10; $i++) {
@@ -70,8 +61,8 @@ function rodada() {
 }
 
 function formatarData($data) {
-    $dataFormatada = DateTime::createFromFormat('Y-m-d', $data);
-    echo $dataFormatada->format('d/m/Y');
+    $dataFormatada = DateTime::createFromFormat('Y-m-d H:i:s', $data);
+    echo $dataFormatada->format('d/m/Y H:i:s');
 }
 
 function excluirPartida($id) {

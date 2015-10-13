@@ -3,8 +3,11 @@
 include_once '../../PDO/conexao.php';
 
 function buscarRodadas() {
-    $buscar = "SELECT * FROM aprendizagem.rodada
-    left join campeonato ON campeonato.id = rodada.campeonato_id";
+    $buscar = "SELECT rd.*, 
+campeonato.nome AS 'campeonato_nome'
+FROM aprendizagem.rodada rd
+left join campeonato ON campeonato.id  = rd.campeonato_id ;
+";
     $rodada = pesquisar($buscar);
     return $rodada;
 }
