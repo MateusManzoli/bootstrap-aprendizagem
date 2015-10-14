@@ -37,7 +37,7 @@ $rodadas = buscarRodadas();
                     <select name="rodada_id" id="rodada_id" >
                         <optgroup label="local">
                             <?php foreach ($rodadas as $rodada) { ?>
-                                <option value="<?php echo $rodada['numero'] ?>"><?php echo $rodada['nome'],' - '. $rodada['numero'] ?></option>
+                                <option value="<?php echo $rodada['id'] ?>"><?php echo $rodada['campeonato_nome'],' - '. $rodada['numero'] ?></option>
                             <?php } ?>
                         </optgroup>
                     </select>
