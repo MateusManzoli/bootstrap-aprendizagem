@@ -16,8 +16,8 @@ function buscarAtletas() {
 
 function buscarAtletaPorEquipe($id) {
     $buscar = "select * from equipe_atleta 
-left join atleta ON atleta.id = equipe_atleta.atleta_id
-where equipe_id = $id";
+    left join atleta ON atleta.id = equipe_atleta.atleta_id
+    where equipe_id = $id";
     $atleta = pesquisar($buscar);
     return $atleta;
 }

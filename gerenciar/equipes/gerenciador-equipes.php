@@ -104,23 +104,18 @@ function verificarRegistros($patrocinador_id, $equipe_id) {
     return $verificacao;
 }
 
-function verificarAtletas($atleta_id, $equipe_id) {
-    $verificar = "select * from aprendizagem.equipe_atleta where atleta_id = $atleta_id && equipe_id = $equipe_id";
+function verificarAtletas($atleta_id) {
+    $verificar = "select * from aprendizagem.equipe_atleta where atleta_id = $atleta_id ";
     $verificacao = pesquisar($verificar);
     return $verificacao;
 }
 
 function contratarAtleta($dados) {
-    print_r($dados);
-    //verifica se ja existe os dados na tabela, se existi nao cadastra
-    if (verificarAtletas($dados['atleta_id'], $dados['equipe_id'])) {
-        try {
+
+    if (verificarAtletas($dados['atleta_id'])) {
             throw new Exception("Os dados ja existem em nossos registros");
-        } catch (Exception $ex) {
-            echo $ex->getMessage();
-        }
-    } else {
-        $contratar = "
+    }
+            $contratar = "
         INSERT INTO aprendizagem.equipe_atleta SET
            equipe_id = '" . addslashes($dados['equipe_id']) . "',
            atleta_id = '" . addslashes($dados['atleta_id']) . "'";
@@ -128,4 +123,3 @@ function contratarAtleta($dados) {
         echo $contratar;
         return inserir($contratar);
     }
-}
