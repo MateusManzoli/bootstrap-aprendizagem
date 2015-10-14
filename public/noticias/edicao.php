@@ -10,7 +10,7 @@ try {
     if ($_POST) {
         editarNoticia($_POST);
         
-        $execute['mensagem'] = "Editada Com sucesso";
+        $execute['mensagem'] = "Noticia editada Com sucesso";
         $execute['tipo'] = "alert-success";
     }
 } catch (Exception $e) {

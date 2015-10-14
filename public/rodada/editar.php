@@ -7,7 +7,7 @@ try {
     if ($_POST) {
         editarRodada($_POST);
 
-        $execute["mensagem"] = "Edicao de rodada realizado";
+        $execute["mensagem"] = "Rodada editada com êxito";
         $execute["tipo"] = "alert-success";
     }
 } catch (Exception $e) {

@@ -6,7 +6,7 @@ try {
     if (!empty($_POST)) {
         cadastrarEquipe($_POST);
 
-        $execute["mensagem"] = "Cadastro de atleta realizado";
+        $execute["mensagem"] = "Cadastro de equipe realizado";
         $execute["tipo"] = "alert-success";
     }
 } catch (Exception $e) {

@@ -7,7 +7,7 @@ try {
     $execute = [];
     if ($_POST['partida']) {
         excluirPartidaEquipe($_POST['partida_rodada_id']);
-        $execute["mensagem"] = "Exclusao de partida rodada realizado";
+        $execute["mensagem"] = "Exclusao de partida realizado";
         $execute["tipo"] = "alert-success";
     }
 } catch (Exception $e) {
