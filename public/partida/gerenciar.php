@@ -9,7 +9,6 @@ if ($_POST['publicar']) {
     tratarCadastroPartidaEquipe($_POST);
 }
 
-
 try {
     $execute = [];
     if ($_POST) {

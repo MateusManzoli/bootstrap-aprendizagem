@@ -12,7 +12,7 @@ if (isset($_POST['cadastrar'])) {
         <?php include_once '../../dados/dados-cabecalho.php'; ?>
         <div class="geral">
             <form action="cadastro.php" class="form-horizontal-a" method="post">                  
-                <legend><h2>Cadastro Usuario</h2></legend>
+                <h2>Cadastro Usuario</h2>
                 <input type="hidden" name="cadastrar" value="1">
                 <div class="form-group-a">
                     <label  class="col-sm-2 control-label">Nome Usuario</label>
@@ -35,7 +35,7 @@ if (isset($_POST['cadastrar'])) {
                 <div class="form-group-a">
                     <label for="inputEmail3" class="col-sm-2 control-label">Data Nascimento</label>
                     <div class="col-sm-10-a">
-                        <input name="data_nascimento" type="date" class="form-control" maxlength="10" placeholder="DD/MM/AAAA"  required/>
+                        <input name="data_nascimento" type="text" class="form-control" maxlength="10" placeholder="DD/MM/AAAA" required />
                     </div>
                 </div>
                 <div class="form-group-b">

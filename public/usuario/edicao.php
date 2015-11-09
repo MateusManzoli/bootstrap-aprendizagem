@@ -39,7 +39,7 @@ $usuario = buscarUsuario($_GET['id']);
                         ?>
                     </div>
                 <?php } ?>
-                <legend><h2>Dados do Usuario</h2></legend>
+                <h2>Dados do Usuario</h2>
                 <div class="form-group-a">
                     <label  class="col-sm-2 control-label">Nome</label>
                     <div class="col-sm-10-a">

@@ -18,6 +18,14 @@ function buscarRodada($id) {
     return $rodada[0];
 }
 
+function buscarProdutosDoPedido() {
+    $buscar = "select * from composer.produto
+    left join composer.pedido_produto ON(pedido_produto.produto_id = produto.id); ;
+";
+    $rodada = pesquisar($buscar);
+    return $rodada;
+}
+
 function buscarRodadaPorPesquisa($pesquisa) {
     $sql = "select * from aprendizagem.rodada where numero like '%{$pesquisa}%'";
     return pesquisar($sql);
@@ -26,15 +34,14 @@ function buscarRodadaPorPesquisa($pesquisa) {
 function cadastrarRodada($dados) {
     validarDadosRodada($dados);
     if (verificarRegistros($dados['campeonato'], $dados['numero'])) {
-            throw new Exception("Os dados ja existem em nossos registros");
-    } 
+        throw new Exception("Os dados ja existem em nossos registros");
+    }
     $cadastrar = "
         INSERT INTO aprendizagem.rodada SET
         campeonato_id = '" . addslashes($dados['campeonato']) . "',
         numero = '" . addslashes($dados['numero']) . "'";
     return inserir($cadastrar);
-    }
-
+}
 
 function verificarRegistros($campeonato_id, $numero) {
     $verificar = "select * from aprendizagem.rodada where campeonato_id = $campeonato_id && numero = $numero";

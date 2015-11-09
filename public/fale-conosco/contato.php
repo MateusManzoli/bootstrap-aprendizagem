@@ -52,10 +52,10 @@ try {
                     F
                 </label>
             </div>
-            <div class="form-group-a" required>
+            <div class="form-group-a">
                 <label for="inputEmail3" class="col-sm-2 control-label">Nascimento</label><br>
                 <div class="col-sm-10-a">
-                    <input name="nascimento" type="text" class="form-control" maxlength="10" placeholder="DD/MM/AAAA">
+                    <input name="nascimento" type="text" class="form-control" maxlength="10" placeholder="DD/MM/AAAA" required>
                 </div>
             </div>
             <div class="form-group-a">
@@ -106,13 +106,13 @@ try {
                     </select>
                 </div>
             </div>
-            <div class="form-group-a" required>
+            <div class="form-group-a" >
                 <label for="inputEmail3" class="col-sm-2 control-label">Assunto</label><br>
                 <div class="col-sm-10-a">
-                    <input name="assunto" type="text" class="form-control" >
+                    <input name="assunto" type="text" class="form-control" required>
                 </div>
             </div>
-            <legend>Mensagem do Usuario</legend>
+            <h3>Mensagem do Usuario</h3>
             <textarea name="mensagem" class="form-control a" ></textarea>
             <div class="form-group-b">
                 <div class="col-sm-offset-2 col-sm-10-a">

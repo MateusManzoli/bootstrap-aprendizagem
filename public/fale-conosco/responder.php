@@ -36,7 +36,7 @@ $solicitacao = buscarSolicitacao($_GET['id']);
                         ?>
                     </div>
                 <?php } ?>
-                <legend><h2>Respondendo Solicitação <?php echo $solicitacao['id'] ?> </h2></legend>
+                <h2>Respondendo Solicitação <?php echo $solicitacao['id'] ?> </h2>
                 <textarea name="mensagem" class="form-control a" ></textarea>
                 <div class="form-group-b">
                     <div class="col-sm-offset-2 col-sm-10-a">

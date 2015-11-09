@@ -30,7 +30,7 @@ try {
                         <?php echo $execute['mensagem']; ?>
                     </div>
                 <?php } ?>
-                <legend><h2>Dados da Noticia</h2></legend>
+                <h2>Dados da Noticia</h2>
                 <input type="hidden" name="cadastrar" value="1">
                 <div class="form-group-a">
                     <label  class="col-sm-2 control-label">Publicação</label>
@@ -74,7 +74,7 @@ try {
                         </select>
                     </div>
                 </div>
-                <legend>Conteudo</legend>
+                <h2>Conteudo</h2>
                 <textarea name="conteudo" class="form-control" ></textarea>
                 <div class="form-group-b">
                     <div class="col-sm-offset-2 col-sm-10-a">

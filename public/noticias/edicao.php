@@ -39,7 +39,7 @@ $noticia = buscarNoticia($_GET['id']);
                         ?>
                     </div>
                 <?php } ?>
-                <legend><h2>Dados da Noticia</h2></legend>
+                <h2>Dados da Noticia</h2>
                 <div class="form-group-a">
                     <label  class="col-sm-2 control-label">Publicação</label>
                     <div class="col-sm-10-a">
@@ -70,7 +70,7 @@ $noticia = buscarNoticia($_GET['id']);
                         <input name="legenda_imagem" type="text" class="form-control" maxlength="150" value="<?php echo $noticia['legenda_imagem'];?>">
                     </div>
                 </div>
-                <legend>Conteudo</legend>
+                <h2>Conteudo</h2>
                 <textarea name="conteudo" class="form-control" ><?php echo $noticia['conteudo']; ?></textarea>
                 <div class="form-group-b">
                     <div class="col-sm-offset-2 col-sm-10-a">

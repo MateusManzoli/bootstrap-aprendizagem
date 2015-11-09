@@ -14,6 +14,7 @@ try {
     $execute['mensagem'] = $e->getMessage();
     $execute['tipo'] = "alert-danger";
 }
+
 ?>
 <html>
     <?php include_once '../../dados/dados-head.php'; ?>
