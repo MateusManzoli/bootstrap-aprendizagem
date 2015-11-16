@@ -43,8 +43,7 @@ function cadastrarAtleta($dados) {
             sexo = '" . addslashes($dados['optionsRadios']) . "',
             posicao = '" . addslashes($dados['posicao']) . "'
         ";
-    echo $cadastrar;
-    //retorna o metodo inserir que contem os valores da variavel
+
     return inserir($cadastrar);
 }
 

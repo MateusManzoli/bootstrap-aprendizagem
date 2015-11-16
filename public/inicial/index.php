@@ -6,4 +6,5 @@
         <?php include_once '../../dados/dados-conteudo.php'; ?>
         <?php include_once '../../dados/dados-menulateral.php'; ?>
         <?php include_once '../../dados/dados-rodape.php'; ?>
+    </body>
 </html>                                         

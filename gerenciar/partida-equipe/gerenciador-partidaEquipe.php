@@ -55,7 +55,6 @@ function cadastrarPartidaEquipe($dados) {
             partida_id = '" . addslashes($dados['partida_id']) . "',
             equipe_id = '" . addslashes($dados['equipe_id']) . "',
             mandante = '" . addslashes($dados['mandante']) . "'";
-    echo $cadastrar;
     return inserir($cadastrar);
 }
 
@@ -71,7 +70,6 @@ function editarPartidaEquipe($dados) {
             equipe_id = '" . addslashes($dados['equipe']) . "',
             mandante = '" . addslashes($dados['mandante']) . "'
             where id = {$dados['id']} ";
-    echo $editar;
     return editar($editar);
 }
 

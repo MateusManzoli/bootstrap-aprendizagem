@@ -24,7 +24,6 @@ function cadastrarCampeonato($dados) {
         INSERT INTO aprendizagem.campeonato SET
             nome = '" . addslashes($dados['nome']) . "',
             quantidade_rodada = '" . addslashes($dados['quantidade']) . "'";
-    echo $cadastrar;
     return inserir($cadastrar);
 }
 

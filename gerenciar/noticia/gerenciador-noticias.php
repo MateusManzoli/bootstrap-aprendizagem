@@ -17,7 +17,6 @@ function buscarNoticiasPorCategoria($categoria) {
     return pesquisar($sql);
 }
 
-
 function buscarNoticia($id) {
     $buscar = "SELECT * FROM aprendizagem.noticias where id = $id";
     $noticia = pesquisar($buscar);
@@ -33,8 +32,6 @@ function buscarNoticiasPorPesquisa($pesquisa) {
 
 function cadastrarNoticia($dados) {
     validarDadosTela($dados);
-    // faz o texto da inserção com os valores que serao preenchidos publicacao etc...
-    //addslashes permite usar os aspas''(apóstrofo)
     $cadastrar = "
         INSERT INTO aprendizagem.noticias SET
             publicacao = '" . addslashes($dados['publicacao']) . "',
@@ -42,17 +39,17 @@ function cadastrarNoticia($dados) {
             subtitulo = '" . addslashes($dados['subtitulo']) . "',
             imagem = '" . addslashes($dados['imagem']) . "',
             legenda_imagem = '" . addslashes($dados['legenda_imagem']) . "',
-            categoria = '" .addslashes($dados['pagina']) . "',
+            categoria = '" . addslashes($dados['pagina']) . "',
             conteudo = '" . addslashes($dados['conteudo']) . "'
         ";
-    echo $cadastrar;
-    //retorna o metodo inserir que contem os valores da variavel
     return inserir($cadastrar);
 }
+
 function excluirNoticias($id) {
     $excluir = "delete from `aprendizagem`.`noticias` where id = $id";
     return excluir($excluir);
 }
+
 function editarNoticia($dados) {
     validarDadosTela($dados);
     $editar = "UPDATE aprendizagem.noticias SET 
@@ -65,6 +62,7 @@ function editarNoticia($dados) {
             where id = {$dados['id']} ";
     return editar($editar);
 }
+
 function validarDadosTela($dados) {
     // empty 'vazio'
     if (empty($dados)) {

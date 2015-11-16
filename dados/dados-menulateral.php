@@ -25,7 +25,7 @@ include_once'../../gerenciar/login/gerenciador-login.php';
     <?php
 } else {
     ?>
-            <!-- logout usuario -->
+    <!-- logout usuario -->
     <form class="form-horizontal" method="post" name="id" action="../../public/login/sair.php?">
         <input type="hidden" name="editar" value="1"/>
         <div class="form-group">
@@ -37,15 +37,7 @@ include_once'../../gerenciar/login/gerenciador-login.php';
         </div>
     </form>
 <?php } ?>
-<div class="link">
-<ul class="imgExpande">
-<li><a href="https://twitter.com" target="_blanck"> <img src="../../imagens/twitter.jpg"></a></li>
-<li><a href="https://facebook.com" target="_blanck"> <img src="../../imagens/facebook.jpg"> </a></li>   
-<li> <a href="../../public/indiceMassa/imc.php"> <img src="../../imagens/calculo-imc.jpg"> </a></a></li>
-</ul>
-</div>
-
-            <!-- tabela clima -->
+<!-- tabela clima -->
 <br><iframe src="http://widget.tempoagora.com.br/selos/r7_2/Widget/" scrolling="no" frameborder="0" height="235px" width="300"></iframe>
 
 <div class="video" align="center">
@@ -56,10 +48,16 @@ include_once'../../gerenciar/login/gerenciador-login.php';
 
 <!-- feed noticias twitter -->
 <?php if (!empty($_SESSION['logado'])) { ?>
-    <div>
-                    <a class="twitter-timeline"  href="https://twitter.com/hashtag/embraer" data-widget-id="654366390615453696">embraer Tweets</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-          
-    </div>
+    <a class="twitter-timeline"  href="https://twitter.com/search?q=%40KLM" data-widget-id="666336011782352896">Tweets sobre @KLM</a>
+    <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + "://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");</script>
+
 <?php } ?>
 </div>

@@ -54,7 +54,6 @@ function editarRodada($dados) {
     $editar = "UPDATE aprendizagem.rodada SET 
             numero = '" . addslashes($dados['numero']) . "'
             where id = {$dados['id']} ";
-    echo $editar;
     return editar($editar);
 }
 

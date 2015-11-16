@@ -26,7 +26,6 @@ function cadastrarClassificacao($dados) {
             equipe_id = '" . addslashes($dados['equipe_id']) . "',
             pontos = '" . addslashes($dados['mandante']) . "'
         ";
-    echo $cadastrar;
     return inserir($cadastrar);
 }
 

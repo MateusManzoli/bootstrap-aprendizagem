@@ -20,7 +20,6 @@ function cadastrarPartidaGol($dados) {
         equipe_id = '" . addslashes($dados['equipe_id']) . "',
         atleta_id = '" . addslashes($dados['atleta_id']) . "',
         minuto = '" . addslashes($dados['minuto']) . "'";
-    echo $cadastrar;
     return inserir($cadastrar);
 }
 
@@ -32,7 +31,6 @@ function editarPartidaGol($dados) {
             atleta_id = '" . addslashes($dados['atleta_id']) . "',
             minuto = '" . addslashes($dados['minuto']) . "'
             where id = {$dados['id']} ";
-    echo $editar;
     return editar($editar);
 }
 

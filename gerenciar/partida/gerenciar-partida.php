@@ -1,5 +1,7 @@
 <?php
+
 include_once '../../PDO/conexao.php';
+
 function buscarPartidas() {
     $buscar = "SELECT * FROM aprendizagem.partida";
     $partida = pesquisar($buscar);
@@ -20,13 +22,12 @@ function buscarPartidaPorPesquisa($pesquisa) {
 
 function cadastrarPartida($dados) {
     validarDadosPartida($dados);
-    $data = DateTime::createFromFormat('d/m/Y H:i:s',$dados['data'].$dados['horario']);
+    $data = DateTime::createFromFormat('d/m/Y H:i:s', $dados['data'] . $dados['horario']);
     $cadastrar = "
         INSERT INTO aprendizagem.partida SET
             rodada_id = '" . addslashes($dados['rodada_id']) . "',
             local = '" . addslashes($dados['local']) . "',
             data = '" . $data->format('Y-m-d H:i:s') . "'";
-    echo $cadastrar;
     return inserir($cadastrar);
 }
 
@@ -38,7 +39,6 @@ function editarPartida($dados) {
             where id = {$dados['id']} ";
     return editar($atualizar);
 }
-
 
 function validarDadosPartida($dados) {
     // empty 'vazio'
