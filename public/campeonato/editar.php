@@ -41,12 +41,19 @@ $gol = buscarCampeonato($_GET['id']);
                     <input name="quantidade" type="text" class="form-control"  value="<?php echo $gol['quantidade_rodada']; ?>">
                 </div>
             </div> 
-            
+
             <div class="form-group-b">
                 <div class="col-sm-offset-2 col-sm-10-a">
                     <button type="submit" class="btn btn-default">Alterar</button>
                 </div>
-            </div>        
+            </div> 
+            <div class="col-sm-12 col-md-12">
+                <div class="form-group-b">
+                    <div class="col-sm-offset-2 col-sm-12-a">
+                        <a href="gerenciar.php"> <button  Type="button" class="btn btn-default" >Voltar</button></a>
+                    </div>
+                </div>
+            </div>
         </form>
     </body>
 </html>

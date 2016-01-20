@@ -18,6 +18,9 @@ body{
     max-width: 950px;
     position: relative;
 }
+.thead th{
+    text-align: center;
+}
 .cabecalho tr{
     text-align: center;
     font-family: monospace;

@@ -29,10 +29,10 @@ $equipes = buscarEquipes();
                         <td><?php echo $equipe['id']; ?></td>
                         <td>
                             <?php
-                            if (empty($equipe['esporte'])) {
+                            if (empty($equipe['esporte_id'].' - '.$equipe['nome_esporte'] )) {
                                 echo '-';
                             } else {
-                                echo $equipe['esporte'];
+                                echo  $equipe['esporte_id'] .' - '. $equipe['nome_esporte'];
                             }
                             ?>
                         </td>
@@ -43,13 +43,13 @@ $equipes = buscarEquipes();
                         <!-- é necessario que o button tenha um name-->
                         <td><button name="excluir" type="submit" class="btn btn-default navbar-btn  glyphicon glyphicon-remove" value="<?php echo $equipe['id']; ?>">Excluir</button></td>
                         <td><a href="editar-equipe.php?id=<?php echo $equipe['id']; ?>" class="btn btn-default navbar-btn glyphicon glyphicon-pencil">Editar</a></td>
-                        <td><a href="../gerenciar-equipes-brasileirao/atletasEpatrocinio.php?equipe_id=<?php echo $equipe['id']; ?>&equipe_nome=<?= $_SESSION['equipe_nome'] ?>" class="btn btn-default navbar-btn">Gerenciar</a></td>
-<?php } ?>
-                        
+                        <td><a href="../gerenciar-equipes-brasileirao/atletasEpatrocinio.php?equipe_id=<?php echo $equipe['id']; ?>" class="btn btn-default navbar-btn">Gerenciar</a></td>
+                    <?php } ?>
+
                 </table>
             </form>
         </div>
-<?php include_once '../../dados/dados-menulateral.php'; ?>
-<?php include_once '../../dados/dados-rodape.php'; ?>
+        <?php include_once '../../dados/dados-menulateral.php'; ?>
+        <?php include_once '../../dados/dados-rodape.php'; ?>
     </body>
 </html>

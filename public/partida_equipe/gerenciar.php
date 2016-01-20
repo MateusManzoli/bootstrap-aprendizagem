@@ -39,9 +39,9 @@ $partidas = buscarPartidaEquipes();
                     <?php foreach ($partidas as $gol) { ?> 
                     <tr style="text-align: center;">
                             <td><?php echo $gol['id']; ?></td>
-                            <td><?php echo $gol['partida_id'] ?></td>
-                            <td><?php echo $gol['equipe_id'] ?></td>
-                            <td><?php echo $gol['mandante'] ?></td>
+                            <td><?php echo $gol['rodada_id'] ?></td>
+                            <td><?php echo $gol['equipe_mandante_id'] ?></td>
+                            <td><?php echo $gol['equipe_mandante_nome'] ?></td>
                             
                             <!-- é necessario que o button tenha um name-->
                             <td><button name="partida_rodada_id" type="submit" class="btn btn-default navbar-btn" value="<?php echo $gol['id']; ?>">Excluir</button></td>

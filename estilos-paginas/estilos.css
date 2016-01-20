@@ -31,6 +31,7 @@ body{
 .menulateral{
     padding-top: 3%;
     padding-left: 6%;
+    width: 450px;
     padding-right: 0.5%;
     float: right;
 }
@@ -56,26 +57,26 @@ body{
 }
 
 .imgExpande {
-list-style: none;
-padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .imgExpande li {
-display: inline;
+    display: inline;
 }
 
 .imgExpande li img {
-width: 70px; /* Aqui é o tamanho da imagem */
--moz-transition: 1s all ease; /* Firefox */
--webkit-transition: 1s all ease; /* É para pega no Chrome e Safira */
--moz-transition: 1s all ease; /* Firefox */
--o-transition: 1s all ease; /* Opera */
+    width: 70px; /* Aqui é o tamanho da imagem */
+    -moz-transition: 1s all ease; /* Firefox */
+    -webkit-transition: 1s all ease; /* É para pega no Chrome e Safira */
+    -moz-transition: 1s all ease; /* Firefox */
+    -o-transition: 1s all ease; /* Opera */
 }
 
 .imgExpande li img:hover {
--moz-transform: scale(1.2);
--webkit-transform: scale(1.2);
--o-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
 }
 
 .video video{
@@ -108,7 +109,7 @@ width: 70px; /* Aqui é o tamanho da imagem */
     color: #9D9D9D;
 }
 .rodape li{
-    
+
     color: #CFCFCF;
 }
 .rodape li:hover{

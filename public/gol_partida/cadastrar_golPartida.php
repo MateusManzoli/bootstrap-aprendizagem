@@ -31,32 +31,32 @@ $atletas = buscarAtletaPorEquipe($_REQUEST['equipe_id']);
                 </div>
             <?php } ?>
             <input type="hidden" name="partida" value="1">
-            <input type="hidden" name="equipe_id" value="<?php $_REQUEST['equipe_id'];?>">
-            <input type="hidden" name="equipe_nome" value="<?= $_REQUEST['equipe_nome'];?>">
-            
+            <input type="hidden" name="equipe_id" value="<?php $_REQUEST['equipe_id']; ?>">
+            <input type="hidden" name="equipe_nome" value="<?= $_REQUEST['equipe_nome']; ?>">
+
             <h3>Cadastrar Gol para a equipe <?= $_REQUEST['equipe_nome']; ?></h3>
 
-                        <div class="form-group-a">
+            <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Equipe</label>
                 <div class="col-sm-10-a">
                     <input name="equipe_id" type="text" class="form-control" maxlength="60" value="<?= $_REQUEST['equipe_id'] ?>" readonly >
                 </div>
             </div>
-            
+
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Partida</label>
                 <div class="col-sm-10-a">
                     <input name="partida_id" type="text" class="form-control" maxlength="60" value="<?= $_REQUEST['partida_id'] ?>" readonly >
                 </div>
             </div>
-                  
+
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Atleta</label>
                 <div class="col-sm-10-a">
                     <select name="atleta_id" id="atleta_id" >
                         <optgroup label="Atleta"></optgroup>
                         <?php foreach ($atletas as $atleta) { ?>
-                        <option value="<?= $atleta['id']; ?>"><?= $atleta['nome']; ?></option>
+                            <option value="<?= $atleta['id']; ?>"><?= $atleta['nome']; ?></option>
                         <?php } ?>
                     </select>
                 </div>
@@ -72,6 +72,13 @@ $atletas = buscarAtletaPorEquipe($_REQUEST['equipe_id']);
             <div class="form-group-b">
                 <div class="col-sm-offset-2 col-sm-10-a">
                     <button type="submit" class="btn btn-default">Cadastrar Gol</button>
+                </div>
+            </div>
+            <div class="col-sm-12-a col-md-12">
+                <div class="form-group-b">
+                    <div class="col-sm-offset-2 col-sm-12-a">
+                        <a href="../partida/gerenciar.php"> <button  Type="button" class="btn btn-default" >Voltar</button></a>
+                    </div>
                 </div>
             </div>
         </form>

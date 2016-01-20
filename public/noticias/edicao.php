@@ -9,12 +9,12 @@ try {
 // se post existir ele ira cadastrar as noticias, 
     if ($_POST) {
         editarNoticia($_POST);
-        
+
         $execute['mensagem'] = "Noticia editada Com sucesso";
         $execute['tipo'] = "alert-success";
     }
 } catch (Exception $e) {
-    
+
     $execute['mensagem'] = $e->getMessage();
     $execute['tipo'] = "alert-danger";
 }
@@ -64,10 +64,10 @@ $noticia = buscarNoticia($_GET['id']);
                         <input name="imagem" type="text" class="form-control" maxlength="150" value="<?php echo '../../imagens/' . $noticia['imagem']; ?>">
                     </div>
                 </div>            
-                 <div class="form-group-a">
+                <div class="form-group-a">
                     <label for="inputEmail3" class="col-sm-2 control-label">Legenda_imagem</label>
                     <div class="col-sm-10-a">
-                        <input name="legenda_imagem" type="text" class="form-control" maxlength="150" value="<?php echo $noticia['legenda_imagem'];?>">
+                        <input name="legenda_imagem" type="text" class="form-control" maxlength="150" value="<?php echo $noticia['legenda_imagem']; ?>">
                     </div>
                 </div>
                 <h2>Conteudo</h2>
@@ -75,6 +75,13 @@ $noticia = buscarNoticia($_GET['id']);
                 <div class="form-group-b">
                     <div class="col-sm-offset-2 col-sm-10-a">
                         <button Type="submit" class="btn btn-default" >Atualizar</button>
+                    </div>
+                </div>
+                <div class="col-sm-12-a col-md-12">
+                    <div class="form-group-b">
+                        <div class="col-sm-offset-2 col-sm-12-a">
+                            <a href="gerenciar.php"> <button  Type="button" class="btn btn-default" >Voltar</button></a>
+                        </div>
                     </div>
                 </div>
             </form>

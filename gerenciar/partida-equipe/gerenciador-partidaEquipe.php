@@ -70,6 +70,7 @@ function editarPartidaEquipe($dados) {
             equipe_id = '" . addslashes($dados['equipe']) . "',
             mandante = '" . addslashes($dados['mandante']) . "'
             where id = {$dados['id']} ";
+    echo $editar;
     return editar($editar);
 }
 

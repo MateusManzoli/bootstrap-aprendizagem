@@ -16,22 +16,27 @@ $noticias = buscarNoticiasMenuPrincipal();
             <form method="post" action="gerenciar.php">
                 <input type="hidden" name="excluir" value="1"/>
                 <table class="table table-bordered">
-                    <tr style="text-align: center; font-family: monospace; font-size: 20px;">
-                        <td>ID</td>
-                        <td>Manchete</td>
-                        <td>Subtitulo</td>
-                        <td>legenda_imagem</td>
-                    </tr>
-                    <?php foreach ($noticias as $noticia) { ?> 
+                    <thead class="thead">
                         <tr>
-                            <td><?php echo $noticia['id']; ?></td>
-                            <td><?php echo $noticia['manchete'] ?></td>
-                            <td><?php echo $noticia['subtitulo'] ?></td>
-                            <td><?php echo $noticia['legenda_imagem'] ?></td>
-                            <!-- é necessario que o button tenha um name-->
-                            <td><button name="id_noticia" type="submit" class="btn btn-default navbar-btn  glyphicon glyphicon-remove" value="<?php echo $noticia['id']; ?>">Excluir</button></td>
-                            <td><a href="edicao.php?id=<?php echo $noticia['id']; ?>" class="btn btn-default navbar-btn glyphicon glyphicon-pencil">Editar</a></td>
+                            <th>ID</th>
+                            <th>Manchete</th>
+                            <th>Subtitulo</th>
+                            <th>Legenda_imagem</th>
+                            <th colspan="2">Gerenciar</th>
                         </tr>
+                    </thead>
+                    <?php foreach ($noticias as $noticia) { ?> 
+                        <tbody>    
+                            <tr style="text-align: justify;">
+                                <td><?php echo $noticia['id']; ?></td>
+                                <td><?php echo $noticia['manchete'] ?></td>
+                                <td><?php echo $noticia['subtitulo'] ?></td>
+                                <td><?php echo $noticia['legenda_imagem'] ?></td>
+                                <!-- é necessario que o button tenha um name-->
+                                <td><button name="id_noticia" type="submit" class="btn btn-default navbar-btn  glyphicon glyphicon-remove" value="<?php echo $noticia['id']; ?>">Excluir</button></td>
+                                <td><a href="edicao.php?id=<?php echo $noticia['id']; ?>" class="btn btn-default navbar-btn glyphicon glyphicon-pencil">Editar</a></td>
+                            </tr>
+                        </tbody>
                     <?php } ?>
                 </table>
             </form>

@@ -20,7 +20,7 @@ try {
     $exe = [];
     if (!empty($_POST['atleta_id']) && is_numeric($_POST['atleta_id'])) {
         contratarAtleta($_POST);
-        $exe["mensagem"] = "Atleta cadastrado com sucesso";
+        $exe["mensagem"] = "Atleta contratado com sucesso";
         $exe["tipo"] = "alert-success";
     }
 } catch (Exception $e) {
@@ -38,7 +38,7 @@ $atletas = buscarAtletas();
     <body>
         <?php include_once '../../dados/dados-cabecalho.php'; ?>              
         <div class="geral">
-            <h3><?= $_REQUEST['equipe_nome'] ?></h3>
+            <h3 style="color: grey">Gerenciando a equipe <?= $_REQUEST['equipe_id'] ?></h3>
             <form class="form-horizontal-a" method="post" action="atletasEpatrocinio.php">
                 <?php if (!empty($execute)) { ?>
                     <div class="alert <?php echo $execute['tipo']; ?>">
@@ -88,7 +88,7 @@ $atletas = buscarAtletas();
                         <select name="atleta_id" id="atleta_id">
                             <option>Atletas</option>
                             <?php foreach ($atletas as $atleta) { ?>
-                                <option value="<?= $atleta['id']; ?>" > <?= $atleta['nome']; ?> | <?= $atleta['posicao'];  // <?= nao precisa dar echo             ?></option> 
+                                <option value="<?= $atleta['id']; ?>" > <?= $atleta['nome']; ?> | <?= $atleta['posicao'];  // <?= nao precisa dar echo                ?></option> 
                             <?php } ?>
                         </select>
                     </div>
@@ -98,7 +98,11 @@ $atletas = buscarAtletas();
                         <button  Type="submit" class="btn btn-default" >Contratar</button>
                     </div>
                 </div>
-
+                <div class="form-group-b">
+                    <div class="col-sm-offset-2 col-sm-10-a">
+                        <a href="../brasileirao/gerenciar-equipe.php"><button  Type="button" class="btn btn-default" >Voltar</button></a>
+                    </div>
+                </div>
             </form>
         </div>
         <?php

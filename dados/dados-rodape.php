@@ -13,7 +13,7 @@ $categorias = buscarCategorias();
     
 <div style="width: 100%;">
     <ul class="nav" style="background: #363636; color: darkgrey; text-align: center;">
-        <li>©  2015 Noticias - O seu portal de noticias. Todos os direitos reservados</li>
+        <li>©  2015 Noticias - O seu portal de noticias. Todos os direitos reservados-Mateus Manzoli Giacomin</li>
     </ul>
 </div>
 </div>   

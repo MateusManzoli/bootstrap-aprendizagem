@@ -15,17 +15,19 @@ $atletas = buscarAtletas();
             <form method="post" action="gerenciar-atleta.php">
                 <input type="hidden" name="delete" value="1"/>
                 <table class="table table-bordered">
-                    <tr style="text-align: center; font-family: monospace; font-size: 20px;">
-                        <td>ID</td>
-                        <td>Nome</td>
-                        <td>Data de Nascimento</td>
-                        <td>Sexo</td>
-                        <td>Posicao</td>
-                        <td colspan="2">Gerenciar</td>
+                    <thead class="thead">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Data de Nascimento</th>
+                            <th>Sexo</th>
+                            <th>Posicao</th>
+                            <th colspan="2">Gerenciar</th>
 
-                    </tr>
+                        </tr>
+                    </thead>
                     <?php foreach ($atletas as $atleta) { ?> 
-                    <tr style="text-align: center;">
+                        <tr style="text-align: center;">
                             <td><?php echo $atleta['id']; ?></td>
                             <td><?php echo $atleta['nome'] ?></td>
                             <td><?php echo $atleta['nascimento'] ?></td>
@@ -39,7 +41,7 @@ $atletas = buscarAtletas();
                 </table>
             </form>
         </div>
-                
+
         <?php include_once '../../dados/dados-menulateral.php'; ?>
         <?php include_once '../../dados/dados-rodape.php'; ?>
     </body>

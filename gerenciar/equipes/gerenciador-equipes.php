@@ -3,7 +3,10 @@
 include_once '../../PDO/conexao.php';
 
 function buscarEquipes() {
-    $buscar = "SELECT * FROM aprendizagem.equipe";
+    $buscar = " select eq.*,
+esporte.nome AS 'nome_esporte'
+from aprendizagem.equipe eq
+left join esporte ON eq.esporte_id = esporte.id";
     $equipe = pesquisar($buscar);
     return $equipe;
 }
@@ -45,6 +48,7 @@ function verificacao($nome, $esporte) {
 function editarEquipe($dados) {
     validarDadosEquipe($dados);
     $editar = "UPDATE aprendizagem.equipe SET 
+            esporte_id = '" . addslashes($dados['esporte_id']) . "',
             nome = '" . addslashes($dados['nome']) . "',
             cidade = '" . addslashes($dados['cidade']) . "',
             presidente = '" . addslashes($dados['presidente']) . "'
@@ -110,7 +114,7 @@ function verificarAtletas($atleta_id) {
 function contratarAtleta($dados) {
 
     if (verificarAtletas($dados['atleta_id'])) {
-        throw new Exception("Os dados ja existem em nossos registros");
+        throw new Exception("Esse atleta ja possui uma equipe!");
     }
     $contratar = "
         INSERT INTO aprendizagem.equipe_atleta SET

@@ -33,10 +33,10 @@ $atleta = buscarAtleta($_GET['id']);
                 if (!empty($execute)) {
                     ?>
                     <div class="alert <?= $execute['tipo']; ?>">
-                        <?= $execute['mensagem'];?>
+                        <?= $execute['mensagem']; ?>
                     </div>
                 <?php } ?>
-                <legend><h2>Dados do atleta <?= $_GET['id']; ?></h2></legend>
+                <h2>Dados do atleta <?= $_GET['id']; ?></h2>
                 <div class="form-group-a">
                     <label  class="col-sm-2 control-label">Nome</label>
                     <div class="col-sm-10-a">
@@ -49,7 +49,7 @@ $atleta = buscarAtleta($_GET['id']);
                         <input  name="nascimento" type="text" class="form-control" id="inputEmail3" maxlength="80" value="<?= $atleta['nascimento'] ?>"> 
                     </div>
                 </div>
-               
+
                 <div class="radio" >
                     <label>
                         <input type="radio" name="optionsRadios" id="optionsRadios1" value="M" checked >
@@ -66,7 +66,7 @@ $atleta = buscarAtleta($_GET['id']);
                     <label  class="col-sm-2 control-label">Posicao</label>
                     <div class="col-sm-10-a">
                         <select name="posicao" id="id_estados" >
-                            <option><?= $atleta['posicao']?></option>
+                            <option><?= $atleta['posicao'] ?></option>
                             <option value="Goleiro">Goleiro</option>
                             <option value="Zagueiro">Zagueiro</option>
                             <option value="Ala-esq">Lateral Esquerdo</option>
@@ -77,13 +77,21 @@ $atleta = buscarAtleta($_GET['id']);
                         </select>
                     </div>
                 </div>
-                
+
                 <div class="form-group-b">
-                    <div class="col-sm-offset-2 col-sm-10-a">
+                    <div class="col-sm-offset-2 col-sm-12-a">
                         <button  Type="submit" class="btn btn-default" >Atualizar</button>
                     </div>
                 </div>
+                <div class="col-sm-12 col-md-12">
+                <div class="form-group-b">
+                    <div class="col-sm-offset-2 col-sm-12-a">
+                        <a href="gerenciar-atleta.php"> <button  Type="button" class="btn btn-default" >Voltar</button></a>
+                    </div>
+                </div>
+                </div>
             </form>
+
         </div>
         <?php
         include_once '../../dados/dados-menulateral.php';

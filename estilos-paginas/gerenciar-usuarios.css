@@ -8,3 +8,6 @@ body{
     max-width: 500px;
     text-align: center;
 }
+.thead th{
+    text-align: center;
+}
