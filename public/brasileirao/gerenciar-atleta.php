@@ -2,9 +2,20 @@
 include_once '../../dados/dados-cabecalho.php';
 include_once '../../gerenciar/atletas/gerenciador-atletas.php';
 //delete recebe o valor do hidden || id_usuario valor que receber o id no button
-if (!empty($_POST['delete'])) {
-    excluirAtleta($_POST['id_usuario']);
+try {
+    $execute = [];
+
+    if (!empty($_POST['delete'])) {
+        excluirAtleta($_POST['id_usuario']);
+        $execute['mensagem'] = "Atleta excluido com êxito!";
+        $execute['tipo'] = "alert-success";
+    }
+    // a variavel do exception nao pode ser a mesma da mensagem e tipo
+} catch (Exception $e) {
+    $execute['mensagem'] = $e->getMessage();
+    $execute['tipo'] = "alert-danger";
 }
+
 $atletas = buscarAtletas();
 ?>
 <html>
@@ -14,6 +25,15 @@ $atletas = buscarAtletas();
         <div class="geral">
             <form method="post" action="gerenciar-atleta.php">
                 <input type="hidden" name="delete" value="1"/>
+
+                <?php
+                if (!empty($execute)) {
+                    ?>
+                    <div class="alert <?= $execute['tipo']; ?>">
+                        <?= $execute['mensagem']; ?>
+                    </div>
+                <?php } ?>
+
                 <table class="table table-bordered">
                     <thead class="thead">
                         <tr>

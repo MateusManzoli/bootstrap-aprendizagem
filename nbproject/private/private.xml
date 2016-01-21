@@ -17,6 +17,12 @@
             <file>file:/C:/Users/mateus/desenv/bootstrap-aprendizagem/public/index.php</file>
             <file>file:/C:/Users/mateus/desenv/bootstrap-aprendizagem/public/contato.php</file>
         </group>
-        <group/>
+        <group>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/dados/dados-cabecalho.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/dados/dados-menulateral.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/musicas_aleatorias/musicas_aleatorias.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/dados/dados-rodape.php</file>
+            <file>file:/C:/Users/DESEN/desenv/bootstrap-aprendizagem/public/inicial/index.php</file>
+        </group>
     </open-files>
 </project-private>

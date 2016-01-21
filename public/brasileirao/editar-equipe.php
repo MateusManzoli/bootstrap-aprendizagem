@@ -4,14 +4,13 @@ include_once '../../gerenciar/equipes/gerenciador-equipes.php';
 include_once '../../gerenciar/esporte/gerenciar-esporte.php';
 // post armazena os dados 
 // se post existir ele ira cadastrar as noticias
-print_r($_POST);
 try {
     $execute = [];
     // post armazena os dados 
 // se post existir ele ira cadastrar as noticias, 
     if ($_POST) {
         editarEquipe($_POST);
-        $execute['mensagem'] = "Dados da equipe modificado com sucesso";
+        $execute['mensagem'] = "Dados da equipe editada com êxito";
         $execute['tipo'] = "alert-success";
     }
     // a variavel do exception nao pode ser a mesma da mensagem e tipo

@@ -2,8 +2,19 @@
 include_once '../../dados/dados-cabecalho.php';
 include_once '../../gerenciar/login/gerenciador-login.php';
 //delete recebe o valor do hidden || id_usuario valor que receber o id no button
-if (!empty($_POST['delete'])) {
-    excluirUsuario($_POST['id_usuario']);
+try {
+    $execute = [];
+    // post armazena os dados 
+// se post existir ele ira cadastrar as noticias, 
+    if (!empty($_POST['delete'])) {
+        excluirUsuario($_POST['id_usuario']);
+        $execute['mensagem'] = "Exclusao de usuario realizada com êxito!";
+        $execute['tipo'] = "alert-success";
+    }
+    // a variavel do exception nao pode ser a mesma da mensagem e tipo
+} catch (Exception $e) {
+    $execute['mensagem'] = $e->getMessage();
+    $execute['tipo'] = "alert-danger";
 }
 $usuarios = buscarUsuarios();
 ?>
@@ -14,6 +25,13 @@ $usuarios = buscarUsuarios();
         <div class="geral">
             <form method="post" action="../usuario/gerenciar.php">
                 <input type="hidden" name="delete" value="1"/>
+                <?php
+                if (!empty($execute)) {
+                    ?>
+                    <div class="alert <?= $execute['tipo']; ?>">
+                        <?= $execute['mensagem']; ?>
+                    </div>
+                <?php } ?>
                 <table class="table table-bordered">
                     <tr style="text-align: center; font-family: monospace; font-size: 20px;">
                         <td>ID</td>

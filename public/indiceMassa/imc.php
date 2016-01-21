@@ -5,14 +5,32 @@ error_reporting(0);
 include_once '../../dados/dados-cabecalho.php';
 include_once '../../dados/dados-head.php';
 include_once '../../gerenciar/calculo-imc/gerenciarCalculoImc.php';
-if ($_POST) {
-    $calculo = calcularImc($_POST['peso'], $_POST['altura']);
+try {
+    $execute = [];
+
+    if ($_POST) {
+        $calculo = calcularImc($_POST['peso'], $_POST['altura']);
+        $execute['mensagem'] = "Imc calculado com êxito";
+        $execute['tipo'] = "alert-success";
+    }
+    // a variavel do exception nao pode ser a mesma da mensagem e tipo
+} catch (Exception $e) {
+    $execute['mensagem'] = $e->getMessage();
+    $execute['tipo'] = "alert-danger";
 }
 ?>
 <body>
     <link rel="stylesheet" type="text/css" href="../../estilos-paginas/estilo-imc.css"/>
     <div class="containers">
         <form class="form-signin" action="imc.php" method="post">
+
+            <?php
+            if (!empty($execute)) {
+                ?>
+                <div class="alert <?= $execute['tipo']; ?>">
+                    <?= $execute['mensagem']; ?>
+                </div>
+            <?php } ?>
             <h2 class="form-signin-heading">Calcule seu IMC</h2>
             <div class="peso">
                 <label for="inputPeso" class="sr-only"> </label>
@@ -25,7 +43,7 @@ if ($_POST) {
             <div class="botao">
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Calcular</button>
             </div>
-            
+
             <h2>Dúvidas sobre o IMC</h2>
             <p><b>O que significa IMC?</b> - IMC é uma sigla utilizada para Índice de Massa Corporal, que é uma medida utilizada para medir a obesidade</p>
             <p><b>Como fazer o cálculo do IMC?</b> - O cálculo do IMC é feito dividindo o peso (em quilogramas) pela altura (em metros) ao quadrado</p>            <p><b>Quais são as limitações do IMC?</b> - O IMC pode apresentar alterações, dependendo de fatores como a prática de exercícios físicos.</p>
@@ -36,7 +54,7 @@ if ($_POST) {
     </div> <!-- /container -->
     <?php if (!empty($calculo)) { ?>
         <div class="resultado">
-            <p><b><?= 'Sua massa corporea é de: ' . number_format($calculo['valor'], 2, ',', '.') //com number format indiquei que teria 2 casas apos a virgula e que a virgula seria substituida por um ponto  ?></b></p>
+            <p><b><?= 'Sua massa corporea é de: ' . number_format($calculo['valor'], 2, ',', '.') //com number format indiquei que teria 2 casas apos a virgula e que a virgula seria substituida por um ponto   ?></b></p>
             <p><b><?= 'situação: ' . $calculo['situacao']; ?></b></p>
             <p><img src="../../imagens/tabela-imc.jpg"></p>
         </div>

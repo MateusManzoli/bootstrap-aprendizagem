@@ -69,6 +69,13 @@ $usuario = buscarUsuario($_GET['id']);
                         <button Type="submit" class="btn btn-default" >Atualizar</button>
                     </div>
                 </div>
+                <div class="col-sm-12-a col-md-12">
+                    <div class="form-group-b">
+                        <div class="col-sm-offset-2 col-sm-12-a">
+                            <a href="gerenciar.php"> <button  Type="button" class="btn btn-default" >Voltar</button></a>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
         <?php

@@ -2,9 +2,19 @@
 include_once '../../dados/dados-cabecalho.php';
 include_once '../../gerenciar/equipes/gerenciador-equipes.php';
 include_once '../../gerenciar/atletas/gerenciador-atletas.php';
-print_r($_POST);
-if (!empty($_POST['excluir'])) {
-    excluirEquipe($_POST['excluir']);
+
+try {
+    $execute = [];
+
+    if (!empty($_POST['excluir'])) {
+        excluirEquipe($_POST['excluir']);
+        $execute['mensagem'] = "Equipe excluida com êxito!";
+        $execute['tipo'] = "alert-success";
+    }
+    // a variavel do exception nao pode ser a mesma da mensagem e tipo
+} catch (Exception $e) {
+    $execute['mensagem'] = $e->getMessage();
+    $execute['tipo'] = "alert-danger";
 }
 $equipes = buscarEquipes();
 ?>
@@ -14,6 +24,14 @@ $equipes = buscarEquipes();
     <body>
         <div class="geral" >
             <form method="post" action="gerenciar-equipe.php" >
+                <?php
+                if (!empty($execute)) {
+                    ?>
+                    <div class="alert <?= $execute['tipo']; ?>">
+                        <?= $execute['mensagem']; ?>
+                    </div>
+                <?php } ?>
+
                 <table class="table table-bordered">
                     <tr style="text-align: center; font-family: monospace; font-size: 20px;">
                         <td>ID</td>
@@ -29,10 +47,10 @@ $equipes = buscarEquipes();
                         <td><?php echo $equipe['id']; ?></td>
                         <td>
                             <?php
-                            if (empty($equipe['esporte_id'].' - '.$equipe['nome_esporte'] )) {
+                            if (empty($equipe['esporte_id'] . ' - ' . $equipe['nome_esporte'])) {
                                 echo '-';
                             } else {
-                                echo  $equipe['esporte_id'] .' - '. $equipe['nome_esporte'];
+                                echo $equipe['esporte_id'] . ' - ' . $equipe['nome_esporte'];
                             }
                             ?>
                         </td>

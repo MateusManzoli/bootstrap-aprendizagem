@@ -2,9 +2,21 @@
 include_once '../../dados/dados-cabecalho.php';
 include_once '../../gerenciar/noticia/gerenciador-noticias.php';
 // o post recebe o nome do submit
-if ($_POST['excluir']) {
-    excluirNoticias($_POST['id_noticia']);
+try {
+    $execute = [];
+    // post armazena os dados 
+// se post existir ele ira cadastrar as noticias, 
+    if ($_POST['excluir']) {
+        excluirNoticias($_POST['id_noticia']);
+        $execute['mensagem'] = "Noticia excluida com êxito!";
+        $execute['tipo'] = "alert-success";
+    }
+    // a variavel do exception nao pode ser a mesma da mensagem e tipo
+} catch (Exception $e) {
+    $execute['mensagem'] = $e->getMessage();
+    $execute['tipo'] = "alert-danger";
 }
+
 $noticias = buscarNoticiasMenuPrincipal();
 ?>
 <html>
@@ -15,6 +27,13 @@ $noticias = buscarNoticiasMenuPrincipal();
         <div class="geral">
             <form method="post" action="gerenciar.php">
                 <input type="hidden" name="excluir" value="1"/>
+                <?php
+                if (!empty($execute)) {
+                    ?>
+                    <div class="alert <?= $execute['tipo']; ?>">
+                        <?= $execute['mensagem']; ?>
+                    </div>
+                <?php } ?>
                 <table class="table table-bordered">
                     <thead class="thead">
                         <tr>

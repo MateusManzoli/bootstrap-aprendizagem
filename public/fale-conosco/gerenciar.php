@@ -2,9 +2,20 @@
 include_once '../../dados/dados-cabecalho.php';
 include_once '../../gerenciar/fale-conosco/gerenciador-faleConosco.php';
 // o post recebe o nome do submit
-if (!empty($_POST['deletar'])) {
-    excluirSolicitacao($_POST['id']);
+try {
+    $execute = [];
+
+    if (!empty($_POST['deletar'])) {
+        excluirSolicitacao($_POST['id']);
+        $execute['mensagem'] = "Exclusao de solicitacao realizada com êxito!";
+        $execute['tipo'] = "alert-success";
+    }
+    // a variavel do exception nao pode ser a mesma da mensagem e tipo
+} catch (Exception $e) {
+    $execute['mensagem'] = $e->getMessage();
+    $execute['tipo'] = "alert-danger";
 }
+
 $solicitacoes = buscarSolicitacoes();
 ?>
 <html>
@@ -14,6 +25,14 @@ $solicitacoes = buscarSolicitacoes();
         <div class="geral">
             <form method="post" action="gerenciar.php">
                 <input type="hidden" name="deletar" value="1"/>
+                <?php
+                if (!empty($execute)) {
+                    ?>
+                    <div class="alert <?= $execute['tipo']; ?>">
+                        <?= $execute['mensagem']; ?>
+                    </div>
+                <?php } ?>
+
                 <table class="table table-bordered">
                     <tr>
                         <td>ID</td>
