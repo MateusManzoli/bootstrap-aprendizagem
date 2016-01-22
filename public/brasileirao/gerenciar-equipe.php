@@ -33,15 +33,16 @@ $equipes = buscarEquipes();
                 <?php } ?>
 
                 <table class="table table-bordered">
-                    <tr style="text-align: center; font-family: monospace; font-size: 20px;">
-                        <td>ID</td>
-                        <td>Esporte</td>
-                        <td>Nome</td>
-                        <td>cidade</td>
-                        <td>presidente</td>
-                        <td colspan="3">Gerenciar</td>
-                    </tr>
-                    <?php foreach ($equipes as $equipe) { ?>
+                    <thead class="thead">
+                    <th>ID</th>
+                    <th>Esporte</th>
+                    <th>Nome</th>
+                    <th>cidade</th>
+                    <th>presidente</th>
+                    <th colspan="3">Gerenciar</th>
+                    <thead>
+                        <?php foreach ($equipes as $equipe) { ?>
+                            
                         <tr style="text-align:center;" >
                         <input type="hidden" name="equipe_id" id="equipe" value="<?php echo $equipe['id']; ?>">
                         <td><?php echo $equipe['id']; ?></td>

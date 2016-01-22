@@ -39,18 +39,20 @@ $partidas = buscarPartidaEquipes();
                     </div>
                 <?php } ?>
                 <table class="table table-bordered">
-                    <tr style="text-align: center; font-family: monospace; font-size: 20px; color: black;">
-                        <td>ID</td>
-                        <td>Campeonato</td>
-                        <td>Rodada</td>
-                        <td>Local</td>
-                        <td>Data|Hora</td>
-                        <Td> Equipe Mandante</Td>
-                        <Td> Equipe Visitante</Td>
-                        <Td colspan="2">Gerenciar</Td>
+                    <thead class="thead">
+                        <th>ID</th>
+                        <th>Campeonato</th>
+                        <th>Rodada</th>
+                        <th>Local</th>
+                        <th>Data|Hora</th>
+                        <th> Equipe Mandante</th>
+                        <th> Equipe Visitante</th>
+                        <th colspan="2">Gerenciar</th>
 
-                    </tr>
-                    <?php foreach ($partidas as $gol) { ?> 
+                    </thead>
+                    <?php foreach ($partidas as $gol) { ?>
+                    <tbody>
+                        
                         <tr style="text-align: center; color: black;">
                             <td><?= $gol['id']; ?></td>
                             <td><?= $gol['campeonato_nome']; ?></td>
@@ -74,6 +76,7 @@ $partidas = buscarPartidaEquipes();
                             <td><a href="../partida/editar.php?id=<?php echo $gol['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
                             <td><a href="../partida_equipe/cadastrar_partidaEquipe.php?rodada_id=<?= $gol['rodada_id']; ?>&partida_id=<?= $_SESSION['id'] ?>" class="btn btn-default navbar-btn">Gerenciar</a></td>
                         </tr>
+                    </tbody>
                     <?php } ?>
                 </table>
             </form>

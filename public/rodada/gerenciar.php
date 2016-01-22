@@ -29,21 +29,24 @@ $rodadas = buscarRodadas();
                 <?php } ?>
                 <input type="hidden" name="partida" value="1"/>
                 <table class="table table-bordered">
-                    <tr style="text-align: center; font-family: monospace; font-size: 20px;">
-                        <td>ID</td>
-                        <td>Campeonato</td>
-                        <td>Numero</td>
-                        <td colspan="2">Gerenciar</td>
-                    </tr>
+                    <thead class="thead">
+                    <th>ID</th>
+                    <th>Campeonato</th>
+                    <th>Numero</th>
+                    <th colspan="2">Gerenciar</th>
+                    </thead>
                     <?php foreach ($rodadas as $rodada) { ?> 
-                    <tr style="text-align: center;">
+                    
+                    <tbody>
+                        <tr style="text-align: center;">
                             <td><?php echo $rodada['id']; ?></td>
-                            <td><?php echo $rodada['campeonato_nome']. '-' . $rodada['campeonato_id']; ?></td>
+                            <td><?php echo $rodada['campeonato_nome'] . '-' . $rodada['campeonato_id']; ?></td>
                             <td><?php echo $rodada['numero'] ?></td>
                             <!-- é necessario que o button tenha um name-->
                             <td><button name="id_rodada" type="submit" class="btn btn-default navbar-btn" value="<?php echo $rodada['id']; ?>">Excluir</button></td>
                             <td><a href="../rodada/editar.php?id=<?php echo $rodada['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
                         </tr>
+                    </tbody>
                     <?php } ?>
                 </table>
             </form>

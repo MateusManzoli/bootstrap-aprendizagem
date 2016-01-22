@@ -29,14 +29,15 @@ $partidas = buscarPartidaEquipes();
                 <?php } ?>
                 <input type="hidden" name="partida" value="1"/>
                 <table class="table table-bordered">
-                    <tr style="text-align: center; font-family: monospace; font-size: 20px;">
-                        <td>ID</td>
-                        <td>ID PARTIDA</td>
-                        <td>ID EQUIPE</td>
-                        <td>MANDANTE</td>
-                        <td colspan="2">Gerenciar</td>
-                    </tr>
+                    <thead class="thead">
+                        <th>ID</th>
+                        <th>ID PARTIDA</th>
+                        <th>ID EQUIPE</th>
+                        <th>MANDANTE</th>
+                        <th colspan="2">Gerenciar</th>
+                    </thead>
                     <?php foreach ($partidas as $gol) { ?> 
+                    <tbody>
                     <tr style="text-align: center;">
                             <td><?php echo $gol['id']; ?></td>
                             <td><?php echo $gol['rodada_id'] ?></td>
@@ -47,6 +48,7 @@ $partidas = buscarPartidaEquipes();
                             <td><button name="partida_rodada_id" type="submit" class="btn btn-default navbar-btn" value="<?php echo $gol['id']; ?>">Excluir</button></td>
                             <td><a href="../partida_equipe/editar.php?id=<?php echo $gol['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
                         </tr>
+                    </tbody>
                     <?php } ?>
                 </table>
             </form>

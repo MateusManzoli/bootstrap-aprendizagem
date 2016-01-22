@@ -29,26 +29,26 @@ $gols = buscarPartidaGols();
                 <?php } ?>
                 <input type="hidden" name="gol" value="1"/>
                 <table class="table table-bordered">
-                    <tr style="text-align: center; font-family: monospace; font-size: 20px;">
-                        <td>ID</td>
-                        <td>PARTIDA</td>
-                        <td>EQUIPE</td>
-                        <td>ATLETA</td>
-                        <td>MINUTO</td>
-                        <td colspan="2">Gerenciar</td>
-                    </tr>
+                    <thead class="thead">
+                    <th>ID</th>
+                    <th>PARTIDA</th>
+                    <th>EQUIPE</th>
+                    <th>ATLETA</th>
+                    <th>MINUTO</th>
+                    </thead>
                     <?php foreach ($gols as $gol) { ?> 
-                    <tr style="text-align: center;">
-                            <td><?php echo $gol['id']; ?></td>
-                            <td><?php echo $gol['partida_id'] ?></td>
-                            <td><?php echo $gol['equipe_id'] ?></td>
-                            <td><?php echo $gol['atleta_id'] ?></td>
-                            <td><?php echo $gol['minuto'] ?></td>
-                            
-                            <!-- é necessario que o button tenha um name-->
-                            <td><button name="partida_gol_id" type="submit" class="btn btn-default navbar-btn" value="<?php echo $gol['id']; ?>">Excluir</button></td>
-                            <td><a href="../gol_partida/editar.php?id=<?php echo $gol['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
-                        </tr>
+                        <tbody>
+                            <tr style="text-align: center;">
+                                <td><?php echo $gol['id']; ?></td>
+                                <td><?php echo $gol['partida_id'] ?></td>
+                                <td><?php echo $gol['equipe_id'] ?></td>
+                                <td><?php echo $gol['atleta_id'] ?></td>
+                                <td><?php echo $gol['minuto'] ?></td>
+                                <!-- é necessario que o button tenha um name-->
+                                <td><button name="partida_gol_id" type="submit" class="btn btn-default navbar-btn" value="<?php echo $gol['id']; ?>">Excluir</button></td>
+                                <td><a href="../gol_partida/editar.php?id=<?php echo $gol['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
+                            </tr>
+                        </tbody>
                     <?php } ?>
                 </table>
             </form>

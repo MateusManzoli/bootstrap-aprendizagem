@@ -16,3 +16,6 @@ body{
     padding-left: 4%;
     font-family: arial;
 }
+.thead th{
+    text-align: center;
+}

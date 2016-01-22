@@ -34,17 +34,17 @@ $solicitacoes = buscarSolicitacoes();
                 <?php } ?>
 
                 <table class="table table-bordered">
-                    <tr>
-                        <td>ID</td>
-                        <td>Nome</td>
-                        <td>Email</td>
-                        <td>Nascimento</td>
-                        <td>Cidade</td>
-                        <td>Logradouro</td>
-                        <td>Estado</td>
-                        <td>Assunto</td>
-                        <td>Mensagem</td>
-                    </tr>
+                    <thead class="thead">
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Nascimento</th>
+                        <th>Cidade</th>
+                        <th>Logradouro</th>
+                        <th>Estado</th>
+                        <th>Assunto</th>
+                        <th>Mensagem</th>
+                    </thead>
                     <?php foreach ($solicitacoes as $solicitacao) { ?> 
                         <tr>
                             <td><?php echo $solicitacao['id']; ?></td>

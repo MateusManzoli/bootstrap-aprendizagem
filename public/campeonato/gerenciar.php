@@ -29,12 +29,12 @@ $campeonatos = buscarCampeonatos();
                     </div>
                 <?php } ?>
                 <table class="table table-bordered">
-                    <tr style="text-align: center; font-family: monospace; font-size: 20px;">
-                        <td>ID</td>
-                        <td>Nome</td>
-                        <td>Quantidade de Rodadas</td>   
-                        <Td colspan="2">Gerenciar</td>
-                    </tr>
+                    <thead class="thead">
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Quantidade de Rodadas</th>   
+                        <th colspan="2">Gerenciar</th>
+                    </thead>
                     <?php foreach ($campeonatos as $campeonato) { ?> 
                     <tr style="text-align: center;">
                             <td><?php echo $campeonato['id']; ?></td>

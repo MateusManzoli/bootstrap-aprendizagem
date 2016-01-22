@@ -33,14 +33,15 @@ $usuarios = buscarUsuarios();
                     </div>
                 <?php } ?>
                 <table class="table table-bordered">
-                    <tr style="text-align: center; font-family: monospace; font-size: 20px;">
-                        <td>ID</td>
-                        <td>Nome</td>
-                        <td>Email</td>
-                        <td>Senha</td>
-                        <td>Data de Nascimento</td>
-                    </tr>
+                    <thead class="thead">
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Senha</th>
+                    <th>Data de Nascimento</th>
+                    </thead>
                     <?php foreach ($usuarios as $usuario) { ?> 
+                    <tbody>
                         <tr>
                             <td><?php echo $usuario['id']; ?></td>
                             <td><?php echo $usuario['nome'] ?></td>
@@ -51,6 +52,7 @@ $usuarios = buscarUsuarios();
                             <td><button name="id_usuario" type="submit" class="btn btn-default navbar-btn" value="<?php echo $usuario['id']; ?>">Excluir</button></td>
                             <td><a href="../usuario/edicao.php?id=<?php echo $usuario['id']; ?>" class="btn btn-default navbar-btn">Editar</a></td>
                         </tr>
+                    <tbody>
                     <?php } ?>
                 </table>
             </form>
