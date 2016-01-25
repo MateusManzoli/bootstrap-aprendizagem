@@ -41,6 +41,7 @@ include_once'../../gerenciar/login/gerenciador-login.php';
             </form>
 
         <?php } ?>
+            <?php if (!empty($_SESSION['logado'])) { ?>
         <div class="link" >
             <a href="https://twitter.com" target="_blanck"> <img src="../../imagens/twitter.jpg"></a> 
             <a href="https://facebook.com" target="_blanck"> <img src="../../imagens/facebook.jpg"> </a>
@@ -57,7 +58,7 @@ include_once'../../gerenciar/login/gerenciador-login.php';
         </div>
 
         <a href="http://www.evino.com.br/relampago-20160121-d?utm_source=UOL&utm_medium=Display&utm_campaign=20160121.Tudopelametade&utm_content=kitrelampago_200x448" target="_blank"><img src="https://tpc.googlesyndication.com/simgad/1583610008444334319" alt="" class="img_ad" border="0" height="300" width="355" style="padding-right: 1%;padding-bottom: 2%;"> </a>       <!-- feed noticias twitter -->
-        <?php if (!empty($_SESSION['logado'])) { ?>
+        
 
             <a class="twitter-timeline"  href="https://twitter.com/search?q=%40AMBaviationpics" data-widget-id="689795771164672000">Tweets sobre @AMBaviationpics</a>
             <script>!function (d, s, id) {
